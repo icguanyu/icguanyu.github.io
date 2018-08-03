@@ -1,5 +1,7 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 body {
   width: 100%;
+  font-family: 'Open Sans';
 }
 body:before,
 body:after {
@@ -72,7 +74,8 @@ td {
   outline: 0;
   font-weight: inherit;
   font-style: inherit;
-  font-family: inherit;
+  /* font-family: inherit; */
+  font-family: 'Open Sans' !important;
   font-size: 100%;
   vertical-align: baseline;
 }
