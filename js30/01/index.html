@@ -132,7 +132,7 @@
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/1.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/2.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/3.PNG">
-<meta property="og:updated_time" content="2018-08-07T11:40:13.686Z">
+<meta property="og:updated_time" content="2018-08-07T11:46:33.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day1 JavaScript Drum Kit">
 <meta name="twitter:image" content="http://icguanyu.github.io/js30/01/1.PNG">
@@ -472,7 +472,7 @@
 </blockquote>
 <p>在transitionend的事件中，我們使用了<code>propertyName</code>去判斷，目的讓<code>propertyName</code>只要<strong>不是</strong><code>transform</code>的屬性就都不要做了，可以試試不加判斷的<code>console.log(e)</code>就會看到噴出很多事件。(因為transitionend會針對<strong>每一個</strong>屬性去觸發)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(<span class="string">'transitionend'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e.propertyName !== <span class="string">"transform"</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h2 id="播放聲音"><a href="#播放聲音" class="headerlink" title="播放聲音"></a>播放聲音</h2><p>就給他play下去吧！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">audio.currentTime = <span class="number">0</span> </span><br><span class="line">audio.play()</span><br></pre></td></tr></table></figure></p>
-<p>為什麼要加<code>currentTime</code>呢，目的是要讓播放進度回到0(重頭播放)<br>假設今天音訊是5秒以上，就可以明顯感受到差異了，要不要加就效果需求。</p>
+<p>為什麼要加<code>currentTime</code>呢，目的是要讓播放進度回到0(重頭播放)<br>假設今天音訊是5秒以上，就可以明顯感受到差異了，要不要加就看效果需求。</p>
 <blockquote>
 <p><a href="https://developer.mozilla.org/pl/docs/Web/HTML/Element/audio" target="_blank" rel="noopener">更多audio介紹</a></p>
 </blockquote>
@@ -601,7 +601,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description">一個還沒有自信的junior，毅然決然地於2018.07辭去現職，一心一意為了朝前端攻城獅之路埋頭苦幹中！</p>
+              <p class="site-description motion-element" itemprop="description">再寫一次、再複習一次、再打穩一點！</p>
           </div>
 
           <nav class="site-state motion-element">
