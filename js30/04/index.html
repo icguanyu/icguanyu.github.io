@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字數統計&#58;</span>
                 
                 <span title="字數統計">
-                  
+                  2,173
                 </span>
               
 
@@ -469,7 +469,7 @@
 <p>白話解釋：從陣列裡一筆一筆資料去過濾（篩選），選出符合條件的那筆資料，再回傳<strong>產生一個新的陣列</strong>。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> question_1 = inventors.filter( <span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  item.year &gt;= <span class="number">1500</span> &amp;&amp; item.year &lt; <span class="number">1600</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(question_1)</span><br></pre></td></tr></table></figure>
-<p><code>console.table()</code>可以印出表格，滿酷的<br><img src="/js30/04/1.PNG" alt=""></p>
+<p><code>console.table()</code>可以印出表格，滿酷的<br><img src="1.PNG" alt=""></p>
 <h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>Give us an array of the inventors’ first and last names<br>我們要做一筆資料，只含他們的姓名就好</p>
 <p>關鍵：<strong>map()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">MDN</a></p>
 <blockquote>
@@ -479,7 +479,7 @@
 <blockquote>
 <p>這裡我們return的是物件，因為需要有first和last的值</p>
 </blockquote>
-<p>產生的結果:<br><img src="/js30/04/2.PNG" alt=""></p>
+<p>產生的結果:<br><img src="2.PNG" alt=""></p>
 <h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>Sort the inventors by birthdate, oldest to youngest<br>由老到年輕排列</p>
 <p>關鍵：<strong>sort()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">MDN</a></p>
 <ul>
@@ -510,7 +510,7 @@
 <p>應該就是第三題的延伸，先算出年紀再做排序。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inventors.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (a.passed-a.year) -(b.passed-b.year)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(inventors)</span><br></pre></td></tr></table></figure></p>
 <h2 id="第六題"><a href="#第六題" class="headerlink" title="第六題"></a>第六題</h2><p>create a list of Boulevards in Paris that contain ‘de’ anywhere in the name<br>這題好像叫我們直接到<a href="https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris" target="_blank" rel="noopener">這個網站</a>去抓名字裡面含有<strong>‘de’</strong>的清單。</p>
 <p>一步一步取得對象！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> peoples = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.mw-category-group a'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>注意:我們透過<code>document.querySelectorAll()</code>取得的這<code>peoples</code>，它是一個叫做<code>NodeList</code>的類似陣列的東西，他並<strong>不具陣列的所有功能</strong>。<br><img src="/js30/04/5.PNG" alt=""></p>
+<p>注意:我們透過<code>document.querySelectorAll()</code>取得的這<code>peoples</code>，它是一個叫做<code>NodeList</code>的類似陣列的東西，他並<strong>不具陣列的所有功能</strong>。<br><img src="5.PNG" alt=""></p>
 <blockquote>
 <p>NodeList不是陣列！<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/NodeList" target="_blank" rel="noopener">這邊</a>有更多介紹</p>
 </blockquote>
@@ -518,11 +518,11 @@
 <blockquote>
 <p>Array.from() 方法會從類陣列（array-like）或是可迭代（iterable）物件建立一個新的 Array 實體。<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">這邊</a>有更多介紹</p>
 </blockquote>
-<p>結果:<br><img src="/js30/04/3.PNG" alt=""></p>
+<p>結果:<br><img src="3.PNG" alt=""></p>
 <p>有了這筆資料後，我們再透過<code>map()</code>(或<code>forEach</code>)的方法取出所有姓名。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;<span class="keyword">return</span> item.innerHTML&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>結果:<br><img src="/js30/04/4.PNG" alt=""></p>
+<p>結果:<br><img src="4.PNG" alt=""></p>
 <p>最後，我們去<strong>過濾/篩選</strong>出名字中含有’de’的人<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = newList.filter(<span class="function"><span class="params">name</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name.includes(<span class="string">'de'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>結果:<br><img src="/js30/04/6.PNG" alt=""></p>
+<p>結果:<br><img src="6.PNG" alt=""></p>
 <blockquote>
 <p>補充:<code>includes()</code>方法會判斷陣列是否包含特定的元素，並以此來回傳 true 或 false。</p>
 </blockquote>
@@ -531,12 +531,12 @@
 <blockquote>
 <p>split()，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">這裡</a>有詳細介紹</p>
 </blockquote>
-<p>結果:原本的每一筆姓名都被切開成兩個了。<br><img src="/js30/04/7.PNG" alt=""></p>
+<p>結果:原本的每一筆姓名都被切開成兩個了。<br><img src="7.PNG" alt=""></p>
 <blockquote>
 <p>預設的排序順序是根據字串的 Unicode 編碼位置（code points）而定。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">newPeople.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a[<span class="number">1</span>]&gt;b[<span class="number">1</span>])&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>結果:可以看到LastName就從字母A開始排序了。<br><img src="/js30/04/8.PNG" alt=""></p>
+<p>結果:可以看到LastName就從字母A開始排序了。<br><img src="8.PNG" alt=""></p>
 <p><strong>寫法二：透過map去產生帶有物件(lastName,lastName)的陣列後再去排序比較易讀一點。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newPeople = people.map(<span class="function"><span class="params">name</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> temp = name.split(<span class="string">', '</span>)<span class="comment">//一樣先拆解</span></span><br><span class="line">  <span class="keyword">return</span> &#123;<span class="comment">//再回傳物件</span></span><br><span class="line">    firstName: temp[<span class="number">0</span>],</span><br><span class="line">    lastName: temp[<span class="number">1</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">newPeople.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a.lastName&gt;b.lastName)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>這題是按照自己意思去寫的，原始範例寫的排列方式和結果和我想像的<strong>按字母排序</strong>不太一樣…</p>
@@ -549,7 +549,7 @@
 </blockquote>
 <p><strong>所以,這次我們把暫存值設定成一個物件，初始值則是物件中的屬性。</strong><br>結構:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = data.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">object, item</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="keyword">return</span> obj</span><br><span class="line">&#125;,&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>首先先把物件的樣子先做出來<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = data.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">obj,item</span>)</span>&#123;</span><br><span class="line">  obj[item] = <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> obj</span><br><span class="line">&#125;,&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>有點像我們要的結果了…有五種交通方式<br><img src="/js30/04/9.PNG" alt=""><br>但是我們需要的是正確數量，一開始可能直覺的寫法是後面再加上<code>obj[item]++</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj[item] = <span class="number">0</span></span><br><span class="line">obj[item]++</span><br></pre></td></tr></table></figure></p>
+<p>有點像我們要的結果了…有五種交通方式<br><img src="9.PNG" alt=""><br>但是我們需要的是正確數量，一開始可能直覺的寫法是後面再加上<code>obj[item]++</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj[item] = <span class="number">0</span></span><br><span class="line">obj[item]++</span><br></pre></td></tr></table></figure></p>
 <p>但這樣會不斷地把item變成0然後再+1變成0再+1….，永遠只會有1而已<br>所以我們要怎麼讓<code>obj[item] = 0</code>執行(定義)一次就好?</p>
 <blockquote>
 <p>加入判斷：因為只有一開始obj[item]會是空值，後面就會++了，所以他只會跑一次。</p>

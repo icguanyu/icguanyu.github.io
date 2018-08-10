@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字數統計&#58;</span>
                 
                 <span title="字數統計">
-                  
+                  1,216
                 </span>
               
 
@@ -446,13 +446,13 @@
       
 
       
-        <p><img src="/js30/02/1.PNG" alt="預覽圖片"><br><a id="more"></a></p>
+        <p><img src="1.PNG" alt="預覽圖片"><br><a id="more"></a></p>
 <p><a href="https://icguanyu.github.io/Js30/02/">Demo</a></p>
 <h2 id="設定CSS"><a href="#設定CSS" class="headerlink" title="設定CSS"></a>設定CSS</h2><p>文件一開始的CSS並還沒設定好，在<code>.hand</code>這個class有留下幾個關鍵的屬性讓我們自己去操作/認識：</p>
 <ol>
 <li><code>transform-origin</code>：調整旋轉的軸心位置。<a href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp" target="_blank" rel="noopener">更多transform-origin介紹</a></li>
 <li><code>transform: rotate(90deg)</code>：將指針重設到00:00</li>
-<li><code>transition-timing-function</code> : 動畫變換的速度。可以從開發者工具去嘗試不同的速度變化。<br><img src="/js30/02/2.PNG" width="200"></li>
+<li><code>transition-timing-function</code> : 動畫變換的速度。可以從開發者工具去嘗試不同的速度變化。<br><img src="2.PNG" width="200"></li>
 <li>transition的4個屬性<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">property</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -472,7 +472,7 @@
 <blockquote>
 <p>但是！分針和時針不可能永遠只在6、12、18或30、60、90..這些位置呀！</p>
 </blockquote>
-<p>以15:40:29秒為例，時針卻直挺挺的指在三點整的位置，顯然不是太正確的時鐘。<br><img src="/js30/02/3.PNG" width="300"></p>
+<p>以15:40:29秒為例，時針卻直挺挺的指在三點整的位置，顯然不是太正確的時鐘。<br><img src="3.PNG" width="300"></p>
 <p>所以我們需要加入<strong>現在秒數對分針而言多幾度</strong>以及<strong>現在的分數對時針而言要多幾度</strong>。(有點饒舌)<br>1.分針需要加入秒針走的角度，每60秒，分針加6度；每1秒，分針加6/60度</p>
 <blockquote>
 <p><code>(seconds/60)*6</code>　或　<code>seconds*(6/60)</code></p>
