@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js30," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Demo">
+<meta name="keywords" content="js30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day4 Array Cardio (1)">
+<meta property="og:url" content="http://icguanyu.github.io/js30/04/index.html">
+<meta property="og:site_name" content="阿姆的前端日記">
+<meta property="og:description" content="Demo">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/2.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/5.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/3.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/4.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/6.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/7.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/8.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/04/9.PNG">
+<meta property="og:updated_time" content="2018-08-10T16:40:54.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day4 Array Cardio (1)">
+<meta name="twitter:description" content="Demo">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/04/1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/js30/04/"/>
+
+
+
+
+
+  <title>Day4 Array Cardio (1) | 阿姆的前端日記</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿姆的前端日記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿姆的前端日記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Day4 Array Cardio (1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-10T13:47:05+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js30/04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/04/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://icguanyu.github.io/Js30/03/">Demo</a><br><a id="more"></a><br>這周是針對陣列的操作做練習，所以沒有預覽圖！<br>主要看程式碼和console.log</p>
+<p>關於陣列操作的教學我認為吳哲宇老師在Hahow上的教學(圖解)非常容易懂，<br>不過課程是要收費的，章節31-陣列的批次操作<br><a href="https://hahow.in/courses/586fae97a8aae907000ce721/discussions" target="_blank" rel="noopener">課程連結</a></p>
+<blockquote>
+<p>不是要幫他打廣告而是真心覺得解說得很好，偶而忘記還會回去複習一下XD</p>
+</blockquote>
+<p>先來看看我們取得的資料有哪些：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inventors = [</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Albert'</span>, <span class="attr">last</span>: <span class="string">'Einstein'</span>, <span class="attr">year</span>: <span class="number">1879</span>, <span class="attr">passed</span>: <span class="number">1955</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Isaac'</span>, <span class="attr">last</span>: <span class="string">'Newton'</span>, <span class="attr">year</span>: <span class="number">1643</span>, <span class="attr">passed</span>: <span class="number">1727</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Galileo'</span>, <span class="attr">last</span>: <span class="string">'Galilei'</span>, <span class="attr">year</span>: <span class="number">1564</span>, <span class="attr">passed</span>: <span class="number">1642</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Marie'</span>, <span class="attr">last</span>: <span class="string">'Curie'</span>, <span class="attr">year</span>: <span class="number">1867</span>, <span class="attr">passed</span>: <span class="number">1934</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Johannes'</span>, <span class="attr">last</span>: <span class="string">'Kepler'</span>, <span class="attr">year</span>: <span class="number">1571</span>, <span class="attr">passed</span>: <span class="number">1630</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Nicolaus'</span>, <span class="attr">last</span>: <span class="string">'Copernicus'</span>, <span class="attr">year</span>: <span class="number">1473</span>, <span class="attr">passed</span>: <span class="number">1543</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Max'</span>, <span class="attr">last</span>: <span class="string">'Planck'</span>, <span class="attr">year</span>: <span class="number">1858</span>, <span class="attr">passed</span>: <span class="number">1947</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Katherine'</span>, <span class="attr">last</span>: <span class="string">'Blodgett'</span>, <span class="attr">year</span>: <span class="number">1898</span>, <span class="attr">passed</span>: <span class="number">1979</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Ada'</span>, <span class="attr">last</span>: <span class="string">'Lovelace'</span>, <span class="attr">year</span>: <span class="number">1815</span>, <span class="attr">passed</span>: <span class="number">1852</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Sarah E.'</span>, <span class="attr">last</span>: <span class="string">'Goode'</span>, <span class="attr">year</span>: <span class="number">1855</span>, <span class="attr">passed</span>: <span class="number">1905</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Lise'</span>, <span class="attr">last</span>: <span class="string">'Meitner'</span>, <span class="attr">year</span>: <span class="number">1878</span>, <span class="attr">passed</span>: <span class="number">1968</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">first</span>: <span class="string">'Hanna'</span>, <span class="attr">last</span>: <span class="string">'Hammarström'</span>, <span class="attr">year</span>: <span class="number">1829</span>, <span class="attr">passed</span>: <span class="number">1909</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people = [<span class="string">'Beck, Glenn'</span>, <span class="string">'Becker, Carl'</span>, <span class="string">'Beckett, Samuel'</span>, <span class="string">'Beddoes, Mick'</span>, <span class="string">'Beecher, Henry'</span>, <span class="string">'Beethoven, Ludwig'</span>, <span class="string">'Begin, Menachem'</span>, <span class="string">'Belloc, Hilaire'</span>, <span class="string">'Bellow, Saul'</span>, <span class="string">'Benchley, Robert'</span>, <span class="string">'Benenson, Peter'</span>, <span class="string">'Ben-Gurion, David'</span>, <span class="string">'Benjamin, Walter'</span>, <span class="string">'Benn, Tony'</span>, <span class="string">'Bennington, Chester'</span>, <span class="string">'Benson, Leana'</span>, <span class="string">'Bent, Silas'</span>, <span class="string">'Bentsen, Lloyd'</span>, <span class="string">'Berger, Ric'</span>, <span class="string">'Bergman, Ingmar'</span>, <span class="string">'Berio, Luciano'</span>, <span class="string">'Berle, Milton'</span>, <span class="string">'Berlin, Irving'</span>, <span class="string">'Berne, Eric'</span>, <span class="string">'Bernhard, Sandra'</span>, <span class="string">'Berra, Yogi'</span>, <span class="string">'Berry, Halle'</span>, <span class="string">'Berry, Wendell'</span>, <span class="string">'Bethea, Erin'</span>, <span class="string">'Bevan, Aneurin'</span>, <span class="string">'Bevel, Ken'</span>, <span class="string">'Biden, Joseph'</span>, <span class="string">'Bierce, Ambrose'</span>, <span class="string">'Biko, Steve'</span>, <span class="string">'Billings, Josh'</span>, <span class="string">'Biondo, Frank'</span>, <span class="string">'Birrell, Augustine'</span>, <span class="string">'Black, Elk'</span>, <span class="string">'Blair, Robert'</span>, <span class="string">'Blair, Tony'</span>, <span class="string">'Blake, William'</span>];</span><br></pre></td></tr></table></figure>
+<p>我們有兩筆資料，第一筆看起來是一些偉人吧，姓名和生平，第二筆則是一堆名稱。</p>
+<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><p>Filter the list of inventors for those who were born in the 1500’s。<br>我們要去取得1500~1600年代出生的人</p>
+<p>關鍵：<strong>filter()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">MDN</a></p>
+<blockquote>
+<p>白話解釋：從陣列裡一筆一筆資料去過濾（篩選），選出符合條件的那筆資料，再回傳<strong>產生一個新的陣列</strong>。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> question_1 = inventors.filter( <span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  item.year &gt;= <span class="number">1500</span> &amp;&amp; item.year &lt; <span class="number">1600</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(question_1)</span><br></pre></td></tr></table></figure>
+<p><code>console.table()</code>可以印出表格，滿酷的<br><img src="/js30/04/1.PNG" alt=""></p>
+<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>Give us an array of the inventors’ first and last names<br>我們要做一筆資料，只含他們的姓名就好</p>
+<p>關鍵：<strong>map()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">MDN</a></p>
+<blockquote>
+<p>白話解釋：從陣列裡一筆一筆資料去抓出來去做一件事(涵式)，再把結果<strong>放到(產生))一個新的陣列</strong>。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> question_2 = inventors.map( <span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    first: item.first,</span><br><span class="line">    last: item.last</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(question_2)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>這裡我們return的是物件，因為需要有first和last的值</p>
+</blockquote>
+<p>產生的結果:<br><img src="/js30/04/2.PNG" alt=""></p>
+<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>Sort the inventors by birthdate, oldest to youngest<br>由老到年輕排列</p>
+<p>關鍵：<strong>sort()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">MDN</a></p>
+<ul>
+<li><p>若 sort(a, b) 的回傳值小於 0，則會把 a 排在小於 b 之索引的位置，<strong>即 a 排在 b 前面</strong>。</p>
+</li>
+<li><p>若 sort(a, b) 的回傳值大於 0，則會把 b 排在小於 a 之索引的位置，<strong>即 b 排在 a 前面</strong>。</p>
+</li>
+</ul>
+<p>如果我們是為了比較簡單的數字，可以利用 a 減 b。（由小到大）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inventors.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.year - b.year</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(inventors)</span><br></pre></td></tr></table></figure></p>
+<p>反之降序<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inventors.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> b.year - a.year</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(inventors)</span><br></pre></td></tr></table></figure></p>
+<p>寫法二:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">inventors.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a&lt;b)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span><span class="comment">//由小到大</span></span><br><span class="line">  &#125;<span class="keyword">else</span>(a&gt;b)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="comment">//由大到小</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>sort我認為是陣列操作裡面最難理解的，實際運作原理待研究…。</p>
+</blockquote>
+<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><p>How many years did all the inventors live?<br>所有人的年紀加總</p>
+<p>關鍵：<strong>reduce()</strong>　詳細介紹:<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank" rel="noopener">MDN</a></p>
+<blockquote>
+<p>白話解釋：我們會有一個<strong>暫存值</strong>，進入陣列去跟每個值做運算，最後回傳這個<strong>暫存值</strong>。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> question_4 = inventors.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">temp,item</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> temp+(item.passed-item.year)</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line"><span class="comment">//item.passed-item.year = 年齡</span></span><br><span class="line"><span class="built_in">console</span>.log(question_4)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>temp : 就是reduce提供我們可以自訂名稱的<strong>暫存值</strong></li>
+<li>item : inventors陣列裡面的每個物件。</li>
+<li>0 : 最後面的0就是預設值。</li>
+</ul>
+<p>如果我們用<code>forEach</code>做(有點像是forEach結合我們要的變數?)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> temp = <span class="number">0</span></span><br><span class="line">inventors.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  temp += (item.passed-item.year)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(temp)</span><br></pre></td></tr></table></figure></p>
+<h2 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h2><p>Sort the inventors by years lived<br>根據這些發明家的年紀做排序</p>
+<p>應該就是第三題的延伸，先算出年紀再做排序。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inventors.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (a.passed-a.year) -(b.passed-b.year)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(inventors)</span><br></pre></td></tr></table></figure></p>
+<h2 id="第六題"><a href="#第六題" class="headerlink" title="第六題"></a>第六題</h2><p>create a list of Boulevards in Paris that contain ‘de’ anywhere in the name<br>這題好像叫我們直接到<a href="https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris" target="_blank" rel="noopener">這個網站</a>去抓名字裡面含有<strong>‘de’</strong>的清單。</p>
+<p>一步一步取得對象！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> peoples = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.mw-category-group a'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>注意:我們透過<code>document.querySelectorAll()</code>取得的這<code>peoples</code>，它是一個叫做<code>NodeList</code>的類似陣列的東西，他並<strong>不具陣列的所有功能</strong>。<br><img src="/js30/04/5.PNG" alt=""></p>
+<blockquote>
+<p>NodeList不是陣列！<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/NodeList" target="_blank" rel="noopener">這邊</a>有更多介紹</p>
+</blockquote>
+<p>接著透過<code>Array.from()</code>產生我們要的陣列：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = <span class="built_in">Array</span>.from(peoples)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Array.from() 方法會從類陣列（array-like）或是可迭代（iterable）物件建立一個新的 Array 實體。<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">這邊</a>有更多介紹</p>
+</blockquote>
+<p>結果:<br><img src="/js30/04/3.PNG" alt=""></p>
+<p>有了這筆資料後，我們再透過<code>map()</code>(或<code>forEach</code>)的方法取出所有姓名。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;<span class="keyword">return</span> item.innerHTML&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>結果:<br><img src="/js30/04/4.PNG" alt=""></p>
+<p>最後，我們去<strong>過濾/篩選</strong>出名字中含有’de’的人<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = newList.filter(<span class="function"><span class="params">name</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name.includes(<span class="string">'de'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>結果:<br><img src="/js30/04/6.PNG" alt=""></p>
+<blockquote>
+<p>補充:<code>includes()</code>方法會判斷陣列是否包含特定的元素，並以此來回傳 true 或 false。</p>
+</blockquote>
+<h2 id="第七題"><a href="#第七題" class="headerlink" title="第七題"></a>第七題</h2><p>Sort the people alphabetically by last name<br>透過last name排序長度去排序people這筆陣列。</p>
+<p>people這筆陣列中並沒有分出last name或first name，所以我們要透過<code>split()</code>去切割字串<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newPeople = people.map(<span class="function"><span class="params">name</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name.split(<span class="string">', '</span>)<span class="comment">//從逗號和空白這邊切開</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newPeople)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>split()，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">這裡</a>有詳細介紹</p>
+</blockquote>
+<p>結果:原本的每一筆姓名都被切開成兩個了。<br><img src="/js30/04/7.PNG" alt=""></p>
+<blockquote>
+<p>預設的排序順序是根據字串的 Unicode 編碼位置（code points）而定。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">newPeople.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a[<span class="number">1</span>]&gt;b[<span class="number">1</span>])&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>結果:可以看到LastName就從字母A開始排序了。<br><img src="/js30/04/8.PNG" alt=""></p>
+<p><strong>寫法二：透過map去產生帶有物件(lastName,lastName)的陣列後再去排序比較易讀一點。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newPeople = people.map(<span class="function"><span class="params">name</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> temp = name.split(<span class="string">', '</span>)<span class="comment">//一樣先拆解</span></span><br><span class="line">  <span class="keyword">return</span> &#123;<span class="comment">//再回傳物件</span></span><br><span class="line">    firstName: temp[<span class="number">0</span>],</span><br><span class="line">    lastName: temp[<span class="number">1</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">newPeople.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a.lastName&gt;b.lastName)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>這題是按照自己意思去寫的，原始範例寫的排列方式和結果和我想像的<strong>按字母排序</strong>不太一樣…</p>
+</blockquote>
+<h2 id="第八題"><a href="#第八題" class="headerlink" title="第八題"></a>第八題</h2><p>Sum up the instances of each of these<br>以下陣列每個項目各有幾個,做統計<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [<span class="string">'car'</span>, <span class="string">'car'</span>, <span class="string">'truck'</span>, <span class="string">'truck'</span>, <span class="string">'bike'</span>, <span class="string">'walk'</span>, <span class="string">'car'</span>, <span class="string">'van'</span>, <span class="string">'bike'</span>, <span class="string">'walk'</span>, <span class="string">'car'</span>, <span class="string">'van'</span>, <span class="string">'car'</span>, <span class="string">'truck'</span> ];</span><br></pre></td></tr></table></figure></p>
+<p>所以最後得到的結果需要是一個<strong>物件</strong>類似這樣:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 統計結果:&#123;</span><br><span class="line">  汽車:<span class="number">2</span>,</span><br><span class="line">  卡車:<span class="number">3</span>,</span><br><span class="line">  ..</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>複習第四題的<code>reduce</code>：</p>
+<blockquote>
+<p>白話解釋：我們會有一個<strong>暫存值</strong>，進入陣列去跟<strong>每個</strong>值做運算，最後回傳這個<strong>暫存值</strong>。</p>
+</blockquote>
+<p><strong>所以,這次我們把暫存值設定成一個物件，初始值則是物件中的屬性。</strong><br>結構:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = data.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">object, item</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="keyword">return</span> obj</span><br><span class="line">&#125;,&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>首先先把物件的樣子先做出來<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = data.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">obj,item</span>)</span>&#123;</span><br><span class="line">  obj[item] = <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> obj</span><br><span class="line">&#125;,&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>有點像我們要的結果了…有五種交通方式<br><img src="/js30/04/9.PNG" alt=""><br>但是我們需要的是正確數量，一開始可能直覺的寫法是後面再加上<code>obj[item]++</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj[item] = <span class="number">0</span></span><br><span class="line">obj[item]++</span><br></pre></td></tr></table></figure></p>
+<p>但這樣會不斷地把item變成0然後再+1變成0再+1….，永遠只會有1而已<br>所以我們要怎麼讓<code>obj[item] = 0</code>執行(定義)一次就好?</p>
+<blockquote>
+<p>加入判斷：因為只有一開始obj[item]會是空值，後面就會++了，所以他只會跑一次。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = data.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">obj,item</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!obj[item])&#123;</span><br><span class="line">    obj[item] = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  obj[item]++</span><br><span class="line">  <span class="keyword">return</span> obj</span><br><span class="line">&#125;,&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>運作邏輯大概是像這樣：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//round1 第1個car來了</span></span><br><span class="line">result = &#123;</span><br><span class="line">  <span class="string">'car'</span>= <span class="number">0</span> <span class="comment">//car第一次進判斷</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//round2</span></span><br><span class="line">result = &#123;</span><br><span class="line">  <span class="string">'car'</span>= <span class="number">1</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//round3 第2個car來了</span></span><br><span class="line">result = &#123;</span><br><span class="line">  <span class="string">'car'</span>= <span class="number">2</span> <span class="comment">//不進判斷了,直接第二次遞增</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//round4 第1個truck來了</span></span><br><span class="line">result = &#123;</span><br><span class="line">  <span class="string">'car'</span>= <span class="number">2</span>, </span><br><span class="line">  <span class="string">'truck'</span>= <span class="number">0</span>, <span class="comment">//truck第一次進判斷</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//round4 </span></span><br><span class="line">result = &#123;</span><br><span class="line">  <span class="string">'car'</span>= <span class="number">2</span>, </span><br><span class="line">  <span class="string">'truck'</span>= <span class="number">1</span>, <span class="comment">//truck第一次遞增</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//依此類推</span></span><br></pre></td></tr></table></figure></p>
+<p>不得不說，如果沒看答案我應該永遠想不到有這種方式…陣列的操作一直是我不熟悉的技術之一，但透過這個主題練習真的學到很多！後續可能還會一直翻回來做複習。</p>
+<blockquote>
+<p>不負責任聲明ಥ◡ಥ：<br>純屬個人筆記，每個範例都有不同的寫法，還有很多細節可以加入，甚至可能有看不到的bug，有任何問題都歡迎提出一起研究哦，我會很感謝您的！- 2018.08.11</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js30/" rel="tag"># js30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/03/" rel="next" title="Day3 CSS Variables and JS">
+                <i class="fa fa-chevron-left"></i> Day3 CSS Variables and JS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/04/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="icguanyu" />
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一題"><span class="nav-number">1.</span> <span class="nav-text">第一題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二題"><span class="nav-number">2.</span> <span class="nav-text">第二題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">3.</span> <span class="nav-text">第三題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四題"><span class="nav-number">4.</span> <span class="nav-text">第四題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題"><span class="nav-number">5.</span> <span class="nav-text">第五題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六題"><span class="nav-number">6.</span> <span class="nav-text">第六題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七題"><span class="nav-number">7.</span> <span class="nav-text">第七題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八題"><span class="nav-number">8.</span> <span class="nav-text">第八題</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
