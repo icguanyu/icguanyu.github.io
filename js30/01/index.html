@@ -121,6 +121,9 @@
 
 
 
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+
 
 
 <meta name="keywords" content="js30">
@@ -132,7 +135,7 @@
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/1.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/2.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/01/3.PNG">
-<meta property="og:updated_time" content="2018-08-11T05:42:09.578Z">
+<meta property="og:updated_time" content="2018-08-11T06:00:31.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day1 JavaScript Drum Kit">
 <meta name="twitter:image" content="http://icguanyu.github.io/js30/01/1.PNG">
@@ -173,6 +176,24 @@
 
   <title>Day1 JavaScript Drum Kit | 阿姆的前端日記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -215,7 +236,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">不想放棄設計的前端攻城小幼獅</h1>
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
       
   </div>
 
@@ -334,7 +355,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Day1 JavaScript Drum Kit</h2>
+          <h1 class="post-title" itemprop="name headline">Day1 JavaScript Drum Kit</h1>
         
 
         <div class="post-meta">
@@ -414,11 +435,11 @@
             <div class="post-wordcount">
               
                 
+                  <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">字數統計&#58;</span>
                 
                 <span title="字數統計">
                   764
@@ -426,19 +447,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
-                
-                <span title="閱讀時長">
-                  3
-                </span>
               
             </div>
           
@@ -458,7 +467,9 @@
       
 
       
-        <p><img src="1.PNG" alt="預覽"><br><a id="more"></a></p>
+        <hr>
+<img src="/js30/01/1.PNG" title="Demo">
+<a id="more"></a>
 <p><a href="https://icguanyu.github.io/Js30/01/">Demo</a></p>
 <h2 id="audio在哪裡"><a href="#audio在哪裡" class="headerlink" title="audio在哪裡?"></a>audio在哪裡?</h2><p>看到audio之後,第一個問題就跑出來了，明明html裡有audio標籤，可是畫面怎麼沒有？讓我們右鍵檢查看看：<br><img src="2.PNG" alt=""></p>
 <p>再讓我們<a href="https://www.w3schools.com/html/html5_audio.asp" target="_blank" rel="noopener">google</a>一下，發現原來少了<code>controls</code>屬性<br>我們把<code>controls</code>加上去看看<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">data-key</span>=<span class="string">"65"</span> <span class="attr">src</span>=<span class="string">"sounds/clap.wav"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -528,6 +539,24 @@
 
       
       
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -577,9 +606,12 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/01/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
     </div>
 
   
@@ -626,7 +658,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
           </div>
 
           <nav class="site-state motion-element">

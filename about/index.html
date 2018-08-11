@@ -121,6 +121,9 @@
 
 
 
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+
 
 
 <meta name="description" content="你好， 我是貫宇!不想放棄設計的前端工程師。對於網頁、平面、攝影、繪圖、多媒體都有一點興趣，直到出社會工作一年後才發現：  這輩子可能很難再找到一項讓我這麼渴望學習的技術了。  於2018.08起辭去工作，一心意一朝前端工程師之路邁進中！  學歷 2015.06 私立淡江大學資訊傳播學系 2011.06 彰化縣立員林高級中學普通高中     作品 食享冰箱｜作品連結 (YouTube Player">
@@ -172,6 +175,24 @@
 
   <title> | 阿姆的前端日記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -214,7 +235,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">不想放棄設計的前端攻城小幼獅</h1>
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
       
   </div>
 
@@ -309,7 +330,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline"></h2>
+	<h1 class="post-title" itemprop="name headline"></h1>
 
 
 
@@ -422,7 +443,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
           </div>
 
           <nav class="site-state motion-element">

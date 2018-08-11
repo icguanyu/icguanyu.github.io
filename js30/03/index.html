@@ -121,6 +121,9 @@
 
 
 
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+
 
 
 <meta name="keywords" content="js30">
@@ -130,7 +133,7 @@
 <meta property="og:site_name" content="阿姆的前端日記">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://icguanyu.github.io/js30/03/1.PNG">
-<meta property="og:updated_time" content="2018-08-11T05:33:08.231Z">
+<meta property="og:updated_time" content="2018-08-11T05:59:47.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day3 CSS Variables and JS">
 <meta name="twitter:image" content="http://icguanyu.github.io/js30/03/1.PNG">
@@ -171,6 +174,24 @@
 
   <title>Day3 CSS Variables and JS | 阿姆的前端日記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -213,7 +234,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">不想放棄設計的前端攻城小幼獅</h1>
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
       
   </div>
 
@@ -332,7 +353,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Day3 CSS Variables and JS</h2>
+          <h1 class="post-title" itemprop="name headline">Day3 CSS Variables and JS</h1>
         
 
         <div class="post-meta">
@@ -412,11 +433,11 @@
             <div class="post-wordcount">
               
                 
+                  <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">字數統計&#58;</span>
                 
                 <span title="字數統計">
                   772
@@ -424,19 +445,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
-                
-                <span title="閱讀時長">
-                  3
-                </span>
               
             </div>
           
@@ -456,7 +465,7 @@
       
 
       
-        <p><img src="1.PNG" alt="預覽圖片"></p>
+        <img src="/js30/03/1.PNG" title="Demo">
 <a id="more"></a>
 <p><a href="https://icguanyu.github.io/Js30/03/">Demo</a></p>
 <h2 id="奇怪的小地方"><a href="#奇怪的小地方" class="headerlink" title="奇怪的小地方"></a>奇怪的小地方</h2><p>我一直以為標題黃色JS是h1標題，結果他竟然是小寫的<strong>L</strong>，害我在css那邊改半天。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hl"</span>&gt;</span>JS<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -528,6 +537,24 @@
 
       
       
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -577,9 +604,12 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/03/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
     </div>
 
   
@@ -626,7 +656,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
           </div>
 
           <nav class="site-state motion-element">

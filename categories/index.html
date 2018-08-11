@@ -121,6 +121,9 @@
 
 
 
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+
 
 
 <meta name="description" content="沒有好或不好，只有適不適合。">
@@ -172,6 +175,24 @@
 
   <title>文章分類 | 阿姆的前端日記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -214,7 +235,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">不想放棄設計的前端攻城小幼獅</h1>
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
       
   </div>
 
@@ -309,7 +330,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">文章分類</h2>
+	<h1 class="post-title" itemprop="name headline">文章分類</h1>
 
 
 
@@ -378,7 +399,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
           </div>
 
           <nav class="site-state motion-element">

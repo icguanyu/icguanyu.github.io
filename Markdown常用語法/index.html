@@ -121,6 +121,9 @@
 
 
 
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+
 
 
 <meta name="description" content="這是紀念blog架設完成的第一篇文章，對Markdown其實還沒很熟，一邊Google一邊記錄下來，哪天自己不小心忘記還可以回到這邊查詢。">
@@ -176,6 +179,24 @@
 
   <title>Markdown常用語法 | 阿姆的前端日記</title>
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -218,7 +239,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">不想放棄設計的前端攻城小幼獅</h1>
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
       
   </div>
 
@@ -337,7 +358,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Markdown常用語法</h2>
+          <h1 class="post-title" itemprop="name headline">Markdown常用語法</h1>
         
 
         <div class="post-meta">
@@ -417,11 +438,11 @@
             <div class="post-wordcount">
               
                 
+                  <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">字數統計&#58;</span>
                 
                 <span title="字數統計">
                   1,083
@@ -429,19 +450,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
-                
-                <span title="閱讀時長">
-                  4
-                </span>
               
             </div>
           
@@ -576,6 +585,24 @@
 
       
       
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -621,9 +648,12 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/Markdown常用語法/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
     </div>
 
   
@@ -670,7 +700,7 @@
                 alt="icguanyu" />
             
               <p class="site-author-name" itemprop="name">icguanyu</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
           </div>
 
           <nav class="site-state motion-element">
