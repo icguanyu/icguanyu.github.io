@@ -182,24 +182,6 @@
 
   <title>Day4 Array Cardio (1) | 阿姆的前端日記</title>
   
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_tw/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 
 
@@ -415,7 +397,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/04/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/04/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/04/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -651,11 +634,11 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/04/"
-           data-numposts="10"
-           data-width="100%"
-           data-colorscheme="light">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     </div>
 
@@ -955,6 +938,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://https://icguanyu.github.io/.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://icguanyu.github.io/js30/04/';
+          this.page.identifier = 'js30/04/';
+          this.page.title = 'Day4 Array Cardio (1)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https://icguanyu.github.io/.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -967,10 +970,6 @@
   
 
 
-
-
-
-  
 
 
 

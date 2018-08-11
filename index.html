@@ -171,24 +171,6 @@
 
   <title>阿姆的前端日記 - 不想放棄設計的前端攻城小幼獅</title>
   
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_tw/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 
 
@@ -407,7 +389,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/05/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/05/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/05/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -593,7 +576,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/04/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/04/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/04/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -779,7 +763,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/03/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/03/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -965,7 +950,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/02/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1152,7 +1138,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/js30/01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/01/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="js30/01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1339,7 +1326,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/Markdown常用語法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/Markdown常用語法/" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Markdown常用語法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1713,6 +1701,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://https://icguanyu.github.io/.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -1725,10 +1721,6 @@
   
 
 
-
-
-
-  
 
 
 
