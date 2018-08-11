@@ -132,7 +132,7 @@
 <meta property="og:image" content="http://icguanyu.github.io/js30/05/1.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/05/2.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/05/3.PNG">
-<meta property="og:updated_time" content="2018-08-11T08:49:56.026Z">
+<meta property="og:updated_time" content="2018-08-11T09:02:06.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day5 Flex Panels">
 <meta name="twitter:image" content="http://icguanyu.github.io/js30/05/1.PNG">
@@ -439,7 +439,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  639
+                  634
                 </span>
               
 
@@ -484,9 +484,9 @@
 <p>transitionend會針對每一個屬性去觸發，如果有很多屬性記得做個簡易判斷：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(e.propertyName !== <span class="string">"transform"</span>) <span class="keyword">return</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h2 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> panels = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.panel'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openHandler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.toggle(<span class="string">'open'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activeHandler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'go'</span>)</span><br><span class="line">  <span class="keyword">this</span>.classList.toggle(<span class="string">'active'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span>=&gt;</span>&#123;panel.addEventListener(<span class="string">'click'</span>,openHandler)&#125;)</span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span>=&gt;</span>&#123;panel.addEventListener(<span class="string">'transitionend'</span>,activeHandler)&#125;)</span><br></pre></td></tr></table></figure>
-<p>直覺上來寫我們這接直接加上toggle(‘active’),但我們加上console.log(‘go’)去觀察會得到：<br><img src="2.PNG" alt=""></p>
+<p>直覺上會直接加上<code>toggle(&#39;active&#39;)</code>,但我們加上<code>console.log(&#39;go&#39;)</code>去觀察會得到：<br><img src="2.PNG" alt=""></p>
 <blockquote>
-<p>go跑了兩次！！也就是說我們的acticv也toggle兩次，出現又馬上消失了。</p>
+<p>go跑了兩次！！也就是說我們的acticv也toggle兩次，<strong>出現又馬上消失</strong>了。</p>
 </blockquote>
 <p>所以為什麼<code>transitionend</code>跑了兩次呢?我們console.log(e)來看看這兩次是什麼：<br><img src="3.PNG" alt=""></p>
 <blockquote>
