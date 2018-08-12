@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js30," />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="js30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day6 Type Ahead">
+<meta property="og:url" content="http://icguanyu.github.io/js30/06/index.html">
+<meta property="og:site_name" content="阿姆的前端日記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/2.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/3.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/4.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/7.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/06/10.PNG">
+<meta property="og:updated_time" content="2018-08-12T11:01:48.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day6 Type Ahead">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/06/1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/js30/06/"/>
+
+
+
+
+
+  <title>Day6 Type Ahead | 阿姆的前端日記</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿姆的前端日記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端攻城小幼獅</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿姆的前端日記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Day6 Type Ahead</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-12T16:03:23+08:00">
+                2018-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js30/" itemprop="url" rel="index">
+                    <span itemprop="name">js30</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js30/06/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/06/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/js30/06/" class="leancloud_visitors" data-flag-title="Day6 Type Ahead">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,325
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/js30/06/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/06/">Demo</a></p>
+<p>今天要做的功能也滿常見的，資料過濾（篩選）並呈現在畫面上。</p>
+<h2 id="資料取得"><a href="#資料取得" class="headerlink" title="資料取得"></a>資料取得</h2><p>範例提供的資料是一個json檔，後面我們還可以利用其他方式快速讀取這些資料。這裡我們透過<code>fetch</code>來取得</p>
+<blockquote>
+<p>更多<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noopener">Fetch</a>介紹<br>或者<a href="https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/ajax_fetch.html" target="_blank" rel="noopener">這裡</a></p>
+<blockquote>
+<p>fetch()方法是一個位於全域window物件的方法，它會被用來執行送出Request(要求)的工作，如果成功得到回應的話，它會回傳一個帶有Response(回應)物件的已實現Promise物件。</p>
+</blockquote>
+</blockquote>
+<p>一步一步來看看<code>fetch</code>做了什麼<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> endpoint = <span class="string">'資料網址'</span>;</span><br><span class="line"></span><br><span class="line">fetch(endpoint)</span><br><span class="line">.then(<span class="function"><span class="params">blob</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> blob.json()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>補充:ES6的箭頭涵式如果帶有括號，必須自己補上<code>return</code></p>
+</blockquote>
+<p>先<code>console.log(blob)</code><br><img src="2.PNG" alt=""><br>再加上<code>.json()</code><br><img src="3.PNG" alt=""><br>好像快看到我們要的資料了…<br>最後再把data存入我們的cities<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cities = [];</span><br><span class="line"></span><br><span class="line">fetch(endpoint)</span><br><span class="line">.then(<span class="function"><span class="params">blob</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> blob.json()</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">  cities = data</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>資料取得就完成了！<br><img src="4.PNG" alt=""></p>
+<h2 id="定義變數和事件"><a href="#定義變數和事件" class="headerlink" title="定義變數和事件"></a>定義變數和事件</h2><p>一樣把我們會用到的變數和事件先定義出來</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> searchInput = <span class="built_in">document</span>.querySelector(<span class="string">'.search'</span>);</span><br><span class="line"><span class="keyword">const</span> suggestions = <span class="built_in">document</span>.querySelector(<span class="string">'.suggestions'</span>);</span><br><span class="line"></span><br><span class="line">searchInput.addEventListener(<span class="string">'input'</span>,Handler)</span><br></pre></td></tr></table></figure>
+<h2 id="觸發事件"><a href="#觸發事件" class="headerlink" title="觸發事件"></a>觸發事件</h2><p>我們先想一下觸發事的瞬間，一共要做的事情有哪些(盡量按照順序)：</p>
+<ol>
+<li>觸發事件(輸入文字,取得我輸入的文字)</li>
+<li>撈資料(去資料庫找出符合我的文字的資料)</li>
+<li>轉成html(將找到的資料轉換為html(並加上highline))</li>
+<li>顯示到畫面上</li>
+</ol>
+<p>一個一個來看~</p>
+<h2 id="輸入文字"><a href="#輸入文字" class="headerlink" title="輸入文字"></a>輸入文字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">searchInput.addEventListener(<span class="string">'input'</span>,Handler)</span><br></pre></td></tr></table></figure>
+<p>觸發事件執行Handler，我的文字就是<code>this.value</code></p>
+<h2 id="撈資料"><a href="#撈資料" class="headerlink" title="撈資料"></a>撈資料</h2><p>撈資料這件事我們另外用一個涵式去取得<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//帶入我輸入的文字this.value</span></span><br><span class="line"><span class="keyword">const</span> mySerchText = findData(<span class="keyword">this</span>.value))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findData</span>(<span class="params">myvalue</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> cities.filter(<span class="function"><span class="params">place</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(myvalue, <span class="string">'gi'</span>)</span><br><span class="line">    <span class="keyword">return</span> place.city.match(regex) || place.state.match(regex)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>new RegExp(myvalue, &#39;gi&#39;)</code>：<br>myvalue：含有myvalue(字串)<br>gi：(比對方式)</p>
+<ul>
+<li>g = 全局匹配;找到所有匹配，而不是在第一个匹配后停止。</li>
+<li>i = 不分大小寫</li>
+</ul>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">正則表達式</a>介紹，不用背，知道怎麼用就好…</p>
+</blockquote>
+<p>當我們試著輸入<strong>york</strong>，console.log(mySerchText)會得到<br><img src="7.PNG" alt=""><br>city和state含有<strong>york</strong>(不分大小寫)的資料都被我們撈出來了！</p>
+<h2 id="如果不用正則"><a href="#如果不用正則" class="headerlink" title="如果不用正則"></a>如果不用正則</h2><p>當然也可以運作，但效果就不是我們要的了，<br>我們試著只用filter去過濾：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mySerchText = cities.filter(<span class="function"><span class="params">place</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> place.city.includes(<span class="keyword">this</span>.value)||place.state.includes(<span class="keyword">this</span>.value)</span><br><span class="line">&#125;)<span class="comment">//不用正則運算式的話只能找到完全相符的(限制大小寫)</span></span><br></pre></td></tr></table></figure></p>
+<p>如果輸入小寫的”y”ork就會發現找不到資料了</p>
+<h2 id="轉成html"><a href="#轉成html" class="headerlink" title="轉成html"></a>轉成html</h2><p>我們取得的<code>place.city</code>和<code>place.state</code>(也就是等於我們的this.value)只是字串<br>我們要替他加上highline有很多種辦法，因範例替我們寫好class所以我們直接把他們加上<code>&lt;span class=&quot;hl&quot;&gt;</code></p>
+<blockquote>
+<p>str.replace(regexp|substr, newSubstr|function)</p>
+</blockquote>
+<p>replace() 方法會傳回一個新字串，此新字串是透過將原字串與 pattern 比對，以 replacement 取代吻合處而生成。pattern 可以是字串或 RegExp，而 replacement 可以是字串或函式（會在每一次匹配時被呼叫）。原始的字串會保持不變。<br>更多<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">replace</a>介紹</p>
+<blockquote>
+<p>白話解釋：str.replace(a, b)　，把str這串文字裡面的a，取代為b</p>
+</blockquote>
+<p>以下是錯誤寫法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cityName = place.city.replace(<span class="keyword">this</span>.value, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br><span class="line"><span class="keyword">const</span> stateName = place.state.replace(<span class="keyword">this</span>.value, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br></pre></td></tr></table></figure></p>
+<p>直覺的我們把place.city這串文字裡面的this.value取代為<code>&lt;span class=&quot;hl&quot;&gt;${this.value}&lt;/span&gt;</code><br>但是，我們如果輸入的是小寫！會發現畫面並沒有加上highline：<br><img src="10.PNG" alt=""><br>所以我們要再把this.value做正則判斷，讓這個值不分大小寫。</p>
+<p>正確寫法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> html = mySerchText.map(<span class="function"><span class="params">place</span>=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="keyword">this</span>.value,<span class="string">'gi'</span>)</span><br><span class="line">  <span class="keyword">const</span> cityName = place.city.replaceWith(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br><span class="line">  <span class="keyword">const</span> stateName = place.state.replace(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;li&gt;</span></span><br><span class="line"><span class="string">      &lt;span class="name"&gt;<span class="subst">$&#123;cityName&#125;</span>, <span class="subst">$&#123;stateName&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;span class="population"&gt;<span class="subst">$&#123;numberWithCommas(place.population)&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/li&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>array.map()</code>方法最後回傳的值為一個陣列，因此需要透過<code>.join(&#39;&#39;)</code>將陣列轉為字串格式並消除之間的陣列元素之間的<code>,</code></p>
+</blockquote>
+<p>最後人數的部分我們也可以入正則運算，顯示出我們要的樣子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numberWithCommas</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x.toString().replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">','</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="渲染到畫面上"><a href="#渲染到畫面上" class="headerlink" title="渲染到畫面上"></a>渲染到畫面上</h2><p>不用去背起來…未來想到再Google就好<br>最後渲染到畫面上<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">suggestions.innerHTML = html</span><br></pre></td></tr></table></figure></p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> endpoint = <span class="string">'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> cities = [];</span><br><span class="line"></span><br><span class="line">fetch(endpoint)</span><br><span class="line">.then(<span class="function"><span class="params">blob</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> blob.json()</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">  cities = data</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findData</span>(<span class="params">myvalue</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> cities.filter(<span class="function"><span class="params">place</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(myvalue, <span class="string">'gi'</span>)</span><br><span class="line">    <span class="keyword">return</span> place.city.match(regex) || place.state.match(regex)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numberWithCommas</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x.toString().replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">','</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Handler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> mySerchText = findData(<span class="keyword">this</span>.value)</span><br><span class="line">  <span class="keyword">const</span> html = mySerchText.map(<span class="function"><span class="params">place</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="keyword">this</span>.value,<span class="string">'gi'</span>)</span><br><span class="line">    <span class="keyword">const</span> cityName = place.city.replaceWith(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br><span class="line">    <span class="keyword">const</span> stateName = place.state.replace(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;li&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="name"&gt;<span class="subst">$&#123;cityName&#125;</span>, <span class="subst">$&#123;stateName&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="population"&gt;<span class="subst">$&#123;numberWithCommas(place.population)&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;/li&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;).join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">  suggestions.innerHTML = html</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> searchInput = <span class="built_in">document</span>.querySelector(<span class="string">'.search'</span>);</span><br><span class="line"><span class="keyword">const</span> suggestions = <span class="built_in">document</span>.querySelector(<span class="string">'.suggestions'</span>);</span><br><span class="line"></span><br><span class="line">searchInput.addEventListener(<span class="string">'input'</span>,Handler)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js30/" rel="tag"># js30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/05/" rel="next" title="Day5 Flex Panels">
+                <i class="fa fa-chevron-left"></i> Day5 Flex Panels
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/06/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="icguanyu" />
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">沒有好或不好，只有適不適合。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#資料取得"><span class="nav-number">1.</span> <span class="nav-text">資料取得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定義變數和事件"><span class="nav-number">2.</span> <span class="nav-text">定義變數和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#觸發事件"><span class="nav-number">3.</span> <span class="nav-text">觸發事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#輸入文字"><span class="nav-number">4.</span> <span class="nav-text">輸入文字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撈資料"><span class="nav-number">5.</span> <span class="nav-text">撈資料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果不用正則"><span class="nav-number">6.</span> <span class="nav-text">如果不用正則</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轉成html"><span class="nav-number">7.</span> <span class="nav-text">轉成html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染到畫面上"><span class="nav-number">8.</span> <span class="nav-text">渲染到畫面上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">9.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
