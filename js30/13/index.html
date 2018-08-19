@@ -125,15 +125,16 @@
 
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day11 HTML Video Player">
-<meta property="og:url" content="http://icguanyu.github.io/js30/11/index.html">
+<meta property="og:title" content="Day13 Slide in on Scroll">
+<meta property="og:url" content="http://icguanyu.github.io/js30/13/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/11/1.PNG">
-<meta property="og:updated_time" content="2018-08-17T14:18:06.291Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/13/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/13/2.PNG">
+<meta property="og:updated_time" content="2018-08-18T15:45:02.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day11 HTML Video Player">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/11/1.PNG">
+<meta name="twitter:title" content="Day13 Slide in on Scroll">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/13/1.PNG">
 
 
 
@@ -163,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/11/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/13/"/>
 
 
 
 
 
-  <title>Day11 HTML Video Player | 阿姆的前端日記</title>
+  <title>Day13 Slide in on Scroll | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -333,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/11/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -350,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day11 HTML Video Player</h1>
+          <h1 class="post-title" itemprop="name headline">Day13 Slide in on Scroll</h1>
         
 
         <div class="post-meta">
@@ -362,8 +363,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-17T20:40:00+08:00">
-                2018-08-17
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-18T22:22:19+08:00">
+                2018-08-18
               </time>
             
 
@@ -403,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/11/" itemprop="commentCount">0</span> comments
+                <a href="/js30/13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/13/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -412,7 +413,7 @@
 
           
           
-             <span id="/js30/11/" class="leancloud_visitors" data-flag-title="Day11 HTML Video Player">
+             <span id="/js30/13/" class="leancloud_visitors" data-flag-title="Day13 Slide in on Scroll">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -437,7 +438,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  923
+                  811
                 </span>
               
 
@@ -462,41 +463,37 @@
       
 
       
-        <img src="/js30/11/1.PNG" title="Demo">
+        <img src="/js30/13/1.PNG" title="Demo">
 <a id="more"></a>
-<p><a href="https://icguanyu.github.io/Js30/11/">Demo</a></p>
-<p>今天要來做一個客製化的影片播放器<br>主要分為四個部分:</p>
+<p><a href="https://icguanyu.github.io/Js30/13/">Demo</a></p>
+<p>這個主題是根據卷軸事件來控制圖片的進出，<br>我認為最主要兩個學習重點在於：</p>
 <ol>
-<li>播放與暫停影片</li>
-<li>音量與速度</li>
-<li>快/倒轉</li>
-<li>控制進度條</li>
+<li>卷軸事件的處理與效能問題</li>
+<li>計算網頁元件的相對位置</li>
 </ol>
-<h2 id="定義變數"><a href="#定義變數" class="headerlink" title="定義變數"></a>定義變數</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myVideo = <span class="built_in">document</span>.querySelector(<span class="string">'video'</span>);</span><br><span class="line"><span class="keyword">const</span> playBtn = <span class="built_in">document</span>.querySelector(<span class="string">'.toggle'</span>)</span><br><span class="line"><span class="keyword">const</span> inputBtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input'</span>)</span><br><span class="line"><span class="keyword">const</span> processbar_out = <span class="built_in">document</span>.querySelector(<span class="string">'.progress'</span>) </span><br><span class="line"><span class="keyword">const</span> processbar = <span class="built_in">document</span>.querySelector(<span class="string">'.progress__filled'</span>)  </span><br><span class="line"><span class="keyword">const</span> skipbtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.player__button[data-skip]'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="播放與暫停影片"><a href="#播放與暫停影片" class="headerlink" title="播放與暫停影片"></a>播放與暫停影片</h2><p>點選播放按鈕與畫面時，需要播放或暫停<br>我們觸發對象為：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myVideo.addEventListener(<span class="string">'click'</span>,playToggle)</span><br><span class="line">playBtn.addEventListener(<span class="string">'click'</span>,playToggle)</span><br></pre></td></tr></table></figure></p>
-<p>要做的事情為：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playToggle</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  playBtn.innerHTML = myVideo.paused ? <span class="string">'❚❚'</span> : <span class="string">'►'</span></span><br><span class="line">  <span class="keyword">if</span>(myVideo.paused)&#123;</span><br><span class="line">    myVideo.play()</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    myVideo.pause()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>這裡還滿容易理解的，透過<code>myVideo.paused</code>判斷狀態再決定播放或暫停。<br><code>playBtn</code>用了三元運算子，判斷該顯示❚❚或►</p>
-<h2 id="音量與速度"><a href="#音量與速度" class="headerlink" title="音量與速度"></a>音量與速度</h2><p>一般的直覺可能會把音量和速度兩件事情拆開來做，但這邊巧妙的利用input的name來區分選取的對象，所以一開始定義的時候直接選取了所有的<code>input</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inputBtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>再透過<code>forEach</code>分別去做事件的觸發<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setHandler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> inputName = <span class="keyword">this</span>.name<span class="comment">//取得名稱volume或playbackRate </span></span><br><span class="line">  <span class="keyword">const</span> inputValue = <span class="keyword">this</span>.value<span class="comment">//取得該input的值</span></span><br><span class="line">  myVideo[inputName] = inputValue</span><br><span class="line">&#125;</span><br><span class="line">inputBtn.forEach(<span class="function">(<span class="params">input</span>)=&gt;</span>&#123;</span><br><span class="line">  input.addEventListener(<span class="string">'input'</span>,setHandler)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>先把功能做出來吧！</p>
+<h2 id="對象"><a href="#對象" class="headerlink" title="對象"></a>對象</h2><p>這次效果的主要對象在於每張圖片的進出，會針對每張圖片做判斷<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> allImages = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.slide-in'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>現在每次使用querySelectorAll選取對象後就會知道接下來極有可能出現forEach了…</p>
+<h2 id="事件偵聽"><a href="#事件偵聽" class="headerlink" title="事件偵聽"></a>事件偵聽</h2><p>所有的事件都觸發在卷軸滾動時<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,Handler)</span><br></pre></td></tr></table></figure></p>
+<h2 id="座標判斷"><a href="#座標判斷" class="headerlink" title="座標判斷"></a>座標判斷</h2><p>所以我們要做甚麼事情呢?(範例中已替我們寫好淡出的class樣式)</p>
 <blockquote>
-<p>注意:用 點號 <code>.</code> 存取時，點號右邊必須是一個可識別字(identifier)，例如屬性名稱，不能是字串、變數、運算式…等。但用 中括號 <code>[]</code> 存取時，中括號裡面可以放字串、變數、運算式等。<br><a href="https://xyz.cinc.biz/2013/11/javascript-property-access-dot-notation-vs-brackets.html" target="_blank" rel="noopener">來源1</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors" target="_blank" rel="noopener">來源2</a></p>
+<p>這邊建議自己畫張小圖以便明白相對位置的加減</p>
 </blockquote>
-<h2 id="快-倒轉"><a href="#快-倒轉" class="headerlink" title="快/倒轉"></a>快/倒轉</h2><p>這裡一樣透過一起選取<code>button</code>再forEach分別做事件<br>再透過<code>dataset</code>取得預設值,指定給<code>currentTime</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipHandler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  myVideo.currentTime += <span class="built_in">parseInt</span>(<span class="keyword">this</span>.dataset.skip) <span class="comment">//轉化成數字 或直接*1</span></span><br><span class="line">&#125;</span><br><span class="line">skipbtn.forEach(<span class="function">(<span class="params">btn</span>)=&gt;</span>&#123;</span><br><span class="line">  btn.addEventListener(<span class="string">'click'</span>,skipHandler)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="進度條顯示"><a href="#進度條顯示" class="headerlink" title="進度條顯示"></a>進度條顯示</h2><p>透過時間總長度(<code>duration</code>)和現在時間(<code>duration</code>)去算出百分比</p>
-<blockquote>
-<p>timeupdate是一個事件，當currentTime更新時會觸發timeupdate事件。<a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/timeupdate" target="_blank" rel="noopener">詳細介紹</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">processbar.style.flexBasis = <span class="number">0</span> <span class="comment">//可先歸零</span></span><br><span class="line">myVideo.addEventListener(<span class="string">'timeupdate'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> allTime = <span class="keyword">this</span>.duration</span><br><span class="line">  <span class="keyword">let</span> progress = <span class="keyword">this</span>.duration</span><br><span class="line">  percent = (progress/allTime)*<span class="number">100</span></span><br><span class="line">  processbar.style.flexBasis = percent +<span class="string">'%'</span> </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis" target="_blank" rel="noopener">flexBasis</a>介紹</p>
-<h2 id="控制時間軸"><a href="#控制時間軸" class="headerlink" title="控制時間軸"></a>控制時間軸</h2><p>這邊分為兩個部分，可以滑鼠按下或拖曳<br>拖曳必須是在mousedown的狀況下才能觸發，而且mouseup時必須關閉<br>觸發對象為整個時間軸<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> processbar_out = <span class="built_in">document</span>.querySelector(<span class="string">'.progress'</span>)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">processbar_out.addEventListener(<span class="string">'mousedown'</span>, addListener);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addListener</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  processbar_out.addEventListener(<span class="string">'mousedown'</span>, gotoTime);</span><br><span class="line">  processbar_out.addEventListener(<span class="string">'mousemove'</span>, gotoTime);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  processbar_out.removeEventListener(<span class="string">'mousemove'</span>, gotoTime);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>這裡我們透過<code>mousedown</code>之後，<strong>重新</strong>再定義一次觸發條件，即符合我們要的mousedown後才能mousemove。<br>而在這邊我認為mouseup觸發的對象不是<code>processbar_out</code>，使用者在拖曳時，有可能會離開我們原本的目標<code>processbar_out</code>，導致關閉不了<code>mousemove</code>，所以我將mosueup觸發對象設定為整個document</p>
-<p>最後執行任務<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gotoTime</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> getPercent = (e.offsetX/<span class="keyword">this</span>.offsetWidth)*<span class="number">100</span></span><br><span class="line">  <span class="comment">//將百分比轉換回該影片實際時間位置</span></span><br><span class="line">  <span class="keyword">let</span> currentTime = (getPercent*myVideo.duration)/<span class="number">100</span></span><br><span class="line">  processbar.style.flexBasis = getPercent +<span class="string">'%'</span></span><br><span class="line">  myVideo.currentTime = currentTime</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>取得滑鼠位置與<code>processbar_out</code>的寬算出百分比</li>
-<li>因為我們要時間指定給<code>currentTime</code>所以要將百分比<strong>轉換</strong>回正確的時間值</li>
-</ol>
-<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p>原始範例的做法是定義一個<code>mousedown=false</code>的變數去判斷是否滑鼠按下來做觸發，<br>其中有一個很酷的寫法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progress.addEventListener(<span class="string">'mousemove'</span>, (e) =&gt; mousedown &amp;&amp; scrub(e));</span><br></pre></td></tr></table></figure></p>
-<p>這裡的<code>&amp;&amp;</code>是<strong>而且</strong>的意思，在這藏了一個判斷式，也就是要執行<code>scrub</code>的條件必須左右都為true，當mousedown = true，右邊的<code>scrub</code>才會執行(也就是我們要的效果，mousedown才能mousemove)</p>
+<p>圖片出現的條件：需同時符合<br>條件一：視窗底部位置大於圖片中心位置時<br>條件二：滾輪捲動長度小於圖片中心位置</p>
+<p>這是我簡略畫的圖：<br><img src="2.PNG" alt=""></p>
+<p>兩個條件直接把他們定義成變數<code>condition_1</code>和<code>condition_2</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> imgPos = img.offsetTop+img.offsetHeight/<span class="number">2</span> <span class="comment">//圖片中心位置</span></span><br><span class="line"><span class="keyword">let</span> condition_1 = <span class="built_in">window</span>.scrollY + <span class="built_in">window</span>.outerHeight &gt; imgPos</span><br><span class="line"><span class="keyword">let</span> condition_2 = imgPos &gt; <span class="built_in">window</span>.scrollY</span><br></pre></td></tr></table></figure></p>
+<h2 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h2><p>最後針對每一張圖片去判斷是否兩個條件同時符合。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Handler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  allImages.forEach(<span class="function">(<span class="params">img</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> imgPos = img.offsetTop+img.offsetHeight/<span class="number">2</span> <span class="comment">//圖片中心位置</span></span><br><span class="line">    <span class="keyword">let</span> condition_1 = <span class="built_in">window</span>.scrollY + <span class="built_in">window</span>.outerHeight &gt; imgPos</span><br><span class="line">    <span class="keyword">let</span> condition_2 = imgPos &gt; <span class="built_in">window</span>.scrollY</span><br><span class="line">    condition_1&amp;&amp;condition_2 ? img.classList.add(<span class="string">'active'</span>) : img.classList.remove(<span class="string">'active'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>到這邊其實就算完成了。</p>
+<h2 id="防抖動-debounce-節流-throttle"><a href="#防抖動-debounce-節流-throttle" class="headerlink" title="防抖動(debounce)/節流(throttle)"></a>防抖動(debounce)/節流(throttle)</h2><p>DOM上有些事件是會頻繁觸發的，像是<code>mouseover</code>、<code>scroll</code>、<code>resize</code>等<br>但其實在大部的狀況下我們並不需要他們瘋狂的去觸發，所以出現了<br>throttle 或 debounce 的方法去優化這些效能問題。</p>
+<p>原始範例中作者有提供一個debounce的涵式如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait = <span class="number">20</span>, immediate = true</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> timeout;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span>, args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      timeout = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span> (!immediate) func.apply(context, args);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> callNow = immediate &amp;&amp; !timeout;</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    timeout = setTimeout(later, wait);</span><br><span class="line">    <span class="keyword">if</span> (callNow) func.apply(context, args);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以我們原本的事件觸發會變成像這樣：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,debounce(Handler))</span><br></pre></td></tr></table></figure></p>
+<p>這裡有個不錯的文章介紹彼此的差異</p>
+<ul>
+<li><a href="https://blog.camel2243.com/2017/06/05/javascript-throttle-%E8%88%87-debounce%EF%BC%8C%E8%99%95%E7%90%86%E9%A0%BB%E7%B9%81%E7%9A%84-callback-%E5%9F%B7%E8%A1%8C%E9%A0%BB%E7%8E%87/" target="_blank" rel="noopener">這裡有範例</a>可看出差異</li>
+<li><a href="http://www.cnblogs.com/jonkee/p/5124335.html" target="_blank" rel="noopener">throttle與debounce算法的邏輯</a></li>
+</ul>
+<h2 id="仿造觀念做一個"><a href="#仿造觀念做一個" class="headerlink" title="仿造觀念做一個"></a>仿造觀念做一個</h2><p>範例中它直接附上完整的debounce沒有要我們自己寫，代表以我目前的實力可能還無法領悟其中的精髓…<br>但我們就用目前會技能來做一個效能控制，達到類似debounce的原理，了解作者要傳達給我們的觀念即可。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> timer</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">    clearTimeout(timer)</span><br><span class="line">  &#125;</span><br><span class="line">  timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hi'</span>)</span><br><span class="line">      Handler()</span><br><span class="line">  &#125;,<span class="number">100</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><code>setTimeout</code>在經過<strong>指定時間</strong>後才會執行<strong>一次</strong>內容，在這裡我們讓它每次觸發scroll時，都去執行<code>setTimeout</code>，讓它在100毫秒後才能執行<code>Handler()</code>，達到效能的控制。但一開始需要加入一個判斷，當已存在<code>setTimeout</code>時就關閉這個setTimeout，再重新給他一次<code>setTimeout</code>，確保每次只會執行一個<code>setTimeout</code>。(可以嘗試把條件刪除比較差異)</p>
 
       
     </div>
@@ -527,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/10/" rel="next" title="Day10 Multiple Checkboxes">
-                <i class="fa fa-chevron-left"></i> Day10 Multiple Checkboxes
+              <a href="/js30/12/" rel="next" title="Day12 Key Detection">
+                <i class="fa fa-chevron-left"></i> Day12 Key Detection
               </a>
             
           </div>
@@ -537,8 +534,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/js30/12/" rel="prev" title="Day12 Key Detection">
-                Day12 Key Detection <i class="fa fa-chevron-right"></i>
+              <a href="/js30/14/" rel="prev" title="Day14 JS Reference VS Copy">
+                Day14 JS Reference VS Copy <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -571,7 +568,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/11/"
+           data-href="http://icguanyu.github.io/js30/13/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -715,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定義變數"><span class="nav-number">1.</span> <span class="nav-text">定義變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#播放與暫停影片"><span class="nav-number">2.</span> <span class="nav-text">播放與暫停影片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音量與速度"><span class="nav-number">3.</span> <span class="nav-text">音量與速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快-倒轉"><span class="nav-number">4.</span> <span class="nav-text">快/倒轉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#進度條顯示"><span class="nav-number">5.</span> <span class="nav-text">進度條顯示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制時間軸"><span class="nav-number">6.</span> <span class="nav-text">控制時間軸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充"><span class="nav-number">7.</span> <span class="nav-text">補充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#對象"><span class="nav-number">1.</span> <span class="nav-text">對象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件偵聽"><span class="nav-number">2.</span> <span class="nav-text">事件偵聽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#座標判斷"><span class="nav-number">3.</span> <span class="nav-text">座標判斷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#執行"><span class="nav-number">4.</span> <span class="nav-text">執行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防抖動-debounce-節流-throttle"><span class="nav-number">5.</span> <span class="nav-text">防抖動(debounce)/節流(throttle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仿造觀念做一個"><span class="nav-number">6.</span> <span class="nav-text">仿造觀念做一個</span></a></li></ol></div>
             
 
           </div>
