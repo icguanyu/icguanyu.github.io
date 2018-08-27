@@ -123,20 +123,19 @@
 
 
 
-<meta name="description" content="Demo">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day12 Key Detection">
-<meta property="og:url" content="http://icguanyu.github.io/js30/12/index.html">
+<meta property="og:title" content="Day17 Sort Without Articles">
+<meta property="og:url" content="http://icguanyu.github.io/js30/17/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
-<meta property="og:description" content="Demo">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/12/1.PNG">
-<meta property="og:updated_time" content="2018-08-18T14:48:12.805Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/17/1.PNG">
+<meta property="og:image" content="https://photo.minwt.com/img/Content/javascript/RegExp/RegExp01.gif">
+<meta property="og:image" content="http://icguanyu.github.io/js30/17/2.PNG">
+<meta property="og:updated_time" content="2018-08-27T16:44:34.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day12 Key Detection">
-<meta name="twitter:description" content="Demo">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/12/1.PNG">
+<meta name="twitter:title" content="Day17 Sort Without Articles">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/17/1.PNG">
 
 
 
@@ -166,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/12/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/17/"/>
 
 
 
 
 
-  <title>Day12 Key Detection | 阿姆的前端日記</title>
+  <title>Day17 Sort Without Articles | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/12/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day12 Key Detection</h1>
+          <h1 class="post-title" itemprop="name headline">Day17 Sort Without Articles</h1>
         
 
         <div class="post-meta">
@@ -365,8 +364,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-18T22:22:17+08:00">
-                2018-08-18
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-27T22:02:45+08:00">
+                2018-08-27
               </time>
             
 
@@ -406,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/12/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/12/" itemprop="commentCount">0</span> comments
+                <a href="/js30/17/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/17/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +414,7 @@
 
           
           
-             <span id="/js30/12/" class="leancloud_visitors" data-flag-title="Day12 Key Detection">
+             <span id="/js30/17/" class="leancloud_visitors" data-flag-title="Day17 Sort Without Articles">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +439,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  589
+                  889
                 </span>
               
 
@@ -465,34 +464,46 @@
       
 
       
-        <p><a href="https://icguanyu.github.io/Js30/12/">Demo</a><br><a id="more"></a><br>今天的主題是<strong>彩蛋</strong>~!<br>我們在頁面上只要鍵入特定文字，就會觸發我們指定的事件。<br>用到的觀念滿簡單的，算是個簡單的小主題。</p>
-<p>首先，先自訂這個特定密碼以及一個陣列來儲存我們鍵入的文字。</p>
-<h2 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mykey = []</span><br><span class="line"><span class="keyword">const</span> code = <span class="string">'icguanyu'</span></span><br></pre></td></tr></table></figure>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>所有的動作當然都是觸發在<code>keyup</code>後<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keyup'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="儲存"><a href="#儲存" class="headerlink" title="儲存"></a>儲存</h2><p>我們的條件是當<code>mykey</code>(輸入的內容)完全符合<code>code</code>(自訂的密碼)時觸發指定的涵式<br>所以每次<code>keyup</code>後都會把當下鍵入的文字儲存起來，我們透過<code>e.key</code>取得文字並透過陣列來儲存。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> key = e.key</span><br><span class="line">mykey.push(key)</span><br></pre></td></tr></table></figure></p>
-<p>不過，所儲存的文字總有長度限制，因為我們的密碼是固定長度<br>所以加入條件判斷，儲存的長度不大於密碼的長度，<strong>如果大於</strong>就要刪除舊的內容(第一筆資料)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> key = e.key</span><br><span class="line"><span class="keyword">if</span>(mykey.length&lt;code.length)&#123;</span><br><span class="line">  mykey.push(key)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  mykey.shift()</span><br><span class="line">  mykey.push(key)<span class="comment">//移除後再繼續push</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>這邊使用到的關鍵：</p>
-<ul>
-<li><p>shift <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener">詳細介紹</a></p>
+        <img src="/js30/17/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/17/">Demo</a></p>
+<p>又出現排序了，看來排序真的很重要<br>這次的特殊排序方法是：去除特定文字後的字母排序。</p>
+<p>我們的原始資料<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bands = [</span><br><span class="line"><span class="string">'The Plot in You'</span>, </span><br><span class="line"><span class="string">'The Devil Wears Prada'</span>, </span><br><span class="line"><span class="string">'Pierce the Veil'</span>, </span><br><span class="line"><span class="string">'Norma Jean'</span>, </span><br><span class="line"><span class="string">'The Bled'</span>, </span><br><span class="line"><span class="string">'Say Anything'</span>, </span><br><span class="line"><span class="string">'The Midway State'</span>, </span><br><span class="line"><span class="string">'We Came as Romans'</span>, </span><br><span class="line"><span class="string">'Counterparts'</span>, </span><br><span class="line"><span class="string">'Oh, Sleeper'</span>, </span><br><span class="line"><span class="string">'A Skylit Drive'</span>, </span><br><span class="line"><span class="string">'Anywhere But Here'</span>, </span><br><span class="line"><span class="string">'An Old Dog'</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
+<p>這邊我們透過作者的方法和<a href="https://ithelp.ithome.com.tw/articles/10195945" target="_blank" rel="noopener">這篇文章</a>的做法都做一次看看</p>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>我們在<a href="https://icguanyu.github.io/js30/04/">day4</a>做過一次<br>最主要的核心就是在排序時去針對a和b兩個值做過濾。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bands.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span>  check(a) &gt; check(b) ? <span class="number">1</span> : <span class="number">-1</span> )</span><br></pre></td></tr></table></figure></p>
+<p>※注意這裡的Arrow functions</p>
 <blockquote>
-<p>shift() 方法會移除並回傳陣列的第一個元素。此方法會改變陣列的長度。</p>
+<p>單一行陳述不需要 {}，如有大括號是需要自行加入 return的</p>
 </blockquote>
-</li>
-<li><p>push <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="noopener">詳細介紹</a></p>
+<h2 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h2><p>我們把符合條件的文字<strong>都刪除後</strong>再傳回新的值去做排序<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">text</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> temp = text.split(<span class="string">' '</span>)</span><br><span class="line">  <span class="keyword">if</span>(temp[<span class="number">0</span>]===<span class="string">'A'</span>||temp[<span class="number">0</span>]===<span class="string">'The'</span>||temp[<span class="number">0</span>]===<span class="string">'An'</span>)&#123;</span><br><span class="line">    temp.shift()</span><br><span class="line">    <span class="keyword">let</span> value = temp.join(<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我們讓每個text透過<code>split(&#39; &#39;)</code>將每個字串以空白做切割，切成一個個單字的陣列<br>每個陣列的第一個值<code>temp[0]</code>若為A、The或An，就透過<code>shift()</code>將他移除，最後將剩下的陣列內容(temp)轉回字串並回傳這個值。</p>
+<p>簡單來說就是把陣列的中的每個字串抓出來(轉成陣列)刪掉特定文字再(轉回文字)塞回去。</p>
+<p>不過這有一個問題是如果遇到小寫就要另外再寫條件比較麻煩。</p>
+<h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><p>作者的原始方法，透過正則表達式去判斷並用空字串取代掉<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strip</span>(<span class="params">bandName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bandName.replace(<span class="regexp">/^(a |the |an )/i</span>, <span class="string">''</span>).trim();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>trim()</code>：刪除空白<br><code>str.replace(regexp|substr, newSubstr|function)</code></p>
 <blockquote>
-<p>push() 方法會添加一個或多個元素至陣列的末端，並且<strong>回傳陣列的新長度</strong>。</p>
+<p>replace() 方法會傳回一個新字串，此新字串是透過將原字串與 pattern 比對，以 replacement 取代吻合處而生成。pattern 可以是字串或 RegExp，而 replacement 可以是字串或函式（會在每一次匹配時被呼叫）。</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="處理資料"><a href="#處理資料" class="headerlink" title="處理資料"></a>處理資料</h2><p>我們儲存的資料是一筆陣列，如下:<br><img src="1.PNG" alt=""><br>無法直接與密碼做比較判斷，所以要將陣列<strong>轉為純文字</strong>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> toString = mykey.join(<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
-<p>我們定義一個新的變數儲存轉換後的文字<br>這邊使用的join()方法：</p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">replace詳細介紹</a></p>
+<p>補充正則表達式:<br><img src="https://photo.minwt.com/img/Content/javascript/RegExp/RegExp01.gif" alt="圖片來源:梅問題教學網"><br>圖片來源:梅問題教學網</p>
+<p>關於<strong> /^(a |the |an )/i </strong>：<br>最後的i指的是比對的方式(flag)</p>
 <ul>
-<li>join <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="noopener">詳細介紹</a><blockquote>
-<p>join() 方法會將陣列（或一個類陣列（array-like）物件）中所有的元素連接、合併成一個字串，並回傳此字串。如果未傳入參數，陣列中的元素將預設用英文逗號（「,」）隔開。如果 是<strong><em>空字串</em></strong>，合併後，元素間不會有任何字元。</p>
-</blockquote>
-</li>
+<li>g：全域比對（Global match）</li>
+<li>i：忽略大小寫（Ignore case）</li>
+<li>gi：全域比對並忽略大小寫</li>
 </ul>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><p>最後進入判斷即可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mykey = []</span><br><span class="line"><span class="keyword">const</span> code = <span class="string">'icguanyu'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keyup'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> key = e.key</span><br><span class="line">  <span class="keyword">if</span>(mykey.length&lt;code.length)&#123;</span><br><span class="line">    mykey.push(key)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    mykey.shift()</span><br><span class="line">    mykey.push(key)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> toString = mykey.join(<span class="string">''</span>)</span><br><span class="line">  <span class="keyword">if</span>(toString===code) alert(<span class="string">'輸入正確,彩蛋出現'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>正則表達式內容太多了這邊無法完全筆記，這邊記錄一些還不錯的幾篇介紹資料：</p>
+<ol>
+<li><a href="http://blog.jex.tw/blog/2013/01/16/regex/" target="_blank" rel="noopener">正則表達式, 符號對照及範例</a></li>
+<li><a href="https://atedev.wordpress.com/2007/11/23/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E5%BC%8F-regular-expression/" target="_blank" rel="noopener">正規表示式 Regular Expression</a></li>
+<li>測試正規表達式的網站<a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></li>
+</ol>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><p>總之，這兩種方法都是透過<strong>先處理</strong>原始的資料再去排序<br>最後透過map將資料轉化成html回傳渲染到畫面上即可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">text</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//方法一</span></span><br><span class="line">  <span class="keyword">let</span> temp = text.split(<span class="string">' '</span>)</span><br><span class="line">  <span class="keyword">if</span>(temp[<span class="number">0</span>]===<span class="string">'A'</span>||temp[<span class="number">0</span>]===<span class="string">'The'</span>||temp[<span class="number">0</span>]===<span class="string">'An'</span>)&#123;</span><br><span class="line">    temp.shift()</span><br><span class="line">    <span class="keyword">let</span> value = temp.join(<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//方法二</span></span><br><span class="line">  <span class="comment">//return text.replace(/^(a |the |an )/i, '').trim();</span></span><br><span class="line">&#125;</span><br><span class="line">bands.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span>　check(a) &gt; check(b) ? <span class="number">1</span> : <span class="number">-1</span> )</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#bands'</span>).innerHTML = bands.map(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;item&#125;</span>&lt;/li&gt;`</span></span><br><span class="line">&#125;).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
+<p>又出現join了，因為陣列中含有逗號<code>，</code>…<br>直接轉換輸出在html中也會出現逗號，所以透過join的特性將每個元素透過<code>&#39;&#39;</code>合併成字串(範例即需合併為html字串，不帶任何符號)</p>
+<blockquote>
+<p>join() 方法會將陣列（或一個類陣列（array-like）物件）中所有的元素連接、合併成一個字串，並回傳此字串。<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="noopener">更多join介紹</a></p>
+</blockquote>
+<p><img src="2.PNG" alt=""></p>
 
       
     </div>
@@ -523,8 +534,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/11/" rel="next" title="Day11 HTML Video Player">
-                <i class="fa fa-chevron-left"></i> Day11 HTML Video Player
+              <a href="/js30/16/" rel="next" title="Day16 Mouse Shadow">
+                <i class="fa fa-chevron-left"></i> Day16 Mouse Shadow
               </a>
             
           </div>
@@ -532,10 +543,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js30/13/" rel="prev" title="Day13 Slide in on Scroll">
-                Day13 Slide in on Scroll <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,7 +574,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/12/"
+           data-href="http://icguanyu.github.io/js30/17/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -711,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#變數"><span class="nav-number">1.</span> <span class="nav-text">變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">2.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#儲存"><span class="nav-number">3.</span> <span class="nav-text">儲存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#處理資料"><span class="nav-number">4.</span> <span class="nav-text">處理資料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">5.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">1.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式一"><span class="nav-number">2.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式二"><span class="nav-number">3.</span> <span class="nav-text">方式二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">4.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
             
 
           </div>
