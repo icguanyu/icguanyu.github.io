@@ -134,7 +134,7 @@
 <meta property="og:image" content="http://icguanyu.github.io/js30/19/1.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/19/2.PNG">
 <meta property="og:image" content="http://icguanyu.github.io/js30/19/3.PNG">
-<meta property="og:updated_time" content="2018-08-28T07:27:12.066Z">
+<meta property="og:updated_time" content="2018-08-28T07:40:21.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day19 Get User Media Code Along!">
 <meta name="twitter:description" content="Demo(需打開電腦相機)">
@@ -442,7 +442,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  1,002
+                  1,008
                 </span>
               
 
@@ -485,7 +485,7 @@
 <p>我們相對於畫布起點(0,0)的位置畫寬為ww高為wh的image </p>
 <h2 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h2><p>在html的button已經設定好觸發條件和涵式名稱了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takePhoto</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//拍照聲音</span></span><br><span class="line">  snap.currentTime = <span class="number">0</span>;</span><br><span class="line">  snap.play()</span><br><span class="line">  <span class="comment">//產出一張圖片的url</span></span><br><span class="line">  <span class="keyword">const</span> dataURL = canvas.toDataURL();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>按下拍照時播放<code>snap</code>的聲音。<br>透過<code>toDataURL()</code>方法會取得一大串恐怖的東西<br><img src="3.PNG" alt="">這只是一部份…<br>這應該就是這一瞬間畫面的資料（拍到的照片）</p>
-<h2 id="顯示照片並下載"><a href="#顯示照片並下載" class="headerlink" title="顯示照片並下載"></a>顯示照片並下載</h2><p>在同一個fuction中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">link.href = dataURL</span><br><span class="line">link.setAttribute(<span class="string">'download'</span>,<span class="string">'handsome'</span>)</span><br><span class="line">link.innerHTML = <span class="string">`&lt;img src="<span class="subst">$&#123;dataURL&#125;</span>" alt="Handsome Man" /&gt;`</span></span><br><span class="line">strip.insertBefore(link, strip.firstChild)</span><br><span class="line"><span class="comment">//strip.appendChild(link)</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="顯示照片並下載"><a href="#顯示照片並下載" class="headerlink" title="顯示照片並下載"></a>顯示照片並下載</h2><p>在同一個fuction中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">link.href = dataURL</span><br><span class="line">link.setAttribute(<span class="string">'download'</span>,<span class="string">'下載的檔案名稱'</span>)</span><br><span class="line">link.innerHTML = <span class="string">`&lt;img src="<span class="subst">$&#123;dataURL&#125;</span>" alt="Handsome Man" /&gt;`</span></span><br><span class="line">strip.insertBefore(link, strip.firstChild)</span><br><span class="line"><span class="comment">//strip.appendChild(link)</span></span><br></pre></td></tr></table></figure></p>
 <p>我們建立一個新的元素，並賦予其 download 屬性，讓<code>&lt;a&gt;</code>元素被點擊的時候，就下載 URL 所指的資料，而它的innerHTML為我們剛取得的圖片<br>並將新建<code>&lt;a&gt;</code>元素插入strip(<code>&lt;div class=&quot;strip&quot;&gt;&lt;/div&gt;</code>)裡</p>
 <h2 id="補充insertBefore"><a href="#補充insertBefore" class="headerlink" title="補充insertBefore()"></a>補充insertBefore()</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/firstChild" target="_blank" rel="noopener">詳細介紹1</a>、<a href="http://www.w3school.com.cn/jsref/met_node_insertbefore.asp" target="_blank" rel="noopener">詳細介紹2</a></p>
 <blockquote>
