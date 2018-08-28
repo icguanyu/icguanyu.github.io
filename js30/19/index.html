@@ -123,19 +123,22 @@
 
 
 
+<meta name="description" content="Demo(需打開電腦相機)">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day1 JavaScript Drum Kit">
-<meta property="og:url" content="http://icguanyu.github.io/js30/01/index.html">
+<meta property="og:title" content="Day19 Get User Media Code Along!">
+<meta property="og:url" content="http://icguanyu.github.io/js30/19/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
+<meta property="og:description" content="Demo(需打開電腦相機)">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/01/1.PNG">
-<meta property="og:image" content="http://icguanyu.github.io/js30/01/2.PNG">
-<meta property="og:image" content="http://icguanyu.github.io/js30/01/3.PNG">
-<meta property="og:updated_time" content="2018-08-11T06:00:31.147Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/19/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/19/2.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/19/3.PNG">
+<meta property="og:updated_time" content="2018-08-28T07:27:12.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day1 JavaScript Drum Kit">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/01/1.PNG">
+<meta name="twitter:title" content="Day19 Get User Media Code Along!">
+<meta name="twitter:description" content="Demo(需打開電腦相機)">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/19/1.PNG">
 
 
 
@@ -165,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/01/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/19/"/>
 
 
 
 
 
-  <title>Day1 JavaScript Drum Kit | 阿姆的前端日記</title>
+  <title>Day19 Get User Media Code Along! | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -335,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/01/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -352,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day1 JavaScript Drum Kit</h1>
+          <h1 class="post-title" itemprop="name headline">Day19 Get User Media Code Along!</h1>
         
 
         <div class="post-meta">
@@ -364,8 +367,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-06T18:26:43+08:00">
-                2018-08-06
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-28T11:26:39+08:00">
+                2018-08-28
               </time>
             
 
@@ -405,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/01/" itemprop="commentCount">0</span> comments
+                <a href="/js30/19/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/19/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -414,7 +417,7 @@
 
           
           
-             <span id="/js30/01/" class="leancloud_visitors" data-flag-title="Day1 JavaScript Drum Kit">
+             <span id="/js30/19/" class="leancloud_visitors" data-flag-title="Day19 Get User Media Code Along!">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -439,7 +442,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  764
+                  1,002
                 </span>
               
 
@@ -464,53 +467,51 @@
       
 
       
-        <hr>
-<img src="/js30/01/1.PNG" title="Demo">
-<a id="more"></a>
-<p><a href="https://icguanyu.github.io/Js30/01/">Demo</a></p>
-<h2 id="audio在哪裡"><a href="#audio在哪裡" class="headerlink" title="audio在哪裡?"></a>audio在哪裡?</h2><p>看到audio之後,第一個問題就跑出來了，明明html裡有audio標籤，可是畫面怎麼沒有？讓我們右鍵檢查看看：<br><img src="2.PNG" alt=""></p>
-<p>再讓我們<a href="https://www.w3schools.com/html/html5_audio.asp" target="_blank" rel="noopener">google</a>一下，發現原來少了<code>controls</code>屬性<br>我們把<code>controls</code>加上去看看<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">data-key</span>=<span class="string">"65"</span> <span class="attr">src</span>=<span class="string">"sounds/clap.wav"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>就會發現其中一個audio介面出現在右下角了！<br><img src="3.PNG" alt=""></p>
+        <p><a href="https://icguanyu.github.io/Js30/19/">Demo</a>(需打開電腦相機)<br><a id="more"></a></p>
+<p>這個主題我們只要簡單學習操作使用者的電腦攝影機並拍下照片就好，<br>原作範例中有操作圖像<code>imageData</code>資料(色素陣列?)，個人覺得此技術太不常用了，所以另外筆記在這個範例中也有出現的、而且覺得重要js方法。</p>
+<h2 id="取得對象"><a href="#取得對象" class="headerlink" title="取得對象"></a>取得對象</h2><p>一開始範例以幫我們定義好所有對象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">'.player'</span>);<span class="comment">//預設player</span></span><br><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">'.photo'</span>);<span class="comment">//畫布呈現影像</span></span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">const</span> strip = <span class="built_in">document</span>.querySelector(<span class="string">'.strip'</span>);<span class="comment">//縮圖</span></span><br><span class="line"><span class="keyword">const</span> snap = <span class="built_in">document</span>.querySelector(<span class="string">'.snap'</span>);<span class="comment">//拍照聲音</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="呼叫相機"><a href="#呼叫相機" class="headerlink" title="呼叫相機"></a>呼叫相機</h2><p>總之就是透過一連串的方法去取得使用者的相機<br>好像也沒有為什麼，就是按照規定的寫法…<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getVideo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  navigator.mediaDevices.getUserMedia(&#123;</span><br><span class="line">    video: <span class="literal">true</span>,</span><br><span class="line">    audio: <span class="literal">false</span></span><br><span class="line">  &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">localMediaStream</span>)</span>&#123;</span><br><span class="line">    video.src = <span class="built_in">window</span>.URL.createObjectURL(localMediaStream);</span><br><span class="line">    video.play();</span><br><span class="line">  &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">    alert(<span class="string">'請開啟相機'</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getVideo()</span><br></pre></td></tr></table></figure></p>
+<p>過程中會取得一筆資料localMediaStream<br><img src="1.PNG" alt=""><br>再將這筆資料<code>createObjectURL</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">video.src = <span class="built_in">window</span>.URL.createObjectURL(localMediaStream);</span><br></pre></td></tr></table></figure></p>
+<p>會出現一個叫做blob的東西，目前還不太懂他是什麼東西，我們在製作上傳圖片或檔案的時候會用到。<br><img src="2.PNG" alt=""></p>
 <blockquote>
-<p>不過這個範例本來就是要讓它隱藏，所以之後如果需要隱藏或是顯示audio就知道要怎麼做了！</p>
+<p>Blob（Binary Large Object）物件代表了一個相當於檔案（原始資料）的不可變物件。<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Blob" target="_blank" rel="noopener">詳細資料</a></p>
 </blockquote>
-<h2 id="什麼是data-attribute-屬性"><a href="#什麼是data-attribute-屬性" class="headerlink" title="什麼是data-* attribute 屬性"></a>什麼是data-* attribute 屬性</h2><p>簡單來說<code>data-* attribute</code>可以用來儲存自訂的值。<br><code>*</code>字號是一個可以自訂的名稱，例如：<code>data-key=&#39;83&#39;</code>、或<code>data-size=&#39;m&#39;</code>，屬性值則可以是任何的<strong>字串</strong>。<br>以此範例來說，我們會需要用到keyCode，所以我們在每個<code>&lt;div class=&quot;key&quot;&gt;</code>中加入了<code>data-key=&quot;xx&quot;</code><br>後面我們就可以透過Javascript來取得data-* attribute的屬性值</p>
+<p>最後我們將將取得的資料指向<code>video</code>讓他播放就可以看到攝影機的畫面了。</p>
+<h2 id="畫在canvas上面"><a href="#畫在canvas上面" class="headerlink" title="畫在canvas上面"></a>畫在canvas上面</h2><p>主要透過<code>drawImage()</code>方法在畫布上畫影像。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">normalPaint</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, ww, wh);</span><br><span class="line">  requestAnimationFrame(normalPaint)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">video.addEventListener(<span class="string">'canplay'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  ww = canvas.width = video.videoWidth;</span><br><span class="line">  wh = canvas.height = video.videoHeight;</span><br><span class="line">  <span class="comment">//主要用來取得正確比例</span></span><br><span class="line">  requestAnimationFrame(normalPaint)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>我們透過<code>canplay</code>偵聽當video播放時，取得video的寬高並設定為畫布的<strong>比例</strong>，在此範例css已經將畫布寬設為100%，取得video寬高用意只是要維持正確比例。</p>
 <blockquote>
-<p>想更深入了解的話，<a href="https://pjchender.blogspot.com/2017/01/html-5-data-attribute.html" target="_blank" rel="noopener">這裡</a>有一篇很棒的data attribute介紹</p>
+<p><code>ctx.drawImage(image, 0, 0, ww, wh)</code></p>
 </blockquote>
-<h2 id="偵測鍵盤事件"><a href="#偵測鍵盤事件" class="headerlink" title="偵測鍵盤事件"></a>偵測鍵盤事件</h2><blockquote>
-<p>引用<a href="https://www.facebook.com/AlexOtakuWhat" target="_blank" rel="noopener">Alex</a>經典台詞：<br>「什麼人、在什麼時候、做什麼事。」</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>,playSound)</span><br></pre></td></tr></table></figure>
-<p>window(什麼人)，在keydown的時候，做playSound這個涵式。</p>
-<h2 id="我按下的是哪個鍵"><a href="#我按下的是哪個鍵" class="headerlink" title="我按下的是哪個鍵"></a>我按下的是哪個鍵</h2><ol>
-<li><p>取得keyCode</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSound</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> key = e.keyCode</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>透過keyCode取得畫面上的對象、取得要播放的audio</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = <span class="built_in">document</span>.querySelector(<span class="string">`div[data-key="<span class="subst">$&#123;key&#125;</span>"]`</span>)</span><br><span class="line"><span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;key&#125;</span>"]`</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="transitionend事件"><a href="#transitionend事件" class="headerlink" title="transitionend事件"></a>transitionend事件</h2><p>在這個範例中他經替我們寫好按下去的效果了(css)，所以我們只要透過<code>target.classList.add(&#39;playing&#39;)</code>套上playing這個class就可以了。</p>
+<p>我們相對於畫布起點(0,0)的位置畫寬為ww高為wh的image </p>
+<h2 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h2><p>在html的button已經設定好觸發條件和涵式名稱了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takePhoto</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//拍照聲音</span></span><br><span class="line">  snap.currentTime = <span class="number">0</span>;</span><br><span class="line">  snap.play()</span><br><span class="line">  <span class="comment">//產出一張圖片的url</span></span><br><span class="line">  <span class="keyword">const</span> dataURL = canvas.toDataURL();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>按下拍照時播放<code>snap</code>的聲音。<br>透過<code>toDataURL()</code>方法會取得一大串恐怖的東西<br><img src="3.PNG" alt="">這只是一部份…<br>這應該就是這一瞬間畫面的資料（拍到的照片）</p>
+<h2 id="顯示照片並下載"><a href="#顯示照片並下載" class="headerlink" title="顯示照片並下載"></a>顯示照片並下載</h2><p>在同一個fuction中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">link.href = dataURL</span><br><span class="line">link.setAttribute(<span class="string">'download'</span>,<span class="string">'handsome'</span>)</span><br><span class="line">link.innerHTML = <span class="string">`&lt;img src="<span class="subst">$&#123;dataURL&#125;</span>" alt="Handsome Man" /&gt;`</span></span><br><span class="line">strip.insertBefore(link, strip.firstChild)</span><br><span class="line"><span class="comment">//strip.appendChild(link)</span></span><br></pre></td></tr></table></figure></p>
+<p>我們建立一個新的元素，並賦予其 download 屬性，讓<code>&lt;a&gt;</code>元素被點擊的時候，就下載 URL 所指的資料，而它的innerHTML為我們剛取得的圖片<br>並將新建<code>&lt;a&gt;</code>元素插入strip(<code>&lt;div class=&quot;strip&quot;&gt;&lt;/div&gt;</code>)裡</p>
+<h2 id="補充insertBefore"><a href="#補充insertBefore" class="headerlink" title="補充insertBefore()"></a>補充insertBefore()</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/firstChild" target="_blank" rel="noopener">詳細介紹1</a>、<a href="http://www.w3school.com.cn/jsref/met_node_insertbefore.asp" target="_blank" rel="noopener">詳細介紹2</a></p>
 <blockquote>
-<ol>
-<li>classList.add()  新增</li>
-<li>classList.remove()  移除</li>
-<li>classList.toggle()  切換</li>
-</ol>
+<p>定義：insertBefore() 方法在您指定的已有子节点<strong>之前</strong>插入新的子节点。</p>
 </blockquote>
-<h2 id="propertyName判斷"><a href="#propertyName判斷" class="headerlink" title="propertyName判斷"></a>propertyName判斷</h2><blockquote>
-<p>雖不影響功能，但是值得注意的細節（自我要求）</p>
-</blockquote>
-<p>在transitionend的事件中，我們使用了<code>propertyName</code>去判斷，目的讓<code>propertyName</code>只要<strong>不是</strong><code>transform</code>的屬性就都不要做了，可以試試不加判斷的<code>console.log(e)</code>就會看到噴出很多事件。(因為transitionend會針對<strong>每一個</strong>屬性去觸發)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(<span class="string">'transitionend'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e.propertyName !== <span class="string">"transform"</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="播放聲音"><a href="#播放聲音" class="headerlink" title="播放聲音"></a>播放聲音</h2><p>就給他play下去吧！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">audio.currentTime = <span class="number">0</span> </span><br><span class="line">audio.play()</span><br></pre></td></tr></table></figure></p>
-<p>為什麼要加<code>currentTime</code>呢，目的是要讓播放進度回到0(重頭播放)<br>假設今天音訊是5秒以上，就可以明顯感受到差異了，要不要加就看效果需求。</p>
+<p>寫法：<code>document.getElementById(&quot;myList&quot;).insertBefore(newItem,existingItem);</code></p>
+<ul>
+<li>newItem：要插入的元素</li>
+<li>existingItem：現有的對象位置</li>
+</ul>
+<p>在此範例中插入的位置我們可以選擇<br>最新的照片排在前面(即排在第一個元素之前):</p>
+<ul>
+<li><code>strip.firstChild</code> 或<code>strip.childNodes[0]</code></li>
+</ul>
+<p>最新的排在最後面:</p>
+<ul>
+<li><code>strip.childNodes[-1]</code>　</li>
+</ul>
+<p>排在<strong>最後一個元素之前</strong>(應該不會有人這樣排)</p>
+<ul>
+<li><code>strip.lastChild</code></li>
+</ul>
+<h2 id="補充appendChild"><a href="#補充appendChild" class="headerlink" title="補充appendChild()"></a>補充appendChild()</h2><p>在這個範例的<code>insertBefore()</code>似乎可以直接用<code>appendChild()</code><br>顧名思義就是插入一個新的子物件(最新的排在最後)。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strip.appendChild(link)</span><br></pre></td></tr></table></figure></p>
+<p>這裡有一篇很棒的關於<code>appendChild()</code>圖文解說，雖然在此範例我們沒有遇到問題，不過使用未來使用appendChild可能會遇到，所以就先筆記下來。<br><a href="https://pjchender.blogspot.com/2017/06/js-node-element-appenchild-disappear.html" target="_blank" rel="noopener">為什麼無法正確 appendChild ！？</a></p>
 <blockquote>
-<p><a href="https://developer.mozilla.org/pl/docs/Web/HTML/Element/audio" target="_blank" rel="noopener">更多audio介紹</a></p>
-</blockquote>
-<h2 id="完成原始碼"><a href="#完成原始碼" class="headerlink" title="完成原始碼"></a>完成原始碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSound</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> key = e.keyCode</span><br><span class="line">  <span class="keyword">const</span> target = <span class="built_in">document</span>.querySelector(<span class="string">`div[data-key="<span class="subst">$&#123;key&#125;</span>"]`</span>)</span><br><span class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;key&#125;</span>"]`</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!target) <span class="keyword">return</span>;</span><br><span class="line">  target.classList.add(<span class="string">'playing'</span>)</span><br><span class="line">  target.addEventListener(<span class="string">'transitionend'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(e.propertyName !== <span class="string">"transform"</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  audio.currentTime = <span class="number">0</span> </span><br><span class="line">  audio.play()</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>,playSound)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>不負責任聲明ಥ◡ಥ：<br>純屬個人筆記，每個範例都有不同的寫法，還有很多細節可以加入，甚至可能有看不到的bug，有任何問題都歡迎提出一起研究哦，我會很感謝您的！<em>沒有好不好，只有適不適合</em> - 2018.08.07</p>
+<p>重點：如果 appendChild 使用時，append 上去的是一個已存在的 node 時，它會做的是搬移，而非複製。</p>
 </blockquote>
 
       
@@ -542,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Markdown常用語法/" rel="next" title="Markdown常用語法">
-                <i class="fa fa-chevron-left"></i> Markdown常用語法
+              <a href="/js30/18/" rel="next" title="Day18 Add Up Times">
+                <i class="fa fa-chevron-left"></i> Day18 Add Up Times
               </a>
             
           </div>
@@ -551,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js30/02/" rel="prev" title="Day2 JS and CSS Clock">
-                Day2 JS and CSS Clock <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -586,7 +583,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/01/"
+           data-href="http://icguanyu.github.io/js30/19/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -730,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#audio在哪裡"><span class="nav-number">1.</span> <span class="nav-text">audio在哪裡?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是data-attribute-屬性"><span class="nav-number">2.</span> <span class="nav-text">什麼是data-* attribute 屬性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偵測鍵盤事件"><span class="nav-number">3.</span> <span class="nav-text">偵測鍵盤事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我按下的是哪個鍵"><span class="nav-number">4.</span> <span class="nav-text">我按下的是哪個鍵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transitionend事件"><span class="nav-number">5.</span> <span class="nav-text">transitionend事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#propertyName判斷"><span class="nav-number">6.</span> <span class="nav-text">propertyName判斷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#播放聲音"><span class="nav-number">7.</span> <span class="nav-text">播放聲音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成原始碼"><span class="nav-number">8.</span> <span class="nav-text">完成原始碼</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得對象"><span class="nav-number">1.</span> <span class="nav-text">取得對象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#呼叫相機"><span class="nav-number">2.</span> <span class="nav-text">呼叫相機</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#畫在canvas上面"><span class="nav-number">3.</span> <span class="nav-text">畫在canvas上面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拍照"><span class="nav-number">4.</span> <span class="nav-text">拍照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顯示照片並下載"><span class="nav-number">5.</span> <span class="nav-text">顯示照片並下載</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充insertBefore"><span class="nav-number">6.</span> <span class="nav-text">補充insertBefore()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充appendChild"><span class="nav-number">7.</span> <span class="nav-text">補充appendChild()</span></a></li></ol></div>
             
 
           </div>
