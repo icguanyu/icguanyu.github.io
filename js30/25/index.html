@@ -126,17 +126,19 @@
 <meta name="description" content="Demo">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day7 Array Cardio (2)">
-<meta property="og:url" content="http://icguanyu.github.io/js30/07/index.html">
+<meta property="og:title" content="Day25 Event Capture(冒泡事件)">
+<meta property="og:url" content="http://icguanyu.github.io/js30/25/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
 <meta property="og:description" content="Demo">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/07/1.PNG">
-<meta property="og:updated_time" content="2018-08-13T04:59:28.707Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/25/1.png">
+<meta property="og:image" content="https://javascript.info/article/bubbling-and-capturing/event-order-bubbling.png">
+<meta property="og:image" content="http://icguanyu.github.io/js30/25/1.png">
+<meta property="og:updated_time" content="2018-09-01T06:48:23.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day7 Array Cardio (2)">
+<meta name="twitter:title" content="Day25 Event Capture(冒泡事件)">
 <meta name="twitter:description" content="Demo">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/07/1.PNG">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/25/1.png">
 
 
 
@@ -166,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/07/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/25/"/>
 
 
 
 
 
-  <title>Day7 Array Cardio (2) | 阿姆的前端日記</title>
+  <title>Day25 Event Capture(冒泡事件) | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/07/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day7 Array Cardio (2)</h1>
+          <h1 class="post-title" itemprop="name headline">Day25 Event Capture(冒泡事件)</h1>
         
 
         <div class="post-meta">
@@ -365,8 +367,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-13T12:14:56+08:00">
-                2018-08-13
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-01T13:23:21+08:00">
+                2018-09-01
               </time>
             
 
@@ -406,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/07/" itemprop="commentCount">0</span> comments
+                <a href="/js30/25/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/25/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +417,7 @@
 
           
           
-             <span id="/js30/07/" class="leancloud_visitors" data-flag-title="Day7 Array Cardio (2)">
+             <span id="/js30/25/" class="leancloud_visitors" data-flag-title="Day25 Event Capture(冒泡事件)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +442,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  605
+                  714
                 </span>
               
 
@@ -465,50 +467,37 @@
       
 
       
-        <p><a href="https://icguanyu.github.io/Js30/07/">Demo</a><br><a id="more"></a><br>這周也是針對陣列的操作做練習，所以沒有預覽圖！<br>主要看程式碼和console.log</p>
-<p>這次會用到的陣列的操作方式有：</p>
+        <p><a href="https://icguanyu.github.io/Js30/25/">Demo</a><br><a id="more"></a></p>
+<p>今天要介紹的是Javascripy中的一個基礎但卻很重要的觀念<br>先放上不錯的介紹資源<br><a href="https://javascript.info/bubbling-and-capturing" target="_blank" rel="noopener">Bubbling and capturing</a></p>
+<h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h2><p>很常用到的addEventListener語法裡面有幾個參數介紹：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Event.target.addEventListener(type, <span class="function"><span class="keyword">function</span>, </span>&#123;</span><br><span class="line">    capture: ture/flase, </span><br><span class="line">    once:<span class="literal">true</span>/<span class="literal">false</span>,</span><br><span class="line">    passive:<span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>Array.prototype.some() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">詳細解說</a></li>
+<li>type：各種監聽事件像是click/scroll/mouseenter…。</li>
+<li>listener：事件發生時負責接收事件的物件，通常為函式。</li>
+<li>options：包含三種可選參數：<ol>
+<li>capture：ture–&gt; <code>capture phase</code>。預設為fales–&gt; <code>bubbling phase</code>。</li>
+<li>once：只監聽一次，觸發一次後就結束。 </li>
+<li>passive：選擇這個屬性將無法在函式中使用 event.preventDefault() 方法。</li>
+</ol>
+</li>
 </ul>
+<h2 id="冒泡事件-bubbling-capture"><a href="#冒泡事件-bubbling-capture" class="headerlink" title="冒泡事件 bubbling / capture"></a>冒泡事件 bubbling / capture</h2><p>要介紹的重點就是冒泡事件<br><img src="1.png" alt=""><br><a href="https://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html#Events-phases" target="_blank" rel="noopener">圖片來源</a></p>
+<p>針對我們的範例做簡單介紹<br>在原始範例中我們可以看到這個DOM結構有三層，由內而外分別是3-&gt;2-&gt;1<br>而我們針對這三個div都做一次點擊事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"two"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"three"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="1-Bubbling-phase"><a href="#1-Bubbling-phase" class="headerlink" title="1.Bubbling phase"></a>1.Bubbling phase</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);<span class="comment">//印出class名稱</span></span><br><span class="line"></span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span> =&gt;</span> div.addEventListener(<span class="string">'click'</span>, logText, &#123;</span><br><span class="line">  capture: <span class="literal">false</span>,<span class="comment">//即為預設,可省略</span></span><br><span class="line">  once: <span class="literal">true</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<p>因three是最內層，當我們點擊three時，同時也會點到two和one<br>而<strong>預設</strong>的觸發順序是，bubbling(<strong>由內到外</strong>)<br>就像是泡泡一樣，所以可以翻作冒泡事件。</p>
+<p>這張圖解我覺得更好懂一些<br><img src="https://javascript.info/article/bubbling-and-capturing/event-order-bubbling.png" alt=""><br><a href="https://javascript.info/bubbling-and-capturing" target="_blank" rel="noopener">圖片來源</a></p>
+<h3 id="2-Capture-phase"><a href="#2-Capture-phase" class="headerlink" title="2. Capture phase"></a>2. Capture phase</h3><p>反之，如果我們將<code>capture</code>改為<code>true</code>，<br>觸發順序將變成由外到內依序被觸發，再看一次圖：（紅色路線）<br><img src="1.png" alt=""></p>
+<h2 id="Event-stopPropagation"><a href="#Event-stopPropagation" class="headerlink" title="Event.stopPropagation()"></a>Event.stopPropagation()</h2><p>在很多時候我們必須阻止這些事件的傳遞（遇過的情境：當點選漢堡icon時，選單要滑出；當<strong>點選畫面任何位置</strong>時，選單要隱藏。）</p>
+<p>我們在這範例中,如果我們對每個對象都加入<code>stopPropagation</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);</span><br><span class="line">  e.stopPropagation(); <span class="comment">// stop bubbling!</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>這時每次點擊只會有當下的目標被觸發，事件就不會再往外或往內傳遞。</p>
+<p>(也可以針對某個元素做<code>stopPropagation</code>)</p>
+<h2 id="Event-preventDefault"><a href="#Event-preventDefault" class="headerlink" title="Event.preventDefault()"></a>Event.preventDefault()</h2><p>很多html會有預設的功能存在，像是超連結、表單送出(submit)等<br>要阻止這些預設功能觸發，可以加上：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e.preventDefault();<span class="comment">//阻止預設功能</span></span><br><span class="line">  <span class="comment">// do something else</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="補充Target和currentTarget的不同"><a href="#補充Target和currentTarget的不同" class="headerlink" title="補充Target和currentTarget的不同"></a>補充Target和currentTarget的不同</h2><p>以這個範例來說<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.target);</span><br><span class="line">  <span class="built_in">console</span>.log(e.currentTarget);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'.one'</span>).addEventListener(<span class="string">'click'</span>,logText)</span><br></pre></td></tr></table></figure></p>
+<p>當我<strong>事件設定在最外層</strong>的one時，我點擊在one裡面的three(一樣會觸發one)但是此時<br>e.target = three<br>e.currentTarget = one</p>
+<p>簡單來說:</p>
 <blockquote>
-<p>白話:陣列中至少有<strong>一個</strong>符合條件就回傳true;沒有就false</p>
+<p>currentTarget始终是监听事件者，而target是事件的真正发出者。</p>
 </blockquote>
-<ul>
-<li>Array.prototype.every() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:陣列中是不是<strong>每個</strong>都符合條件,是就回true;沒有就false</p>
-</blockquote>
-<ul>
-<li>Array.prototype.find() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">詳細解說</a> </li>
-</ul>
-<blockquote>
-<p>白話:去陣列中找到<strong>第一個</strong>滿足條件的值就回這筆<strong>值</strong>;都找不到就undefined。</p>
-</blockquote>
-<ul>
-<li>Array.prototype.findIndex() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:承上,找到那個值是在陣列中的第幾個(序列)。如果沒有符合的對象，將回傳 -1 。</p>
-</blockquote>
-<ul>
-<li>Array.(index,N) <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:從陣列中刪除第index到N個之後的這些值。所以<code>(index,N)</code>就是把index這位置刪掉。如果沒輸入N，從index開始之後的都會被刪掉。</p>
-</blockquote>
-<p><a href="https://goo.gl/sCDcEr" target="_blank" rel="noopener">更多操作方法介紹</a></p>
-<h2 id="進入主題"><a href="#進入主題" class="headerlink" title="進入主題"></a>進入主題</h2><p>我們有兩筆資料:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Wes'</span>, <span class="attr">year</span>: <span class="number">1988</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kait'</span>, <span class="attr">year</span>: <span class="number">1986</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Irv'</span>, <span class="attr">year</span>: <span class="number">1970</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Lux'</span>, <span class="attr">year</span>: <span class="number">2015</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comments = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Love this!'</span>, <span class="attr">id</span>: <span class="number">523423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Super good'</span>, <span class="attr">id</span>: <span class="number">823423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'You are the best'</span>, <span class="attr">id</span>: <span class="number">2039842</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Ramen is my fav food ever'</span>, <span class="attr">id</span>: <span class="number">123523</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Nice Nice Nice!'</span>, <span class="attr">id</span>: <span class="number">542328</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
-<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><p>is at least one person 19 or older?<br>判斷陣列中是否有<strong>任一</strong>年齡大於19的人。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.some(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; true</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>記得箭頭涵式如果<strong>有</strong>大括號<code>{}</code>要補上return</p>
-</blockquote>
-<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>is everyone 19 or older?<br>判斷陣列中是否<strong>每個人</strong>的年齡都大於19<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.every(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; false</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>find the comment with the ID of 823423<br>找出符合ID為823423的物件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.find(<span class="function"><span class="params">comment</span>=&gt;</span>comment.id === <span class="number">823423</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; &#123;text: "Super good", id: 823423&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><p>Find the comment with this ID<br>找出符合ID為823423的物件元素在陣列中的Index<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// console.log(result) ==&gt; 1</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h2><p>delete the comment with the ID of 823423<br>找出符合ID為823423的物件元素在陣列中的Index並刪除它<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line">comments.splice(result,<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p>刪除後我們再<code>console.log(comments)</code>會發現823423這筆已經被我們移除<br><img src="1.PNG" alt=""></p>
-<p>這次的陣列操作方法反而比<a href="https://icguanyu.github.io/js30/04/">day4</a>的簡單多了，day4真的滿重要的可以再回去複習一下。</p>
+<p>更多參考資料：<br><a href="http://fireqqtw.logdown.com/posts/245517-angularng-click-the-target-and-currenttarget" target="_blank" rel="noopener">Target 和 currentTarget</a><br><a href="https://juejin.im/post/59f16ffaf265da43085d4108" target="_blank" rel="noopener">深入理解e.target与e.currentTarget</a></p>
 
       
     </div>
@@ -539,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/06/" rel="next" title="Day6 Type Ahead">
-                <i class="fa fa-chevron-left"></i> Day6 Type Ahead
+              <a href="/js30/26/" rel="next" title="Day26 Follow Along Nav">
+                <i class="fa fa-chevron-left"></i> Day26 Follow Along Nav
               </a>
             
           </div>
@@ -548,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js30/08/" rel="prev" title="Day8 HTML5 Canvas">
-                Day8 HTML5 Canvas <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +568,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/07/"
+           data-href="http://icguanyu.github.io/js30/25/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -727,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#進入主題"><span class="nav-number">1.</span> <span class="nav-text">進入主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一題"><span class="nav-number">2.</span> <span class="nav-text">第一題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二題"><span class="nav-number">3.</span> <span class="nav-text">第二題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">4.</span> <span class="nav-text">第三題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四題"><span class="nav-number">5.</span> <span class="nav-text">第四題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題"><span class="nav-number">6.</span> <span class="nav-text">第五題</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#addEventListener"><span class="nav-number">1.</span> <span class="nav-text">addEventListener</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡事件-bubbling-capture"><span class="nav-number">2.</span> <span class="nav-text">冒泡事件 bubbling / capture</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Bubbling-phase"><span class="nav-number">2.1.</span> <span class="nav-text">1.Bubbling phase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Capture-phase"><span class="nav-number">2.2.</span> <span class="nav-text">2. Capture phase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-stopPropagation"><span class="nav-number">3.</span> <span class="nav-text">Event.stopPropagation()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-preventDefault"><span class="nav-number">4.</span> <span class="nav-text">Event.preventDefault()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充Target和currentTarget的不同"><span class="nav-number">5.</span> <span class="nav-text">補充Target和currentTarget的不同</span></a></li></ol></div>
             
 
           </div>

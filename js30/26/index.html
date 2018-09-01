@@ -123,20 +123,20 @@
 
 
 
-<meta name="description" content="Demo">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day7 Array Cardio (2)">
-<meta property="og:url" content="http://icguanyu.github.io/js30/07/index.html">
+<meta property="og:title" content="Day26 Follow Along Nav">
+<meta property="og:url" content="http://icguanyu.github.io/js30/26/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
-<meta property="og:description" content="Demo">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/07/1.PNG">
-<meta property="og:updated_time" content="2018-08-13T04:59:28.707Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/26/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/26/2.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/26/3.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/26/4.PNG">
+<meta property="og:updated_time" content="2018-09-01T09:37:30.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day7 Array Cardio (2)">
-<meta name="twitter:description" content="Demo">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/07/1.PNG">
+<meta name="twitter:title" content="Day26 Follow Along Nav">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/26/1.PNG">
 
 
 
@@ -166,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/07/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/26/"/>
 
 
 
 
 
-  <title>Day7 Array Cardio (2) | 阿姆的前端日記</title>
+  <title>Day26 Follow Along Nav | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/07/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day7 Array Cardio (2)</h1>
+          <h1 class="post-title" itemprop="name headline">Day26 Follow Along Nav</h1>
         
 
         <div class="post-meta">
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-13T12:14:56+08:00">
-                2018-08-13
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-01T13:23:21+08:00">
+                2018-09-01
               </time>
             
 
@@ -406,8 +406,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/07/" itemprop="commentCount">0</span> comments
+                <a href="/js30/26/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/26/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +415,7 @@
 
           
           
-             <span id="/js30/07/" class="leancloud_visitors" data-flag-title="Day7 Array Cardio (2)">
+             <span id="/js30/26/" class="leancloud_visitors" data-flag-title="Day26 Follow Along Nav">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +440,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  605
+                  1,037
                 </span>
               
 
@@ -465,50 +465,59 @@
       
 
       
-        <p><a href="https://icguanyu.github.io/Js30/07/">Demo</a><br><a id="more"></a><br>這周也是針對陣列的操作做練習，所以沒有預覽圖！<br>主要看程式碼和console.log</p>
-<p>這次會用到的陣列的操作方式有：</p>
-<ul>
-<li>Array.prototype.some() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
+        <img src="/js30/26/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/26/">Demo</a></p>
+<p>這次的範例有一小部份效果看似跟<a href="https://icguanyu.github.io/js30/22/">Day22</a>的範例一樣<br>但其中藏了滿多<strong>值得留意</strong>的重點和技巧！</p>
+<p>看似無聊但很多重點的單元！</p>
+<h2 id="觀察-HTML-和-CSS-結構"><a href="#觀察-HTML-和-CSS-結構" class="headerlink" title="觀察 HTML 和 CSS 結構"></a>觀察 HTML 和 CSS 結構</h2><p><img src="2.PNG" alt=""></p>
+<p>在範例中，每個 li 裡所包含的資料都已經存在<br>而<strong>資料要包在 li 裡</strong>也關係到了我們觸發事件使用的<code>mouseenter</code>和<code>mouseleave</code></p>
 <blockquote>
-<p>白話:陣列中至少有<strong>一個</strong>符合條件就回傳true;沒有就false</p>
+<p>mouseenterc 和 mouseover 差別：<a href="http://imweb.io/topic/5a2bb4cfa192c3b460fce2b9" target="_blank" rel="noopener">介紹 1</a> / <a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_event_mouseenter_mouseover" target="_blank" rel="noopener">介紹 2</a></p>
 </blockquote>
-<ul>
-<li>Array.prototype.every() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
+<p>在 css 部分，我們要先隱藏原本的內容，除了透明外，<code>display:none</code> <strong>是必須的</strong><br>不然我們滑鼠一碰到這些隱藏內容，就會觸發事件<br>（因為內容包在 li 內，碰到內容即碰到 li，這不是我們要的效果)。</p>
+<h2 id="css-部屬"><a href="#css-部屬" class="headerlink" title="css 部屬"></a>css 部屬</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.5s</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100px);</span><br><span class="line">  <span class="attribute">will-change</span>: opacity;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.trigger-enter</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.trigger-enter-active</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>白話:陣列中是不是<strong>每個</strong>都符合條件,是就回true;沒有就false</p>
+<p>說明：原始元素只有套用<code>.dropdown</code>這個 class，而下方兩個樣式是在必須<strong>有父層樣式</strong>(<code>.trigger-enter</code>,<code>.trigger-enter-active</code>)的條件下，才會有效果的 class，因此這邊我們是去控制父層的 class 來改變<code>.dropdown</code>的屬性。</p>
 </blockquote>
-<ul>
-<li>Array.prototype.find() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">詳細解說</a> </li>
-</ul>
+<p>再透過事件觸發去加上或刪除指定的 class<br>(分開寫純粹是效果需求)</p>
+<h2 id="對象和觸發條件"><a href="#對象和觸發條件" class="headerlink" title="對象和觸發條件"></a>對象和觸發條件</h2><p>一樣先把觸發對象和條件先建構出來<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> triggers = <span class="built_in">document</span>.querySelectorAll(<span class="string">".cool &gt; li"</span>);</span><br><span class="line"><span class="keyword">const</span> background = <span class="built_in">document</span>.querySelector(<span class="string">".dropdownBackground"</span>);</span><br><span class="line"><span class="keyword">const</span> nav = <span class="built_in">document</span>.querySelector(<span class="string">".top"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleLeave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span>trigger.addEventListener(<span class="string">"mouseenter"</span>, handleEnter));</span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span>trigger.addEventListener(<span class="string">"mouseleave"</span>, handleLeave));</span><br></pre></td></tr></table></figure></p>
+<h2 id="滑鼠移入後"><a href="#滑鼠移入後" class="headerlink" title="滑鼠移入後"></a>滑鼠移入後</h2><p>滑鼠移入後，按照效果需求先後加上class<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter'</span>);</span><br><span class="line">  <span class="comment">//關鍵:判斷有沒有class的方法</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//此時的this已變成window,所以用ES6立即函示</span></span><br><span class="line">    <span class="comment">//console.log(this)</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">      <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//小技巧:</span></span><br><span class="line">    <span class="comment">//this.classList.contains('trigger-enter') &amp;&amp; t his.classList.add('trigger-enter-active')</span></span><br><span class="line">  &#125;, <span class="number">150</span>)</span><br><span class="line">  background.classList.add(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>當然在這邊也可以不用特別去判斷是否有<code>trigger-enter</code>效果一樣存在，但因為有了這個判斷<br>我們可以認識<code>DOMTokenList.contains</code>！</p>
+<h3 id="關鍵：DOMTokenList-contains"><a href="#關鍵：DOMTokenList-contains" class="headerlink" title="關鍵：DOMTokenList.contains()"></a>關鍵：DOMTokenList.contains()</h3><p>為什麼不是includes?</p>
 <blockquote>
-<p>白話:去陣列中找到<strong>第一個</strong>滿足條件的值就回這筆<strong>值</strong>;都找不到就undefined。</p>
+<p>includes() 方法會判斷<strong>陣列</strong>是否包含特定的元素，並以此來回傳 true 或 false。</p>
 </blockquote>
-<ul>
-<li>Array.prototype.findIndex() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
+<p>因為我們的<code>this.classList</code>不是陣列<br><img src="3.PNG" alt=""></p>
+<p>我們透過<code>contains</code>：<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains" target="_blank" rel="noopener">DOMTokenList.contains()</a></p>
 <blockquote>
-<p>白話:承上,找到那個值是在陣列中的第幾個(序列)。如果沒有符合的對象，將回傳 -1 。</p>
+<p>The contains() method of the DOMTokenList interface returns a Boolean — true if the underlying list contains the given token, otherwise false.</p>
 </blockquote>
-<ul>
-<li>Array.(index,N) <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
+<p>還有很多方法可以判斷:<br><a href="https://segmentfault.com/q/1010000002501794" target="_blank" rel="noopener">如何用JavaScript判断dom是否有class的值？</a></p>
+<p>當然在這邊也可以不做setTimeout延遲效果，但因為有了setTimeout<br>我們注意到了this發生了變化！</p>
+<h3 id="關鍵：this"><a href="#關鍵：this" class="headerlink" title="關鍵：this"></a>關鍵：this</h3><p>錯誤寫法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">150</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="4.PNG" alt=""><br>在setTimeout裡面我們的this變成了window</p>
 <blockquote>
-<p>白話:從陣列中刪除第index到N個之後的這些值。所以<code>(index,N)</code>就是把index這位置刪掉。如果沒輸入N，從index開始之後的都會被刪掉。</p>
+<p>ES5中的this指向的事觸發該涵式的對象</p>
 </blockquote>
-<p><a href="https://goo.gl/sCDcEr" target="_blank" rel="noopener">更多操作方法介紹</a></p>
-<h2 id="進入主題"><a href="#進入主題" class="headerlink" title="進入主題"></a>進入主題</h2><p>我們有兩筆資料:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Wes'</span>, <span class="attr">year</span>: <span class="number">1988</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kait'</span>, <span class="attr">year</span>: <span class="number">1986</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Irv'</span>, <span class="attr">year</span>: <span class="number">1970</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Lux'</span>, <span class="attr">year</span>: <span class="number">2015</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comments = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Love this!'</span>, <span class="attr">id</span>: <span class="number">523423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Super good'</span>, <span class="attr">id</span>: <span class="number">823423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'You are the best'</span>, <span class="attr">id</span>: <span class="number">2039842</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Ramen is my fav food ever'</span>, <span class="attr">id</span>: <span class="number">123523</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Nice Nice Nice!'</span>, <span class="attr">id</span>: <span class="number">542328</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
-<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><p>is at least one person 19 or older?<br>判斷陣列中是否有<strong>任一</strong>年齡大於19的人。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.some(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; true</span></span><br></pre></td></tr></table></figure></p>
+<p>setTimeout是由windows觸發的。<br>所以這時候他不知道window.contains是什麼，因此出現錯誤。</p>
+<p>解決方法可以簡單透過變數在setTimeout之前定義對象，不要用this即可<br><code>const showItem = event.target;</code></p>
 <blockquote>
-<p>記得箭頭涵式如果<strong>有</strong>大括號<code>{}</code>要補上return</p>
+<p>this看的是究竟是誰調用該函式 <a href="https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this" target="_blank" rel="noopener">#Javascript：this用法整理</a></p>
 </blockquote>
-<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>is everyone 19 or older?<br>判斷陣列中是否<strong>每個人</strong>的年齡都大於19<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.every(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; false</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>find the comment with the ID of 823423<br>找出符合ID為823423的物件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.find(<span class="function"><span class="params">comment</span>=&gt;</span>comment.id === <span class="number">823423</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; &#123;text: "Super good", id: 823423&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><p>Find the comment with this ID<br>找出符合ID為823423的物件元素在陣列中的Index<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// console.log(result) ==&gt; 1</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h2><p>delete the comment with the ID of 823423<br>找出符合ID為823423的物件元素在陣列中的Index並刪除它<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line">comments.splice(result,<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p>刪除後我們再<code>console.log(comments)</code>會發現823423這筆已經被我們移除<br><img src="1.PNG" alt=""></p>
-<p>這次的陣列操作方法反而比<a href="https://icguanyu.github.io/js30/04/">day4</a>的簡單多了，day4真的滿重要的可以再回去複習一下。</p>
+<hr>
+<p>我們透過es6箭頭涵式中this的特性來解決</p>
+<blockquote>
+<p>ES6中箭頭函數它没有自己的this值，它<strong>繼承外圍作用域的this</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">150</span>)</span><br></pre></td></tr></table></figure>
+<p>所以這時的this指的就是我們的<code>li</code>了</p>
+<h2 id="條件式縮寫"><a href="#條件式縮寫" class="headerlink" title="條件式縮寫"></a>條件式縮寫</h2><p>在原始範例中出現一個少見的條件式簡寫<br>原本:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以縮寫成:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>) &amp;&amp; <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>一個不起眼範例藏了滿多細節的！</p>
+<blockquote>
+<p>不負責任聲明ಥ◡ಥ：<br>純屬個人筆記，每個範例都有不同的寫法，還有很多細節可以加入，甚至可能有看不到的bug，有任何問題都歡迎提出一起研究哦，我會很感謝您的！<em>沒有好不好，只有適不適合</em> - 2018.09.01</p>
+</blockquote>
 
       
     </div>
@@ -539,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/06/" rel="next" title="Day6 Type Ahead">
-                <i class="fa fa-chevron-left"></i> Day6 Type Ahead
+              <a href="/js30/24/" rel="next" title="Day24 Sticky Nav">
+                <i class="fa fa-chevron-left"></i> Day24 Sticky Nav
               </a>
             
           </div>
@@ -549,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/js30/08/" rel="prev" title="Day8 HTML5 Canvas">
-                Day8 HTML5 Canvas <i class="fa fa-chevron-right"></i>
+              <a href="/js30/25/" rel="prev" title="Day25 Event Capture(冒泡事件)">
+                Day25 Event Capture(冒泡事件) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -583,7 +592,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/07/"
+           data-href="http://icguanyu.github.io/js30/26/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -727,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#進入主題"><span class="nav-number">1.</span> <span class="nav-text">進入主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一題"><span class="nav-number">2.</span> <span class="nav-text">第一題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二題"><span class="nav-number">3.</span> <span class="nav-text">第二題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">4.</span> <span class="nav-text">第三題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四題"><span class="nav-number">5.</span> <span class="nav-text">第四題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題"><span class="nav-number">6.</span> <span class="nav-text">第五題</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#觀察-HTML-和-CSS-結構"><span class="nav-number">1.</span> <span class="nav-text">觀察 HTML 和 CSS 結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-部屬"><span class="nav-number">2.</span> <span class="nav-text">css 部屬</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#對象和觸發條件"><span class="nav-number">3.</span> <span class="nav-text">對象和觸發條件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑鼠移入後"><span class="nav-number">4.</span> <span class="nav-text">滑鼠移入後</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵：DOMTokenList-contains"><span class="nav-number">4.1.</span> <span class="nav-text">關鍵：DOMTokenList.contains()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵：this"><span class="nav-number">4.2.</span> <span class="nav-text">關鍵：this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#條件式縮寫"><span class="nav-number">5.</span> <span class="nav-text">條件式縮寫</span></a></li></ol></div>
             
 
           </div>
