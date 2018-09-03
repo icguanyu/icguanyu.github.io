@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js30," />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="js30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day29 Countdown Timer">
+<meta property="og:url" content="http://icguanyu.github.io/js30/29/index.html">
+<meta property="og:site_name" content="阿姆的前端日記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://icguanyu.github.io/js30/29/1.PNG">
+<meta property="og:updated_time" content="2018-09-03T10:44:30.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day29 Countdown Timer">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/29/1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/js30/29/"/>
+
+
+
+
+
+  <title>Day29 Countdown Timer | 阿姆的前端日記</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿姆的前端日記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿姆的前端日記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Day29 Countdown Timer</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-03T15:57:21+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js30/" itemprop="url" rel="index">
+                    <span itemprop="name">js30</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js30/29/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/29/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/js30/29/" class="leancloud_visitors" data-flag-title="Day29 Countdown Timer">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,113
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/js30/29/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/29/">Demo</a></p>
+<h2 id="對象和事件"><a href="#對象和事件" class="headerlink" title="對象和事件"></a>對象和事件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> countdown; <span class="comment">//setInterval計時器</span></span><br><span class="line"><span class="keyword">const</span> timer_btn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.timer__button'</span>)</span><br><span class="line"><span class="keyword">const</span> timerDisplay = <span class="built_in">document</span>.querySelector(<span class="string">'.display__time-left'</span>);</span><br><span class="line"><span class="keyword">const</span> endTime = <span class="built_in">document</span>.querySelector(<span class="string">'.display__end-time'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line">timer_btn.forEach(<span class="function">(<span class="params">btn</span>)=&gt;</span>&#123;btn.addEventListener(<span class="string">'click'</span>,getTime)&#125;)</span><br></pre></td></tr></table></figure>
+<p>我們會有一個setInterval計時器，所以先建立一個<code>countdown</code>計時器名稱<br>以及我們的觸發按鈕、顯示倒數、顯示到期</p>
+<p>接下來我們會觸發一系列的涵式<br>取得時間–&gt;計算時間–&gt;顯示剩餘和到期時間</p>
+<h2 id="取得時間"><a href="#取得時間" class="headerlink" title="取得時間"></a>取得時間</h2><p>時間資料已經寫在data-time裡面，點下按鈕時將資料取出:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> getSec = <span class="built_in">parseInt</span>(<span class="keyword">this</span>.dataset.time)</span><br><span class="line">  startTimer(getSec)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>呼叫startTimer，並將取得的秒數傳入</p>
+<h2 id="計算時間"><a href="#計算時間" class="headerlink" title="計算時間"></a>計算時間</h2><p>我們需要操作三個時間：</p>
+<ul>
+<li>現在時間：Date.now()</li>
+<li>到期時間：現在時間 + 指定時間(我們傳入的指定seconds)</li>
+<li>剩下時間：到期時間 - 現在時間</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startTimer</span>(<span class="params">seconds</span>)</span>&#123;</span><br><span class="line">  clearInterval(countdown);<span class="comment">//關閉正在執行的倒數</span></span><br><span class="line">  <span class="keyword">const</span> now =  <span class="built_in">Date</span>.now() <span class="comment">//取得現在的timestamp</span></span><br><span class="line">  <span class="keyword">const</span> deadline = now + seconds*<span class="number">1000</span> <span class="comment">//截止時間</span></span><br><span class="line"></span><br><span class="line">  formatTime(seconds) <span class="comment">//馬上顯示起始時間</span></span><br><span class="line">  formatDeadline(deadline)<span class="comment">//馬上顯示結束時間</span></span><br><span class="line"></span><br><span class="line">  countdown = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> remain = <span class="built_in">Math</span>.round((deadline - <span class="built_in">Date</span>.now())/<span class="number">1000</span>)</span><br><span class="line">    <span class="comment">//小於0就停止計時</span></span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      clearInterval(countdown);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    formatTime(remain)<span class="comment">//傳remain值去做格式化並顯示</span></span><br><span class="line">  &#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>透過<code>setInterval</code><strong>每秒</strong>去取得剩餘時間</p>
+<blockquote>
+<p>注意：「剩下時間 = 到期時間 - 現在時間」，此時的<strong>現在時間</strong>我們不是去呼叫<code>now</code>，而是重新再取一次時間<code>Date.now()</code>因為時間是一直前進的。</p>
+</blockquote>
+<h2 id="顯示剩餘時間"><a href="#顯示剩餘時間" class="headerlink" title="顯示剩餘時間"></a>顯示剩餘時間</h2><p>我們在<code>setInterval</code>計算出剩餘時間後，再將直傳入<code>formatTime</code>來渲染到畫面上<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatTime</span>(<span class="params">remain</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> min = <span class="built_in">Math</span>.floor(remain/<span class="number">60</span>)</span><br><span class="line">  <span class="keyword">const</span> sec = remain%<span class="number">60</span></span><br><span class="line">  <span class="keyword">const</span> show = <span class="string">`<span class="subst">$&#123;min&#125;</span>:<span class="subst">$&#123;sec &lt; <span class="number">10</span> ? <span class="string">'0'</span> : <span class="string">''</span> &#125;</span><span class="subst">$&#123;sec&#125;</span>`</span></span><br><span class="line">  <span class="built_in">document</span>.title = show;</span><br><span class="line">  timerDisplay.textContent = show;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>當然我們要將timestamp轉換成時間格式，完成後傳到指定的元素即可。</p>
+<blockquote>
+<p>補充:<code>${sec &lt; 10 ? &#39;0&#39; : &#39;&#39; }</code>讓秒數有<strong>兩位數</strong></p>
+</blockquote>
+<h2 id="顯示到期時間"><a href="#顯示到期時間" class="headerlink" title="顯示到期時間"></a>顯示到期時間</h2><p>因為到期時間只需呼叫一次，所以不要放到<code>setInterval</code>中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startTimer</span>(<span class="params">seconds</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">  formatTime(seconds) <span class="comment">//馬上顯示起始時間</span></span><br><span class="line">  formatDeadline(deadline)<span class="comment">//馬上顯示結束時間</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatTime</span>(<span class="params">remain</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> min = <span class="built_in">Math</span>.floor(remain/<span class="number">60</span>)</span><br><span class="line">  <span class="keyword">const</span> sec = remain%<span class="number">60</span></span><br><span class="line">  <span class="keyword">const</span> show = <span class="string">`<span class="subst">$&#123;min&#125;</span>:<span class="subst">$&#123;sec &lt; <span class="number">10</span> ? <span class="string">'0'</span> : <span class="string">''</span> &#125;</span><span class="subst">$&#123;sec&#125;</span>`</span></span><br><span class="line">  <span class="built_in">document</span>.title = show;</span><br><span class="line">  timerDisplay.textContent = show;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在這邊我們立即呼叫了<code>formatTime</code>和<code>formatDeadline</code>兩個涵式，為的是希望畫面在觸發後，能先顯示資訊，而非等待<code>setInterval</code>一秒後才顯示。</p>
+</blockquote>
+<h2 id="客製時間"><a href="#客製時間" class="headerlink" title="客製時間"></a>客製時間</h2><p><code>customForm</code>為範例html表單的name，可以直接選取，並給予<code>submit</code>事件<br><code>this.minutes.value</code>意即form裡面input-name為minutes的值<br>取得值後帶入我們一開始的startTimer()涵式中，<br>要注意的是我們涵式是接收<strong>秒數</strong>來做計算`所以要轉成秒數<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.customForm.addEventListener(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault();<span class="comment">//關閉預設送出功能</span></span><br><span class="line">  <span class="keyword">const</span> customval = <span class="keyword">this</span>.minutes.value</span><br><span class="line">  startTimer(customval*<span class="number">60</span>)</span><br><span class="line">  <span class="keyword">this</span>.reset();<span class="comment">//重設表單</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="補充筆記：時間格式轉換"><a href="#補充筆記：時間格式轉換" class="headerlink" title="補充筆記：時間格式轉換"></a>補充筆記：時間格式轉換</h2><ol>
+<li><p>取得時間</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="comment">//不給值就是取出電腦當下時間,給timestamp值就是取出指定時間。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取得timestamp</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> now = <span class="built_in">Date</span>.now();</span><br><span class="line"><span class="comment">//OR</span></span><br><span class="line"><span class="comment">// const now = (new Date()).getTime()</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>網路範例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"Wed Jun 20 19:20:44 +0000 2012"</span>);</span><br><span class="line">d.getTime(); <span class="comment">//returns 1340220044000</span></span><br><span class="line"><span class="comment">//OR</span></span><br><span class="line"><span class="built_in">Date</span>.parse(<span class="string">"Wed Jun 20 19:20:44 +0000 2012"</span>); <span class="comment">//returns 1340220044000</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> countdown;</span><br><span class="line"><span class="keyword">const</span> timer_btn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.timer__button'</span>)</span><br><span class="line"><span class="keyword">const</span> timerDisplay = <span class="built_in">document</span>.querySelector(<span class="string">'.display__time-left'</span>);</span><br><span class="line"><span class="keyword">const</span> endTime = <span class="built_in">document</span>.querySelector(<span class="string">'.display__end-time'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startTimer</span>(<span class="params">seconds</span>)</span>&#123;</span><br><span class="line">  clearInterval(countdown);<span class="comment">//關閉正在執行的倒數</span></span><br><span class="line">  <span class="keyword">const</span> now =  <span class="built_in">Date</span>.now() <span class="comment">//取得現在的timestamp</span></span><br><span class="line">  <span class="keyword">const</span> deadline = now + seconds*<span class="number">1000</span> <span class="comment">//截止時間</span></span><br><span class="line"></span><br><span class="line">  formatTime(seconds) <span class="comment">//馬上顯示起始時間</span></span><br><span class="line">  formatDeadline(deadline)<span class="comment">//馬上顯示結束時間</span></span><br><span class="line"></span><br><span class="line">  countdown = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> remain = <span class="built_in">Math</span>.round((deadline - <span class="built_in">Date</span>.now())/<span class="number">1000</span>)</span><br><span class="line">    <span class="comment">//小於0就停止計時</span></span><br><span class="line">    <span class="keyword">if</span>(remain &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      clearInterval(countdown);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    formatTime(remain)<span class="comment">//傳remain值去做格式化並顯示</span></span><br><span class="line">  &#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatTime</span>(<span class="params">remain</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> min = <span class="built_in">Math</span>.floor(remain/<span class="number">60</span>)</span><br><span class="line">  <span class="keyword">const</span> sec = remain%<span class="number">60</span></span><br><span class="line">  <span class="keyword">const</span> show = <span class="string">`<span class="subst">$&#123;min&#125;</span>:<span class="subst">$&#123;sec &lt; <span class="number">10</span> ? <span class="string">'0'</span> : <span class="string">''</span> &#125;</span><span class="subst">$&#123;sec&#125;</span>`</span></span><br><span class="line">  <span class="built_in">document</span>.title = show;</span><br><span class="line">  timerDisplay.textContent = show;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDeadline</span>(<span class="params">deadline</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> end = <span class="keyword">new</span> <span class="built_in">Date</span>(deadline)<span class="comment">//直接把timestamp轉乘時間格式</span></span><br><span class="line">  <span class="keyword">const</span> hour = end.getHours()</span><br><span class="line">  <span class="keyword">const</span> min = end.getMinutes()</span><br><span class="line">  endTime.textContent = <span class="string">`到期時間：<span class="subst">$&#123;hour&#125;</span>:<span class="subst">$&#123;min&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> getSec = <span class="built_in">parseInt</span>(<span class="keyword">this</span>.dataset.time)</span><br><span class="line">  startTimer(getSec)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timer_btn.forEach(<span class="function">(<span class="params">btn</span>)=&gt;</span>&#123;btn.addEventListener(<span class="string">'click'</span>,getTime)&#125;)</span><br><span class="line"><span class="built_in">document</span>.customForm.addEventListener(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault();<span class="comment">//關閉預設送出功能</span></span><br><span class="line">  <span class="keyword">const</span> customval = <span class="keyword">this</span>.minutes.value</span><br><span class="line">  startTimer(customval*<span class="number">60</span>)</span><br><span class="line">  <span class="keyword">this</span>.reset();<span class="comment">//重設表單</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js30/" rel="tag"># js30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/28/" rel="next" title="Day28 Video Speed Bar">
+                <i class="fa fa-chevron-left"></i> Day28 Video Speed Bar
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/29/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="icguanyu" />
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#對象和事件"><span class="nav-number">1.</span> <span class="nav-text">對象和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取得時間"><span class="nav-number">2.</span> <span class="nav-text">取得時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#計算時間"><span class="nav-number">3.</span> <span class="nav-text">計算時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顯示剩餘時間"><span class="nav-number">4.</span> <span class="nav-text">顯示剩餘時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顯示到期時間"><span class="nav-number">5.</span> <span class="nav-text">顯示到期時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客製時間"><span class="nav-number">6.</span> <span class="nav-text">客製時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充筆記：時間格式轉換"><span class="nav-number">7.</span> <span class="nav-text">補充筆記：時間格式轉換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整程式碼"><span class="nav-number">8.</span> <span class="nav-text">完整程式碼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

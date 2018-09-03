@@ -123,20 +123,18 @@
 
 
 
-<meta name="description" content="Demo">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day7 Array Cardio (2)">
-<meta property="og:url" content="http://icguanyu.github.io/js30/07/index.html">
+<meta property="og:title" content="Day27 Click and Drag">
+<meta property="og:url" content="http://icguanyu.github.io/js30/27/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
-<meta property="og:description" content="Demo">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/07/1.PNG">
-<meta property="og:updated_time" content="2018-08-13T04:59:28.707Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/27/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/27/2.PNG">
+<meta property="og:updated_time" content="2018-09-03T08:51:28.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day7 Array Cardio (2)">
-<meta name="twitter:description" content="Demo">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/07/1.PNG">
+<meta name="twitter:title" content="Day27 Click and Drag">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/27/1.PNG">
 
 
 
@@ -166,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/07/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/27/"/>
 
 
 
 
 
-  <title>Day7 Array Cardio (2) | 阿姆的前端日記</title>
+  <title>Day27 Click and Drag | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/07/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/27/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day7 Array Cardio (2)</h1>
+          <h1 class="post-title" itemprop="name headline">Day27 Click and Drag</h1>
         
 
         <div class="post-meta">
@@ -365,8 +363,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-13T12:14:56+08:00">
-                2018-08-13
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-03T15:57:09+08:00">
+                2018-09-03
               </time>
             
 
@@ -406,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/07/" itemprop="commentCount">0</span> comments
+                <a href="/js30/27/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/27/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +413,7 @@
 
           
           
-             <span id="/js30/07/" class="leancloud_visitors" data-flag-title="Day7 Array Cardio (2)">
+             <span id="/js30/27/" class="leancloud_visitors" data-flag-title="Day27 Click and Drag">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +438,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  605
+                  571
                 </span>
               
 
@@ -465,50 +463,25 @@
       
 
       
-        <p><a href="https://icguanyu.github.io/Js30/07/">Demo</a><br><a id="more"></a><br>這周也是針對陣列的操作做練習，所以沒有預覽圖！<br>主要看程式碼和console.log</p>
-<p>這次會用到的陣列的操作方式有：</p>
-<ul>
-<li>Array.prototype.some() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
+        <img src="/js30/27/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/27/">Demo</a><br>一般來說在桌機上要移動畫面不是拖曳卷軸就是透過滾輪<br>這次要練習的是透過<strong>滑鼠</strong>來拖曳畫面的效果，主要練習取得位置和計算座標</p>
+<h2 id="對象和變數"><a href="#對象和變數" class="headerlink" title="對象和變數"></a>對象和變數</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="built_in">document</span>.querySelector(<span class="string">'.items'</span>)</span><br><span class="line"><span class="keyword">let</span> isdowm = <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> startX; <span class="comment">//現在滑鼠在整個slide的哪個位置</span></span><br><span class="line"><span class="keyword">let</span> scrollnow; <span class="comment">//卷軸現在位置</span></span><br></pre></td></tr></table></figure>
+<p>在這個範例中我們需要判斷<strong>滑鼠是否按下</strong>，<br>所以我們定義一個變數<code>isdowm = false</code>按下後變成<code>ture</code></p>
+<p>另外我們要有<strong>滑鼠所在的X位置</strong>和<strong>卷軸位置</strong></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>滑鼠<strong>按下</strong>後會套用淡化與放大的效果<br>滑鼠按下並<strong>移動</strong>時要拖曳<br>滑鼠<strong>放開</strong>與<strong>離開</strong>目標時要取消拖曳,取消效果</p>
+<p>所以有四個事件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">items.addEventListener(<span class="string">'mousedown'</span>,()=&gt;&#123;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line">items.addEventListener(<span class="string">'mouseup'</span>,()=&gt;&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">items.addEventListener(<span class="string">'mouseleave'</span>,()=&gt;&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">items.addEventListener(<span class="string">'mousemove'</span>,()=&gt;&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="mousedown"><a href="#mousedown" class="headerlink" title="mousedown"></a>mousedown</h2><p>滑鼠按下我們要套用一個已經寫好的<code>.avtice</code>樣式，我們把套用樣式的涵式獨立出來<br>去判斷是否按下才套用樣式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">active</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  isdowm ? items.classList.add(<span class="string">'active'</span>) : items.classList.remove(<span class="string">'active'</span>)</span><br><span class="line">&#125;</span><br><span class="line">items.addEventListener(<span class="string">'mousedown'</span>,(e)=&gt;&#123;</span><br><span class="line">  isdowm = <span class="literal">true</span></span><br><span class="line">  active()</span><br><span class="line">  scrollnow = items.scrollLeft</span><br><span class="line">  startX = e.pageX <span class="comment">//先取得起點位置</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>為什麼要取得現在位置?因為我們待會需要計算滑鼠移動了多少距離<br><img src="2.PNG" alt=""></p>
+<h2 id="mosuedown和mouseleave"><a href="#mosuedown和mouseleave" class="headerlink" title="mosuedown和mouseleave"></a>mosuedown和mouseleave</h2><p>我們先處理簡單的<code>mosuedown</code>和<code>mouseleave</code><br>滑鼠移開後要讓<code>isdowm</code>變成<code>false</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">items.addEventListener(<span class="string">'mouseup'</span>,()=&gt;&#123;</span><br><span class="line">  isdowm = <span class="literal">false</span></span><br><span class="line">  active()</span><br><span class="line">&#125;)</span><br><span class="line">items.addEventListener(<span class="string">'mouseleave'</span>,()=&gt;&#123;</span><br><span class="line">  isdowm = <span class="literal">false</span></span><br><span class="line">  active()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="重點-mousemove"><a href="#重點-mousemove" class="headerlink" title="重點:mousemove"></a>重點:mousemove</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">items.addEventListener(<span class="string">'mousemove'</span>,(e)=&gt;&#123;</span><br><span class="line">  <span class="keyword">if</span>(!isdowm) <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">let</span> moveafter = e.pageX</span><br><span class="line">  <span class="keyword">let</span> move = moveafter - startX <span class="comment">//實際要移動的量</span></span><br><span class="line">  items.scrollLeft = scrollnow - move</span><br><span class="line">  <span class="comment">//滑鼠移動後的位置-剛開始的位置(startX)= 卷軸移動的距離</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>一開始我們就要判斷滑鼠是否按下<code>if(!isdowm) return</code>，否則就結束<br>mousemove是不斷觸發的，所以我們的moveafter會不斷地改變<br>我們透過　<strong>移動後的距離 - 開始的距離</strong> 取得我們卷軸要移動的值</p>
 <blockquote>
-<p>白話:陣列中至少有<strong>一個</strong>符合條件就回傳true;沒有就false</p>
+<p>items.scrollLeft = scrollnow - move 究竟是 <strong>+move</strong> 還是 *<em>-move</em> 就看需求效果決定囉</p>
 </blockquote>
-<ul>
-<li>Array.prototype.every() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:陣列中是不是<strong>每個</strong>都符合條件,是就回true;沒有就false</p>
-</blockquote>
-<ul>
-<li>Array.prototype.find() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">詳細解說</a> </li>
-</ul>
-<blockquote>
-<p>白話:去陣列中找到<strong>第一個</strong>滿足條件的值就回這筆<strong>值</strong>;都找不到就undefined。</p>
-</blockquote>
-<ul>
-<li>Array.prototype.findIndex() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:承上,找到那個值是在陣列中的第幾個(序列)。如果沒有符合的對象，將回傳 -1 。</p>
-</blockquote>
-<ul>
-<li>Array.(index,N) <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:從陣列中刪除第index到N個之後的這些值。所以<code>(index,N)</code>就是把index這位置刪掉。如果沒輸入N，從index開始之後的都會被刪掉。</p>
-</blockquote>
-<p><a href="https://goo.gl/sCDcEr" target="_blank" rel="noopener">更多操作方法介紹</a></p>
-<h2 id="進入主題"><a href="#進入主題" class="headerlink" title="進入主題"></a>進入主題</h2><p>我們有兩筆資料:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Wes'</span>, <span class="attr">year</span>: <span class="number">1988</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kait'</span>, <span class="attr">year</span>: <span class="number">1986</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Irv'</span>, <span class="attr">year</span>: <span class="number">1970</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Lux'</span>, <span class="attr">year</span>: <span class="number">2015</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comments = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Love this!'</span>, <span class="attr">id</span>: <span class="number">523423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Super good'</span>, <span class="attr">id</span>: <span class="number">823423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'You are the best'</span>, <span class="attr">id</span>: <span class="number">2039842</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Ramen is my fav food ever'</span>, <span class="attr">id</span>: <span class="number">123523</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Nice Nice Nice!'</span>, <span class="attr">id</span>: <span class="number">542328</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
-<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><p>is at least one person 19 or older?<br>判斷陣列中是否有<strong>任一</strong>年齡大於19的人。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.some(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; true</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>記得箭頭涵式如果<strong>有</strong>大括號<code>{}</code>要補上return</p>
-</blockquote>
-<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>is everyone 19 or older?<br>判斷陣列中是否<strong>每個人</strong>的年齡都大於19<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.every(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; false</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>find the comment with the ID of 823423<br>找出符合ID為823423的物件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.find(<span class="function"><span class="params">comment</span>=&gt;</span>comment.id === <span class="number">823423</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; &#123;text: "Super good", id: 823423&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><p>Find the comment with this ID<br>找出符合ID為823423的物件元素在陣列中的Index<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// console.log(result) ==&gt; 1</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h2><p>delete the comment with the ID of 823423<br>找出符合ID為823423的物件元素在陣列中的Index並刪除它<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line">comments.splice(result,<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p>刪除後我們再<code>console.log(comments)</code>會發現823423這筆已經被我們移除<br><img src="1.PNG" alt=""></p>
-<p>這次的陣列操作方法反而比<a href="https://icguanyu.github.io/js30/04/">day4</a>的簡單多了，day4真的滿重要的可以再回去複習一下。</p>
+<p>再套用給<code>items.scrollLeft</code>就大功告成囉！</p>
+<h2 id="補充筆記"><a href="#補充筆記" class="headerlink" title="補充筆記"></a>補充筆記</h2><p>在這邊的透視效果主要來自：<code>perspective</code>搭配transform等</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective" target="_blank" rel="noopener">詳細perspective介紹</a></p>
 
       
     </div>
@@ -539,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/06/" rel="next" title="Day6 Type Ahead">
-                <i class="fa fa-chevron-left"></i> Day6 Type Ahead
+              <a href="/js30/26/" rel="next" title="Day26 Follow Along Nav">
+                <i class="fa fa-chevron-left"></i> Day26 Follow Along Nav
               </a>
             
           </div>
@@ -549,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/js30/08/" rel="prev" title="Day8 HTML5 Canvas">
-                Day8 HTML5 Canvas <i class="fa fa-chevron-right"></i>
+              <a href="/js30/28/" rel="prev" title="Day28 Video Speed Bar">
+                Day28 Video Speed Bar <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -583,7 +556,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/07/"
+           data-href="http://icguanyu.github.io/js30/27/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -727,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#進入主題"><span class="nav-number">1.</span> <span class="nav-text">進入主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一題"><span class="nav-number">2.</span> <span class="nav-text">第一題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二題"><span class="nav-number">3.</span> <span class="nav-text">第二題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">4.</span> <span class="nav-text">第三題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四題"><span class="nav-number">5.</span> <span class="nav-text">第四題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題"><span class="nav-number">6.</span> <span class="nav-text">第五題</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#對象和變數"><span class="nav-number">1.</span> <span class="nav-text">對象和變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">2.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mousedown"><span class="nav-number">3.</span> <span class="nav-text">mousedown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosuedown和mouseleave"><span class="nav-number">4.</span> <span class="nav-text">mosuedown和mouseleave</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重點-mousemove"><span class="nav-number">5.</span> <span class="nav-text">重點:mousemove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充筆記"><span class="nav-number">6.</span> <span class="nav-text">補充筆記</span></a></li></ol></div>
             
 
           </div>

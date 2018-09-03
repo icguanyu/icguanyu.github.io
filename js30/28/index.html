@@ -123,20 +123,18 @@
 
 
 
-<meta name="description" content="Demo">
 <meta name="keywords" content="js30">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day7 Array Cardio (2)">
-<meta property="og:url" content="http://icguanyu.github.io/js30/07/index.html">
+<meta property="og:title" content="Day28 Video Speed Bar">
+<meta property="og:url" content="http://icguanyu.github.io/js30/28/index.html">
 <meta property="og:site_name" content="阿姆的前端日記">
-<meta property="og:description" content="Demo">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/07/1.PNG">
-<meta property="og:updated_time" content="2018-08-13T04:59:28.707Z">
+<meta property="og:image" content="http://icguanyu.github.io/js30/28/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/28/2.PNG">
+<meta property="og:updated_time" content="2018-09-03T09:25:06.041Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day7 Array Cardio (2)">
-<meta name="twitter:description" content="Demo">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/07/1.PNG">
+<meta name="twitter:title" content="Day28 Video Speed Bar">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/28/1.PNG">
 
 
 
@@ -166,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/07/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/js30/28/"/>
 
 
 
 
 
-  <title>Day7 Array Cardio (2) | 阿姆的前端日記</title>
+  <title>Day28 Video Speed Bar | 阿姆的前端日記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/07/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/28/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day7 Array Cardio (2)</h1>
+          <h1 class="post-title" itemprop="name headline">Day28 Video Speed Bar</h1>
         
 
         <div class="post-meta">
@@ -365,8 +363,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-13T12:14:56+08:00">
-                2018-08-13
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-03T15:57:17+08:00">
+                2018-09-03
               </time>
             
 
@@ -406,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/07/" itemprop="commentCount">0</span> comments
+                <a href="/js30/28/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/28/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +413,7 @@
 
           
           
-             <span id="/js30/07/" class="leancloud_visitors" data-flag-title="Day7 Array Cardio (2)">
+             <span id="/js30/28/" class="leancloud_visitors" data-flag-title="Day28 Video Speed Bar">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +438,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  605
+                  321
                 </span>
               
 
@@ -465,51 +463,16 @@
       
 
       
-        <p><a href="https://icguanyu.github.io/Js30/07/">Demo</a><br><a id="more"></a><br>這周也是針對陣列的操作做練習，所以沒有預覽圖！<br>主要看程式碼和console.log</p>
-<p>這次會用到的陣列的操作方式有：</p>
-<ul>
-<li>Array.prototype.some() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:陣列中至少有<strong>一個</strong>符合條件就回傳true;沒有就false</p>
-</blockquote>
-<ul>
-<li>Array.prototype.every() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:陣列中是不是<strong>每個</strong>都符合條件,是就回true;沒有就false</p>
-</blockquote>
-<ul>
-<li>Array.prototype.find() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">詳細解說</a> </li>
-</ul>
-<blockquote>
-<p>白話:去陣列中找到<strong>第一個</strong>滿足條件的值就回這筆<strong>值</strong>;都找不到就undefined。</p>
-</blockquote>
-<ul>
-<li>Array.prototype.findIndex() <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:承上,找到那個值是在陣列中的第幾個(序列)。如果沒有符合的對象，將回傳 -1 。</p>
-</blockquote>
-<ul>
-<li>Array.(index,N) <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">詳細解說</a></li>
-</ul>
-<blockquote>
-<p>白話:從陣列中刪除第index到N個之後的這些值。所以<code>(index,N)</code>就是把index這位置刪掉。如果沒輸入N，從index開始之後的都會被刪掉。</p>
-</blockquote>
-<p><a href="https://goo.gl/sCDcEr" target="_blank" rel="noopener">更多操作方法介紹</a></p>
-<h2 id="進入主題"><a href="#進入主題" class="headerlink" title="進入主題"></a>進入主題</h2><p>我們有兩筆資料:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Wes'</span>, <span class="attr">year</span>: <span class="number">1988</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kait'</span>, <span class="attr">year</span>: <span class="number">1986</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Irv'</span>, <span class="attr">year</span>: <span class="number">1970</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Lux'</span>, <span class="attr">year</span>: <span class="number">2015</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comments = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Love this!'</span>, <span class="attr">id</span>: <span class="number">523423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Super good'</span>, <span class="attr">id</span>: <span class="number">823423</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'You are the best'</span>, <span class="attr">id</span>: <span class="number">2039842</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Ramen is my fav food ever'</span>, <span class="attr">id</span>: <span class="number">123523</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'Nice Nice Nice!'</span>, <span class="attr">id</span>: <span class="number">542328</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
-<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><p>is at least one person 19 or older?<br>判斷陣列中是否有<strong>任一</strong>年齡大於19的人。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.some(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; true</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>記得箭頭涵式如果<strong>有</strong>大括號<code>{}</code>要補上return</p>
-</blockquote>
-<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><p>is everyone 19 or older?<br>判斷陣列中是否<strong>每個人</strong>的年齡都大於19<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = people.every(<span class="function"><span class="params">who</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - who.year &gt;= <span class="number">19</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; false</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><p>find the comment with the ID of 823423<br>找出符合ID為823423的物件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.find(<span class="function"><span class="params">comment</span>=&gt;</span>comment.id === <span class="number">823423</span>)</span><br><span class="line"><span class="comment">// console.log(result)  ==&gt; &#123;text: "Super good", id: 823423&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><p>Find the comment with this ID<br>找出符合ID為823423的物件元素在陣列中的Index<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// console.log(result) ==&gt; 1</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h2><p>delete the comment with the ID of 823423<br>找出符合ID為823423的物件元素在陣列中的Index並刪除它<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = comments.findIndex(<span class="function"><span class="params">comment</span>=&gt;</span></span><br><span class="line">  comment.id === <span class="number">823423</span></span><br><span class="line">)</span><br><span class="line">comments.splice(result,<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p>刪除後我們再<code>console.log(comments)</code>會發現823423這筆已經被我們移除<br><img src="1.PNG" alt=""></p>
-<p>這次的陣列操作方法反而比<a href="https://icguanyu.github.io/js30/04/">day4</a>的簡單多了，day4真的滿重要的可以再回去複習一下。</p>
-
+        <img src="/js30/28/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/28/">Demo</a></p>
+<p>我們在<a href="https://icguanyu.github.io/Js30/11/">day11</a>有練習過客製化的影音播放器，<br>上次我們是用內建的<code>&lt;input type=range&gt;</code>控制bar(範例已修改好樣式)<br>這次則是用自製的range bar來操作</p>
+<h2 id="對象和事件"><a href="#對象和事件" class="headerlink" title="對象和事件"></a>對象和事件</h2><p>所有事件圍都繞在對象<code>.speed</code>的<code>mousemove</code>事件上<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speed = <span class="built_in">document</span>.querySelector(<span class="string">'.speed'</span>)</span><br><span class="line"><span class="keyword">const</span> speed_bar = <span class="built_in">document</span>.querySelector(<span class="string">'.speed-bar'</span>)</span><br><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">'.flex'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line">speed.addEventListener(<span class="string">'mousemove'</span>,handler)</span><br></pre></td></tr></table></figure></p>
+<h2 id="取得百分比"><a href="#取得百分比" class="headerlink" title="取得百分比"></a>取得百分比</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> mouseY = e.pageY - <span class="keyword">this</span>.offsetTop <span class="comment">// 滑鼠在bar裡面的高度</span></span><br><span class="line">  <span class="keyword">let</span> speed_height = <span class="keyword">this</span>.offsetHeight <span class="comment">// bar的高</span></span><br><span class="line">  <span class="keyword">let</span> bar_height = (mouseY/speed_height)*<span class="number">100</span> +<span class="string">'%'</span></span><br><span class="line">  <span class="keyword">let</span> textval = ((mouseY/speed_height*<span class="number">4</span>)+min).toFixed(<span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="2.PNG" alt=""><br>我們把值轉換成我們要的範圍後<br>透過<code>.toFixed(N)</code>可以將小數四捨五入取至第N位</p>
+<h2 id="渲染到畫面上"><a href="#渲染到畫面上" class="headerlink" title="渲染到畫面上"></a>渲染到畫面上</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">speed_bar.style.height = bar_height</span><br><span class="line">speed_bar.textContent = textval + <span class="string">'x'</span></span><br><span class="line">video.playbackRate = textval</span><br></pre></td></tr></table></figure>
+<p>依序把值傳給指定元素即可</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speed = <span class="built_in">document</span>.querySelector(<span class="string">'.speed'</span>)</span><br><span class="line"><span class="keyword">const</span> speed_bar = <span class="built_in">document</span>.querySelector(<span class="string">'.speed-bar'</span>)</span><br><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">'.flex'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> mouseY = e.pageY - <span class="keyword">this</span>.offsetTop <span class="comment">// 滑鼠在bar裡面的高度</span></span><br><span class="line">  <span class="keyword">let</span> speed_height = <span class="keyword">this</span>.offsetHeight <span class="comment">// bar的高</span></span><br><span class="line">  <span class="keyword">let</span> min = <span class="number">0.5</span>;<span class="comment">//可加可不加,設定最慢播放速度</span></span><br><span class="line">  <span class="keyword">let</span> bar_height = (mouseY/speed_height)*<span class="number">100</span> +<span class="string">'%'</span></span><br><span class="line">  <span class="keyword">let</span> textval = ((mouseY/speed_height*<span class="number">4</span>)+min).toFixed(<span class="number">2</span>)</span><br><span class="line">  speed_bar.style.height = bar_height</span><br><span class="line">  speed_bar.textContent = textval + <span class="string">'x'</span></span><br><span class="line">  video.playbackRate = textval</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">speed.addEventListener(<span class="string">'mousemove'</span>,handler)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -539,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/06/" rel="next" title="Day6 Type Ahead">
-                <i class="fa fa-chevron-left"></i> Day6 Type Ahead
+              <a href="/js30/27/" rel="next" title="Day27 Click and Drag">
+                <i class="fa fa-chevron-left"></i> Day27 Click and Drag
               </a>
             
           </div>
@@ -549,8 +512,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/js30/08/" rel="prev" title="Day8 HTML5 Canvas">
-                Day8 HTML5 Canvas <i class="fa fa-chevron-right"></i>
+              <a href="/js30/29/" rel="prev" title="Day29 Countdown Timer">
+                Day29 Countdown Timer <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -583,7 +546,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/07/"
+           data-href="http://icguanyu.github.io/js30/28/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -727,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#進入主題"><span class="nav-number">1.</span> <span class="nav-text">進入主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一題"><span class="nav-number">2.</span> <span class="nav-text">第一題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二題"><span class="nav-number">3.</span> <span class="nav-text">第二題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三題"><span class="nav-number">4.</span> <span class="nav-text">第三題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四題"><span class="nav-number">5.</span> <span class="nav-text">第四題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五題"><span class="nav-number">6.</span> <span class="nav-text">第五題</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#對象和事件"><span class="nav-number">1.</span> <span class="nav-text">對象和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取得百分比"><span class="nav-number">2.</span> <span class="nav-text">取得百分比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染到畫面上"><span class="nav-number">3.</span> <span class="nav-text">渲染到畫面上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">4.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
             
 
           </div>
