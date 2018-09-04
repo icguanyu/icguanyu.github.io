@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js30," />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="js30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day30 Whack A Mole!">
+<meta property="og:url" content="http://icguanyu.github.io/js30/30/index.html">
+<meta property="og:site_name" content="阿姆的前端日記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://icguanyu.github.io/js30/30/1.PNG">
+<meta property="og:updated_time" content="2018-09-04T06:32:12.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day30 Whack A Mole!">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/30/1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/js30/30/"/>
+
+
+
+
+
+  <title>Day30 Whack A Mole! | 阿姆的前端日記</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿姆的前端日記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿姆的前端日記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Day30 Whack A Mole!</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-04T13:45:53+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js30/" itemprop="url" rel="index">
+                    <span itemprop="name">js30</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js30/30/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/30/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/js30/30/" class="leancloud_visitors" data-flag-title="Day30 Whack A Mole!">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,491
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/js30/30/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/30/">Demo</a></p>
+<p>終於來到最後一天<br>透過前面29累積下來的經驗來做一個打地鼠吧</p>
+<h2 id="HTML-CSS結構"><a href="#HTML-CSS結構" class="headerlink" title="HTML/CSS結構"></a>HTML/CSS結構</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hole hole1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mole"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我們有地鼠的洞<code>hole</code>和地鼠<code>mole</code><br>而CSS的部分<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hole</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">0</span> <span class="number">33.33%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mole</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">'gophers.png'</span>) bottom center no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>:<span class="number">80%</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">transition</span>:all <span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hole</span><span class="selector-class">.up</span> <span class="selector-class">.mole</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">0%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>原始範例透過<code>top:100%</code>以及父層的<code>overflow:hidden</code>讓地鼠隱藏<br>當<code>.hole</code>加了<code>.up</code>之後，<code>.mole</code>就會跑上來</p>
+<h2 id="哪些事情要做"><a href="#哪些事情要做" class="headerlink" title="哪些事情要做"></a>哪些事情要做</h2><p>對象：</p>
+<ol>
+<li>按鈕(<code>&lt;button onClick=&quot;startGame()&quot;&gt;Start!&lt;/button&gt;</code>)</li>
+<li>每隻地鼠做事件偵聽<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moles.forEach(<span class="function">(<span class="params">mole</span>) =&gt;</span> mole.addEventListener(<span class="string">'click'</span>, hit))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>涵式：</p>
+<ol>
+<li>按下按鈕時: startGame()</li>
+<li>哪個洞: getHole()</li>
+<li>多久要回去 : getTime()</li>
+<li>跑出來/回去 : show()</li>
+<li>打擊: hit()</li>
+</ol>
+<h2 id="開始遊戲"><a href="#開始遊戲" class="headerlink" title="開始遊戲"></a>開始遊戲</h2><p>既然有開始遊戲就有結束的時候，所以我們定義<code>timpUp</code>判斷時間是否結束<br>還有分數<code>score</code>一開始為0分；而地鼠的出現有先後之分，我們為了避免地鼠同地點重複出現我們要去判斷 <strong>現在這隻</strong> 和 <strong>剛剛那隻</strong> 有沒有一樣所以定義一個<code>last</code>待會會用到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> timpUp = <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> score = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> last</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startGame</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  timeUp = <span class="literal">false</span></span><br><span class="line">  score = <span class="number">0</span></span><br><span class="line">  scoreBoard.textContent = score</span><br><span class="line">  show()</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    timeUp = <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="number">10000</span>) <span class="comment">//遊戲時間10秒</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>開始遊戲，將timpUp設為<code>false</code>，這邊我們定義<code>false</code>代表時間還沒到<br>再透過<code>setTimeout</code>設定10秒後將timpUp設為<code>true</code>代表時間到。</p>
+<h2 id="地鼠出現"><a href="#地鼠出現" class="headerlink" title="地鼠出現"></a>地鼠出現</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> time = getTime()</span><br><span class="line">  <span class="keyword">const</span> hole = getHole()</span><br><span class="line">  hole.classList.add(<span class="string">'up'</span>)</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    hole.classList.remove(<span class="string">'up'</span>)</span><br><span class="line">    <span class="keyword">if</span> (!timeUp) show();<span class="comment">//時間還沒到繼續做</span></span><br><span class="line">  &#125;, time);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>出現與消失的方法簡單透過<code>classList.add</code>和<code>classList.remove</code>即可<br>這邊的關鍵在於<strong>哪個位置</strong>的地鼠，和<strong>出現多久</strong>(多久後要remove class)，所以我們交給 <code>getTime()</code>和<code>getHole()</code> 幫我們取得隨機位置和時間。</p>
+<h2 id="哪個位置的地鼠"><a href="#哪個位置的地鼠" class="headerlink" title="哪個位置的地鼠"></a>哪個位置的地鼠</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHole</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">5</span>) <span class="comment">//四捨五入</span></span><br><span class="line">  <span class="keyword">const</span> hole = holes[now]</span><br><span class="line">  <span class="keyword">if</span> (hole === last) &#123;<span class="comment">// 如果下一個等於上一個(重複)就再取一次</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'重複'</span>);</span><br><span class="line">    <span class="keyword">return</span> getHole()</span><br><span class="line">  &#125;</span><br><span class="line">  last = hole</span><br><span class="line">  <span class="built_in">console</span>.log(now)</span><br><span class="line">  <span class="keyword">return</span> hole</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我們有6個洞，序列為<strong>0~5</strong>，所以我們取隨機數0~5<br>我們就取到這個隨機位置了<code>const hole = holes[now]</code></p>
+<p>回傳給show()函數前，我們做個小判斷，避免同一位置出現地鼠，<br>所以<code>last</code>就派上用場了，讓last暫時等於現在取得的這個值，<br>而下次執行時就會判斷是否重複，如果重複就再做一次<code>getHole()</code>，依此類推。</p>
+<h2 id="出現多久"><a href="#出現多久" class="headerlink" title="出現多久"></a>出現多久</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>) </span>&#123;<span class="comment">//自訂時間:0.5s(500)~1s(1000)間</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">1000</span> + <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以自訂要出現多久，這邊我設定為0.5~1秒之間<br>這邊完成後就可以按下開始看到地鼠隨機跑出來了~</p>
+<h2 id="打擊"><a href="#打擊" class="headerlink" title="打擊"></a>打擊</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hit</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  score++</span><br><span class="line">  scoreBoard.textContent = score;</span><br><span class="line">  <span class="keyword">this</span>.parentNode.classList.remove(<span class="string">'up'</span>)<span class="comment">//地鼠的上層,控制地鼠的DOM</span></span><br><span class="line">  <span class="comment">//console.log(this.parentNode)</span></span><br><span class="line">  <span class="keyword">this</span>.style.pointerEvents = <span class="string">'none'</span><span class="comment">//暫時讓地鼠不可再被點擊</span></span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="comment">//0.5秒後才可再被點擊</span></span><br><span class="line">    <span class="keyword">this</span>.style.pointerEvents = <span class="string">'visible'</span></span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每打擊一次score就+1並顯示出來<br>而這邊有個小關鍵是，由於我們的this是地鼠，<br>打擊後要remove class的並不是地鼠(this)，<br>而是他的父層<code>this.parentNode.classList.remove(&#39;up&#39;)</code></p>
+<p>除此之外，在這邊我為了防止一隻地鼠在短時間內可能被重複點擊<br>我們可以在點擊後立刻加上css屬性<code>pointer-events:&#39;none&#39;</code>，<br>並在0.5秒後再讓這隻地鼠屬性改回<code>pointer-events:&#39;visible&#39;</code></p>
+<h2 id="自己加上槌子"><a href="#自己加上槌子" class="headerlink" title="自己加上槌子"></a>自己加上槌子</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"game"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hammer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hammer</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'hammer.png'</span>);</span><br><span class="line">  <span class="attribute">background-size</span>: contain;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">160px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">160px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我們把槌子放在<code>&lt;div class=&quot;game&quot;&gt;&lt;/div&gt;</code>裡面<br>(不放在外面(<code>&lt;body&gt;</code>)是怕擋到其他元素)並設定css</p>
+<p>接著我們將事件設定在game上面<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> game = <span class="built_in">document</span>.querySelector(<span class="string">'.game'</span>)</span><br><span class="line"><span class="keyword">const</span> hammer = <span class="built_in">document</span>.querySelector(<span class="string">'.hammer'</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> mousePos = &#123;<span class="attr">x</span>: e.pageX,<span class="attr">y</span>: e.pageY&#125;</span><br><span class="line">  hammer.style.top = mousePos.y<span class="number">-120</span> + <span class="string">'px'</span></span><br><span class="line">  hammer.style.left = mousePos.x<span class="number">-80</span> + <span class="string">'px'</span></span><br><span class="line">&#125;</span><br><span class="line">game.addEventListener(<span class="string">'mousemove'</span>, handler)</span><br></pre></td></tr></table></figure></p>
+<p>我們取得滑鼠位置後再賦予到槌子身上(再依需求修飾滑鼠位置的值)<br>最後在簡單加上槌子轉動的樣式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mousedown'</span>, () =&gt; &#123;</span><br><span class="line">  hammer.style.transform = <span class="string">'rotate(-45deg)'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, () =&gt; &#123;</span><br><span class="line">  hammer.style.transform = <span class="string">'rotate(0deg)'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>就完成槌子的部分囉！</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> holes = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.hole'</span>);</span><br><span class="line"><span class="keyword">const</span> scoreBoard = <span class="built_in">document</span>.querySelector(<span class="string">'.score'</span>);</span><br><span class="line"><span class="keyword">const</span> moles = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.mole'</span>);</span><br><span class="line"><span class="keyword">const</span> game = <span class="built_in">document</span>.querySelector(<span class="string">'.game'</span>)</span><br><span class="line"><span class="keyword">const</span> hammer = <span class="built_in">document</span>.querySelector(<span class="string">'.hammer'</span>)</span><br><span class="line"><span class="keyword">let</span> timpUp = <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> score = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> last;<span class="comment">//最後一個出現的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startGame</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  timeUp = <span class="literal">false</span></span><br><span class="line">  score = <span class="number">0</span></span><br><span class="line">  scoreBoard.textContent = score</span><br><span class="line">  show()</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    timeUp = <span class="literal">true</span></span><br><span class="line">  &#125;, <span class="number">10000</span>) <span class="comment">//遊戲時間10秒</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>) </span>&#123;<span class="comment">//自訂時間:0.5s(500)~1s(1000)間</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">1000</span> + <span class="number">500</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHole</span>(<span class="params"></span>) </span>&#123;<span class="comment">//0~5的洞</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">5</span>) <span class="comment">//四捨五入</span></span><br><span class="line">  <span class="keyword">const</span> hole = holes[now]</span><br><span class="line">  <span class="keyword">if</span> (hole === last) &#123;<span class="comment">// 如果下一個等於上一個(重複)就再取一次</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'重複'</span>);</span><br><span class="line">    <span class="keyword">return</span> getHole()</span><br><span class="line">  &#125;</span><br><span class="line">  last = hole</span><br><span class="line">  <span class="keyword">return</span> hole</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> time = getTime()</span><br><span class="line">  <span class="keyword">const</span> hole = getHole()</span><br><span class="line">  hole.classList.add(<span class="string">'up'</span>)</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    hole.classList.remove(<span class="string">'up'</span>)</span><br><span class="line">    <span class="keyword">if</span> (!timeUp) show();<span class="comment">//時間還沒到繼續做</span></span><br><span class="line">  &#125;, time);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hit</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  score++</span><br><span class="line">  scoreBoard.textContent = score;</span><br><span class="line">  <span class="keyword">this</span>.parentNode.classList.remove(<span class="string">'up'</span>)<span class="comment">//地鼠的上層,控制地鼠的DOM</span></span><br><span class="line">  <span class="keyword">this</span>.style.pointerEvents = <span class="string">'none'</span><span class="comment">//暫時讓地鼠不可再被點擊</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="comment">//0.5秒後才可再被點擊</span></span><br><span class="line">    <span class="keyword">this</span>.style.pointerEvents = <span class="string">'visible'</span></span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> mousePos = &#123;<span class="attr">x</span>: e.pageX,<span class="attr">y</span>: e.pageY&#125;</span><br><span class="line">  hammer.style.top = mousePos.y<span class="number">-120</span> + <span class="string">'px'</span></span><br><span class="line">  hammer.style.left = mousePos.x<span class="number">-80</span> + <span class="string">'px'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">moles.forEach(<span class="function">(<span class="params">mole</span>) =&gt;</span> mole.addEventListener(<span class="string">'click'</span>, hit))</span><br><span class="line">game.addEventListener(<span class="string">'mousemove'</span>, handler)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mousedown'</span>, () =&gt; &#123;</span><br><span class="line">  hammer.style.transform = <span class="string">'rotate(-45deg)'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, () =&gt; &#123;</span><br><span class="line">  hammer.style.transform = <span class="string">'rotate(0deg)'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js30/" rel="tag"># js30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/29/" rel="next" title="Day29 Countdown Timer">
+                <i class="fa fa-chevron-left"></i> Day29 Countdown Timer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/30/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="icguanyu" />
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-CSS結構"><span class="nav-number">1.</span> <span class="nav-text">HTML/CSS結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪些事情要做"><span class="nav-number">2.</span> <span class="nav-text">哪些事情要做</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始遊戲"><span class="nav-number">3.</span> <span class="nav-text">開始遊戲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地鼠出現"><span class="nav-number">4.</span> <span class="nav-text">地鼠出現</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪個位置的地鼠"><span class="nav-number">5.</span> <span class="nav-text">哪個位置的地鼠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出現多久"><span class="nav-number">6.</span> <span class="nav-text">出現多久</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打擊"><span class="nav-number">7.</span> <span class="nav-text">打擊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己加上槌子"><span class="nav-number">8.</span> <span class="nav-text">自己加上槌子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">9.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
