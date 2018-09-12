@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="js30," />
+  <meta name="keywords" content="筆記," />
 
 
 
@@ -123,20 +123,22 @@
 
 
 
-<meta name="keywords" content="js30">
+<meta name="description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
+<meta name="keywords" content="筆記">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day26 Follow Along Nav">
-<meta property="og:url" content="http://icguanyu.github.io/js30/26/index.html">
+<meta property="og:title" content="js&#x2F;jQ各種取寬高與位置">
+<meta property="og:url" content="http://icguanyu.github.io/getsize/index.html">
 <meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://icguanyu.github.io/js30/26/1.PNG">
-<meta property="og:image" content="http://icguanyu.github.io/js30/26/2.PNG">
-<meta property="og:image" content="http://icguanyu.github.io/js30/26/3.PNG">
-<meta property="og:image" content="http://icguanyu.github.io/js30/26/4.PNG">
-<meta property="og:updated_time" content="2018-09-03T08:14:41.056Z">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
+<meta property="og:image" content="http://icguanyu.github.io/getsize/0912.PNG">
+<meta property="og:updated_time" content="2018-09-12T06:35:40.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day26 Follow Along Nav">
-<meta name="twitter:image" content="http://icguanyu.github.io/js30/26/1.PNG">
+<meta name="twitter:title" content="js&#x2F;jQ各種取寬高與位置">
+<meta name="twitter:description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
+<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
 
 
 
@@ -166,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://icguanyu.github.io/js30/26/"/>
+  <link rel="canonical" href="http://icguanyu.github.io/getsize/"/>
 
 
 
 
 
-  <title>Day26 Follow Along Nav | 個人前端筆記</title>
+  <title>js/jQ各種取寬高與位置 | 個人前端筆記</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -336,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/26/">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/getsize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icguanyu">
@@ -353,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Day26 Follow Along Nav</h1>
+          <h1 class="post-title" itemprop="name headline">js/jQ各種取寬高與位置</h1>
         
 
         <div class="post-meta">
@@ -365,8 +367,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-01T13:23:21+08:00">
-                2018-09-01
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-12T11:41:23+08:00">
+                2018-09-12
               </time>
             
 
@@ -388,8 +390,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js30/" itemprop="url" rel="index">
-                    <span itemprop="name">js30</span>
+                  <a href="/categories/jq/" itemprop="url" rel="index">
+                    <span itemprop="name">jq</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jq/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -406,8 +419,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/js30/26/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/26/" itemprop="commentCount">0</span> comments
+                <a href="/getsize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/getsize/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -415,7 +428,7 @@
 
           
           
-             <span id="/js30/26/" class="leancloud_visitors" data-flag-title="Day26 Follow Along Nav">
+             <span id="/getsize/" class="leancloud_visitors" data-flag-title="js/jQ各種取寬高與位置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +453,7 @@
                 </span>
                 
                 <span title="字數統計">
-                  1,037
+                  1,124
                 </span>
               
 
@@ -465,59 +478,108 @@
       
 
       
-        <img src="/js30/26/1.PNG" title="Demo">
-<a id="more"></a>
-<p><a href="https://icguanyu.github.io/Js30/26/">Demo</a></p>
-<p>這次的範例有一小部份效果看似跟<a href="https://icguanyu.github.io/js30/22/">Day22</a>的範例一樣<br>但其中藏了滿多<strong>值得留意</strong>的重點和技巧！</p>
-<p>看似無聊但很多重點的單元！</p>
-<h2 id="觀察-HTML-和-CSS-結構"><a href="#觀察-HTML-和-CSS-結構" class="headerlink" title="觀察 HTML 和 CSS 結構"></a>觀察 HTML 和 CSS 結構</h2><p><img src="2.PNG" alt=""></p>
-<p>在範例中，每個 li 裡所包含的資料都已經存在<br>而<strong>資料要包在 li 裡</strong>也關係到了我們觸發事件使用的<code>mouseenter</code>和<code>mouseleave</code></p>
+        <p>有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等<br>所以整理了各種取寬高位置的方法<br><a id="more"></a></p>
+<h1 id="原生js"><a href="#原生js" class="headerlink" title="原生js"></a>原生js</h1><p>以下是原生js用法</p>
+<h2 id="元素的寬高"><a href="#元素的寬高" class="headerlink" title="元素的寬高"></a>元素的寬高</h2><p><img src="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" alt=""></p>
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><ul>
+<li>clientWidth 取得元素的寬度（含padding 不含 border）較少用</li>
+<li>clientHeight 取得元素的高度（含padding 不含 border）較少用</li>
+<li>offsetWidth 取得元素的寬度（包含 padding 和 border）</li>
+<li>offsetHeight 取得元素的高度（包含 padding 和 border）</li>
+</ul>
+<h3 id="設置（直接透過style設定-不會改變到預設padding-和-border）"><a href="#設置（直接透過style設定-不會改變到預設padding-和-border）" class="headerlink" title="設置（直接透過style設定,不會改變到預設padding 和 border）"></a>設置（直接透過style設定,不會改變到預設padding 和 border）</h3><ul>
+<li>style.width = “120px”;</li>
+<li>style.height = “130px”;</li>
+</ul>
+<h3 id="如果元素被overflow擋住"><a href="#如果元素被overflow擋住" class="headerlink" title="如果元素被overflow擋住"></a>如果元素被overflow擋住</h3><p>Element.scrollHeight 是衡量元素包含因為 overflow 而沒顯示在螢幕上的內容高度的唯讀屬性。</p>
+<ul>
+<li>scrollWidth 取得整個沒被擋住的寬</li>
+<li>scrollHeight 取得整個沒被擋住的高</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Element/scrollHeight" target="_blank" rel="noopener">詳細介紹</a><br>圖解更容易懂<br><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt=""><br>可以用來判斷元素<strong>是否完全被滾過</strong></p>
+<h3 id="取得border的值"><a href="#取得border的值" class="headerlink" title="取得border的值"></a>取得border的值</h3><p>還有較少見的，如果我今天border很大，可以取得border</p>
+<ul>
+<li>clientTop 取得元素的border-top</li>
+<li>clientLeft 取得元素的border-ledt</li>
+</ul>
+<h2 id="元素的位置"><a href="#元素的位置" class="headerlink" title="元素的位置"></a>元素的位置</h2><p><strong>相對於父層</strong>的位置</p>
+<ul>
+<li>offsetTop - 取得相對於上層的Y座標</li>
+<li>offsetLeft - 取得相對於上層的X座標<br>(類似jQ的position)</li>
+</ul>
+<p><strong>絕對位置</strong></p>
 <blockquote>
-<p>mouseenterc 和 mouseover 差別：<a href="http://imweb.io/topic/5a2bb4cfa192c3b460fce2b9" target="_blank" rel="noopener">介紹 1</a> / <a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_event_mouseenter_mouseover" target="_blank" rel="noopener">介紹 2</a></p>
+<p>原生js中沒有直接的語法像jQuery的offset可以取得絕對位置，但可透過相對位置的方法加上遍歷直到父元素沒有為止，可參考：<a href="https://www.jianshu.com/p/1c2e0bef7907" target="_blank" rel="noopener">原生JS获取页面中DIV绝对位置的方法</a></p>
 </blockquote>
-<p>在 css 部分，我們要先隱藏原本的內容，除了透明外，<code>display:none</code> <strong>是必須的</strong><br>不然我們滑鼠一碰到這些隱藏內容，就會觸發事件<br>（因為內容包在 li 內，碰到內容即碰到 li，這不是我們要的效果)。</p>
-<h2 id="css-部屬"><a href="#css-部屬" class="headerlink" title="css 部屬"></a>css 部屬</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.5s</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100px);</span><br><span class="line">  <span class="attribute">will-change</span>: opacity;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.trigger-enter</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.trigger-enter-active</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="視窗的寬高"><a href="#視窗的寬高" class="headerlink" title="視窗的寬高"></a>視窗的寬高</h2><p>取得視窗的寬高我們可利用上面提到元素的寬高來取得</p>
+<ul>
+<li>document.body.clientWidth</li>
+<li>document.body.clientHeight</li>
+<li>document.body.offsetWidth(包括邊線和捲軸的寬)</li>
+<li>document.body.offsetHeight</li>
+</ul>
+<h2 id="卷軸位置"><a href="#卷軸位置" class="headerlink" title="卷軸位置"></a>卷軸位置</h2><p>範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.scrollY)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意：window本身沒有scrollTop/Left這個屬性，<br>所以window.scrollTop是undefined的，可以console.log印出來看看：<br><img src="0912.PNG" alt=""></p>
+<p>所以我們取得視窗卷軸可以使用：</p>
+<h3 id="視窗卷軸"><a href="#視窗卷軸" class="headerlink" title="視窗卷軸"></a>視窗卷軸</h3><ul>
+<li>window.scrollX 卷軸現在寬值(X軸)</li>
+<li>window.scrollY 卷軸現在高值(Y軸)</li>
+</ul>
+<p>我們在<a href="https://icguanyu.github.io/js30/13/#more">Day13</a>有練習過一次。</p>
+<h3 id="元素卷軸"><a href="#元素卷軸" class="headerlink" title="元素卷軸"></a>元素卷軸</h3><p>我們要操作指定元素內的捲軸可以使用</p>
+<ul>
+<li>Element.scorllTop</li>
+<li>Element.scrollLeft<br>如果要給值：scorllTop = 500</li>
+</ul>
 <blockquote>
-<p>說明：原始元素只有套用<code>.dropdown</code>這個 class，而下方兩個樣式是在必須<strong>有父層樣式</strong>(<code>.trigger-enter</code>,<code>.trigger-enter-active</code>)的條件下，才會有效果的 class，因此這邊我們是去控制父層的 class 來改變<code>.dropdown</code>的屬性。</p>
+<p>建議卷軸操作還是交給jQuery比較不會搞混</p>
 </blockquote>
-<p>再透過事件觸發去加上或刪除指定的 class<br>(分開寫純粹是效果需求)</p>
-<h2 id="對象和觸發條件"><a href="#對象和觸發條件" class="headerlink" title="對象和觸發條件"></a>對象和觸發條件</h2><p>一樣先把觸發對象和條件先建構出來<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> triggers = <span class="built_in">document</span>.querySelectorAll(<span class="string">".cool &gt; li"</span>);</span><br><span class="line"><span class="keyword">const</span> background = <span class="built_in">document</span>.querySelector(<span class="string">".dropdownBackground"</span>);</span><br><span class="line"><span class="keyword">const</span> nav = <span class="built_in">document</span>.querySelector(<span class="string">".top"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleLeave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//..</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span>trigger.addEventListener(<span class="string">"mouseenter"</span>, handleEnter));</span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span>trigger.addEventListener(<span class="string">"mouseleave"</span>, handleLeave));</span><br></pre></td></tr></table></figure></p>
-<h2 id="滑鼠移入後"><a href="#滑鼠移入後" class="headerlink" title="滑鼠移入後"></a>滑鼠移入後</h2><p>滑鼠移入後，按照效果需求先後加上class<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter'</span>);</span><br><span class="line">  <span class="comment">//關鍵:判斷有沒有class的方法</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//此時的this已變成window,所以用ES6立即函示</span></span><br><span class="line">    <span class="comment">//console.log(this)</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">      <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//小技巧:</span></span><br><span class="line">    <span class="comment">//this.classList.contains('trigger-enter') &amp;&amp; t his.classList.add('trigger-enter-active')</span></span><br><span class="line">  &#125;, <span class="number">150</span>)</span><br><span class="line">  background.classList.add(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>當然在這邊也可以不用特別去判斷是否有<code>trigger-enter</code>效果一樣存在，但因為有了這個判斷<br>我們可以認識<code>DOMTokenList.contains</code>！</p>
-<h3 id="關鍵：DOMTokenList-contains"><a href="#關鍵：DOMTokenList-contains" class="headerlink" title="關鍵：DOMTokenList.contains()"></a>關鍵：DOMTokenList.contains()</h3><p>為什麼不是includes?</p>
-<blockquote>
-<p>includes() 方法會判斷<strong>陣列</strong>是否包含特定的元素，並以此來回傳 true 或 false。</p>
-</blockquote>
-<p>因為我們的<code>this.classList</code>不是陣列<br><img src="3.PNG" alt=""></p>
-<p>我們透過<code>contains</code>：<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains" target="_blank" rel="noopener">DOMTokenList.contains()</a></p>
-<blockquote>
-<p>The contains() method of the DOMTokenList interface returns a Boolean — true if the underlying list contains the given token, otherwise false.</p>
-</blockquote>
-<p>還有很多方法可以判斷:<br><a href="https://segmentfault.com/q/1010000002501794" target="_blank" rel="noopener">如何用JavaScript判断dom是否有class的值？</a></p>
-<p>當然在這邊也可以不做setTimeout延遲效果，但因為有了setTimeout<br>我們注意到了this發生了變化！</p>
-<h3 id="關鍵：this"><a href="#關鍵：this" class="headerlink" title="關鍵：this"></a>關鍵：this</h3><p>錯誤寫法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">150</span>)</span><br></pre></td></tr></table></figure></p>
-<p><img src="4.PNG" alt=""><br>在setTimeout裡面我們的this變成了window</p>
-<blockquote>
-<p>ES5中的this指向的事觸發該涵式的對象</p>
-</blockquote>
-<p>setTimeout是由windows觸發的。<br>所以這時候他不知道window.contains是什麼，因此出現錯誤。</p>
-<p>解決方法可以簡單透過變數在setTimeout之前定義對象，不要用this即可<br><code>const showItem = event.target;</code></p>
-<blockquote>
-<p>this看的是究竟是誰調用該函式 <a href="https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this" target="_blank" rel="noopener">#Javascript：this用法整理</a></p>
-</blockquote>
+<h2 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect()"></a>getBoundingClientRect()</h2><p>可以快速取得元素的許多值，高、寬、位置等</p>
+<ul>
+<li>DOMRect.top：元素於目前可視範圍中，距離上方邊界的距離。</li>
+<li>DOMRect.bottom：元素於目前可視範圍中，距離下方邊界的距離。</li>
+<li>DOMRect.left：元素於目前可視範圍中，距離左邊邊界的距離。</li>
+<li>DOMRect.right：元素於目前可視範圍中，距離右邊邊界的距離。</li>
+<li>DOMRect.x：元素於目前可視範圍中，水平方向的座標。</li>
+<li>DOMRect.y：元素於目前可視範圍中，垂直方向的座標。</li>
+<li>DOMRect.width：元素的寬。</li>
+<li>DOMRect.height：元素的高。</li>
+</ul>
+<p>我們在js30<a href="https://icguanyu.github.io/js30/22/">Day22</a>有介紹過</p>
 <hr>
-<p>我們透過es6箭頭涵式中this的特性來解決</p>
-<blockquote>
-<p>ES6中箭頭函數它没有自己的this值，它<strong>繼承外圍作用域的this</strong></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">150</span>)</span><br></pre></td></tr></table></figure>
-<p>所以這時的this指的就是我們的<code>li</code>了</p>
-<h2 id="條件式縮寫"><a href="#條件式縮寫" class="headerlink" title="條件式縮寫"></a>條件式縮寫</h2><p>在原始範例中出現一個少見的條件式簡寫<br>原本:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>)) &#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以縮寫成:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.classList.contains(<span class="string">'trigger-enter'</span>) &amp;&amp; <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>一個不起眼範例藏了滿多細節的！</p>
-<blockquote>
-<p>不負責任聲明ಥ◡ಥ：<br>純屬個人筆記，每個範例都有不同的寫法，還有很多細節可以加入，甚至可能有看不到的bug，有任何問題都歡迎提出一起研究哦，我會很感謝您的！<em>沒有好不好，只有適不適合</em> - 2018.09.01</p>
-</blockquote>
+<h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><p>以下是JQ用法</p>
+<h2 id="元素的寬高-1"><a href="#元素的寬高-1" class="headerlink" title="元素的寬高"></a>元素的寬高</h2><ul>
+<li>width() - <strong>設置</strong>或取得元素的宽度</li>
+<li>height() - <strong>設置</strong>或取得元素的高度<br>括號內放值可自訂寬高</li>
+<li>innerWidth() - 取得元素的寬度（<strong>含 padding</strong>）</li>
+<li>innerHeight() - 取得元素的高度（<strong>含 padding</strong>）<br>注意：元素內,不含border等</li>
+<li>outerWidth() - 取得元素的寬度（包含 padding 和 border）</li>
+<li>outerHeight() - 取得元素的高度（包含 padding 和 border）<br>注意：不含margin，<strong>括號內加入true就包含margin</strong></li>
+</ul>
+<h2 id="元素的位置-1"><a href="#元素的位置-1" class="headerlink" title="元素的位置"></a>元素的位置</h2><h3 id="絕對位置"><a href="#絕對位置" class="headerlink" title="絕對位置"></a>絕對位置</h3><p>相對整個視窗中</p>
+<ul>
+<li>offset() - 取得一個<strong>物件</strong>，包含top和left</li>
+<li>offset().left - 取得X座標</li>
+<li>offset().top - 取得Y座標<br>也可以傳入一個物件設定他的位置(數值為字串)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.block'</span>).offset(&#123;</span><br><span class="line">  top: <span class="string">'50'</span>, <span class="comment">//數值為字串</span></span><br><span class="line">  left: <span class="string">'100'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="相對位置"><a href="#相對位置" class="headerlink" title="相對位置"></a>相對位置</h3><p>相對於父層</p>
+<ul>
+<li>position() - 取得一個<strong>物件</strong>，包含top和left</li>
+<li>position().left - 取得相對於上層的X座標</li>
+<li>position().top - 取得相對於上層的Y座標<br>使用方法和絕對位置一樣，只是相對位置為父層（上一層）</li>
+</ul>
+<h2 id="視窗的寬高-1"><a href="#視窗的寬高-1" class="headerlink" title="視窗的寬高"></a>視窗的寬高</h2><ul>
+<li>取得螢幕寬 $(window).width()</li>
+<li>取得螢幕高 $(window).height()<br>跟取得元素寬高一樣，基本上就不會有inner/outer差別了</li>
+</ul>
+<h2 id="視窗-元素-卷軸位置"><a href="#視窗-元素-卷軸位置" class="headerlink" title="視窗(元素)卷軸位置"></a>視窗(元素)卷軸位置</h2><p>如果元素本身沒有卷軸會取得0，所以大多情況下都是用在window/html/body這些元素</p>
+<ul>
+<li>$(window).scrollTop() 卷軸現在Y值(高度)</li>
+<li>$(window).scrollLeft() 卷軸現在的X值</li>
+</ul>
+<p>常用在捲動時取得高度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="string">'html,body'</span>).scrollTop())</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="keyword">this</span>).scrollTop())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>或返回頂端效果<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.backTop'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">'html,body'</span>).animate(&#123;<span class="attr">scrollTop</span>:<span class="number">0</span>&#125;,<span class="number">400</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -535,7 +597,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js30/" rel="tag"># js30</a>
+            <a href="/tags/筆記/" rel="tag"># 筆記</a>
           
         </div>
       
@@ -548,8 +610,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js30/25/" rel="next" title="Day25 Event Capture(冒泡事件)">
-                <i class="fa fa-chevron-left"></i> Day25 Event Capture(冒泡事件)
+              <a href="/js30/30/" rel="next" title="Day30 Whack A Mole!">
+                <i class="fa fa-chevron-left"></i> Day30 Whack A Mole!
               </a>
             
           </div>
@@ -557,10 +619,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js30/27/" rel="prev" title="Day27 Click and Drag">
-                Day27 Click and Drag <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +650,7 @@
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="http://icguanyu.github.io/js30/26/"
+           data-href="http://icguanyu.github.io/getsize/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -732,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#觀察-HTML-和-CSS-結構"><span class="nav-number">1.</span> <span class="nav-text">觀察 HTML 和 CSS 結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-部屬"><span class="nav-number">2.</span> <span class="nav-text">css 部屬</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#對象和觸發條件"><span class="nav-number">3.</span> <span class="nav-text">對象和觸發條件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑鼠移入後"><span class="nav-number">4.</span> <span class="nav-text">滑鼠移入後</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵：DOMTokenList-contains"><span class="nav-number">4.1.</span> <span class="nav-text">關鍵：DOMTokenList.contains()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#關鍵：this"><span class="nav-number">4.2.</span> <span class="nav-text">關鍵：this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#條件式縮寫"><span class="nav-number">5.</span> <span class="nav-text">條件式縮寫</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原生js"><span class="nav-number">1.</span> <span class="nav-text">原生js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的寬高"><span class="nav-number">1.1.</span> <span class="nav-text">元素的寬高</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#取值"><span class="nav-number">1.1.1.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設置（直接透過style設定-不會改變到預設padding-和-border）"><span class="nav-number">1.1.2.</span> <span class="nav-text">設置（直接透過style設定,不會改變到預設padding 和 border）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果元素被overflow擋住"><span class="nav-number">1.1.3.</span> <span class="nav-text">如果元素被overflow擋住</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取得border的值"><span class="nav-number">1.1.4.</span> <span class="nav-text">取得border的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的位置"><span class="nav-number">1.2.</span> <span class="nav-text">元素的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗的寬高"><span class="nav-number">1.3.</span> <span class="nav-text">視窗的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷軸位置"><span class="nav-number">1.4.</span> <span class="nav-text">卷軸位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#視窗卷軸"><span class="nav-number">1.4.1.</span> <span class="nav-text">視窗卷軸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素卷軸"><span class="nav-number">1.4.2.</span> <span class="nav-text">元素卷軸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getBoundingClientRect"><span class="nav-number">1.5.</span> <span class="nav-text">getBoundingClientRect()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery"><span class="nav-number">2.</span> <span class="nav-text">JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的寬高-1"><span class="nav-number">2.1.</span> <span class="nav-text">元素的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的位置-1"><span class="nav-number">2.2.</span> <span class="nav-text">元素的位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#絕對位置"><span class="nav-number">2.2.1.</span> <span class="nav-text">絕對位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相對位置"><span class="nav-number">2.2.2.</span> <span class="nav-text">相對位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗的寬高-1"><span class="nav-number">2.3.</span> <span class="nav-text">視窗的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗-元素-卷軸位置"><span class="nav-number">2.4.</span> <span class="nav-text">視窗(元素)卷軸位置</span></a></li></ol></li></ol></div>
             
 
           </div>
