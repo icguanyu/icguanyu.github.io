@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js30," />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="js30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day2 JS and CSS Clock">
+<meta property="og:url" content="http://icguanyu.github.io/js30/02/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://icguanyu.github.io/js30/02/1.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/02/2.PNG">
+<meta property="og:image" content="http://icguanyu.github.io/js30/02/3.PNG">
+<meta property="og:updated_time" content="2018-08-11T06:00:17.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day2 JS and CSS Clock">
+<meta name="twitter:image" content="http://icguanyu.github.io/js30/02/1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/js30/02/"/>
+
+
+
+
+
+  <title>Day2 JS and CSS Clock | 個人前端筆記</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/js30/02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Day2 JS and CSS Clock</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-08T14:38:46+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js30/" itemprop="url" rel="index">
+                    <span itemprop="name">js30</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js30/02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://icguanyu.github.io/js30/02/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/js30/02/" class="leancloud_visitors" data-flag-title="Day2 JS and CSS Clock">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,216
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<img src="/js30/02/1.PNG" title="Demo">
+<a id="more"></a>
+<p><a href="https://icguanyu.github.io/Js30/02/">Demo</a></p>
+<h2 id="設定CSS"><a href="#設定CSS" class="headerlink" title="設定CSS"></a>設定CSS</h2><p>文件一開始的CSS並還沒設定好，在<code>.hand</code>這個class有留下幾個關鍵的屬性讓我們自己去操作/認識：</p>
+<ol>
+<li><code>transform-origin</code>：調整旋轉的軸心位置。<a href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp" target="_blank" rel="noopener">更多transform-origin介紹</a></li>
+<li><code>transform: rotate(90deg)</code>：將指針重設到00:00</li>
+<li><code>transition-timing-function</code> : 動畫變換的速度。可以從開發者工具去嘗試不同的速度變化。<br><img src="2.PNG" width="200"></li>
+<li>transition的4個屬性<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">property</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="取得時間"><a href="#取得時間" class="headerlink" title="取得時間"></a>取得時間</h2><p>在這個範例中並沒有透過setInterval不斷地去取得時間，只在載入畫面時去取得一次當下的時間，後續變化時間再透過setInterval()去遞加上去。</p>
+<blockquote>
+<p>在作者提供的原始Code當中，我們會發現秒針在59跳回0秒的時候，會出現一個神奇的情況。秒針會瞬間逆時針轉回0度再馬上轉回到目前的位置。這是因為作者在旋轉角度的寫法，是將當下的時間換算成角度，因此當秒針從59秒要跳回0秒的時候，transform的rotate角度會由接近360轉回接近0度，以致於逆時針旋轉的產生。而在我們的code當中，因為旋轉角度是<strong>用每秒增加的方式加上去</strong>，因此不會有此現象的產生，各位讀者如果是依照JS30作者的方法練習的話，可以嘗試參考我們文章中的設定內容，便可以消除秒針的在位置的小插曲。</p>
+<blockquote>
+<p><a href="https://ithelp.ithome.com.tw/articles/10192719" target="_blank" rel="noopener">資料來源-王郁翔-好想工作室</a></p>
+</blockquote>
+</blockquote>
+<p>所以我們先在全域中取得時間<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="keyword">const</span> seconds = now.getSeconds()</span><br><span class="line"><span class="keyword">const</span> mins = now.getMinutes()</span><br><span class="line"><span class="keyword">const</span> hours = now.getHours()</span><br></pre></td></tr></table></figure></p>
+<h2 id="算數學"><a href="#算數學" class="headerlink" title="算數學"></a>算數學</h2><p>整個範例的關鍵應該就是要把<strong>時間值</strong>轉換成<strong>角度</strong>。<br>60秒=360度，所以<strong>每秒轉6度</strong>。<br>60分=360度，所以<strong>每分轉6度</strong>。<br>12時=360度，所以<strong>每時轉30度</strong>。<br>+90是因為一開始我們已經手動將指針旋轉90度至00:00，所以起點是從90度開始</p>
+<blockquote>
+<p>個人習慣用乘法比較容易理解</p>
+</blockquote>
+<p>一樣在全域中先轉換成角度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s_deg = seconds*(<span class="number">360</span>/<span class="number">60</span>) + <span class="number">90</span></span><br><span class="line"><span class="keyword">var</span> m_deg = mins*(<span class="number">360</span>/<span class="number">60</span>) + <span class="number">90</span> </span><br><span class="line"><span class="keyword">var</span> h_deg = hours*(<span class="number">360</span>/<span class="number">12</span>) + <span class="number">90</span> </span><br><span class="line"><span class="comment">//秒*6度</span></span><br><span class="line"><span class="comment">//分*6度</span></span><br><span class="line"><span class="comment">//時*30度</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>但是！分針和時針不可能永遠只在6、12、18或30、60、90..這些位置呀！</p>
+</blockquote>
+<p>以15:40:29秒為例，時針卻直挺挺的指在三點整的位置，顯然不是太正確的時鐘。<br><img src="3.PNG" width="300"></p>
+<p>所以我們需要加入<strong>現在秒數對分針而言多幾度</strong>以及<strong>現在的分數對時針而言要多幾度</strong>。(有點饒舌)<br>1.分針需要加入秒針走的角度，每60秒，分針加6度；每1秒，分針加6/60度</p>
+<blockquote>
+<p><code>(seconds/60)*6</code>　或　<code>seconds*(6/60)</code></p>
+</blockquote>
+<p>2.時針需要加入分針走的角度，每60分，時針加30度；每1分，時針加30/60(1/2)度</p>
+<blockquote>
+<p><code>(mins/60)*30</code>　或　<code>mins*(30/60)</code></p>
+</blockquote>
+<p>加完後<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s_deg = seconds*(<span class="number">360</span>/<span class="number">60</span>) + <span class="number">90</span></span><br><span class="line"><span class="keyword">var</span> m_deg = mins*(<span class="number">360</span>/<span class="number">60</span>) + seconds*(<span class="number">6</span>/<span class="number">60</span>) + <span class="number">90</span> </span><br><span class="line"><span class="keyword">var</span> h_deg = hours*(<span class="number">360</span>/<span class="number">12</span>) + mins*(<span class="number">30</span>/<span class="number">60</span>) + <span class="number">90</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="細節"><a href="#細節" class="headerlink" title="細節"></a>細節</h2><ul>
+<li><p>延遲<br>這個範例中我們只用<code>setInterval</code>呼叫<code>timeSet()</code><br>也就是畫面載入後1秒，時間才會顯示，所以我們可以一開始就先跑一次<code>timeSet()</code></p>
+</li>
+<li><p>transition<br>按照原本案例寫的話，每當秒數從59-0的時候，會有一個小bug<br><a href="https://ithelp.ithome.com.tw/articles/10192719" target="_blank" rel="noopener">這裡有很好的說明（小插曲）</a></p>
+</li>
+</ul>
+<h2 id="讓時鐘動起來"><a href="#讓時鐘動起來" class="headerlink" title="讓時鐘動起來"></a>讓時鐘動起來</h2><p>最後我們每秒呼叫一次timeSet讓各個角度不斷地累加上去</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeSet</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  s_deg += <span class="number">360</span>/<span class="number">60</span> <span class="comment">//每秒6度</span></span><br><span class="line">  m_deg += <span class="number">360</span>/(<span class="number">60</span>*<span class="number">60</span>)  <span class="comment">//每秒6/60度;每60秒6度;</span></span><br><span class="line">  h_deg += <span class="number">360</span>/(<span class="number">60</span>*<span class="number">60</span>*<span class="number">12</span>) </span><br><span class="line">  </span><br><span class="line">  secondPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;s_deg&#125;</span>deg)`</span></span><br><span class="line">  minPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;m_deg&#125;</span>deg)`</span></span><br><span class="line">  hourPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;h_deg&#125;</span>deg)`</span></span><br><span class="line">&#125;</span><br><span class="line">setInterval(timeSet,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secondPin = <span class="built_in">document</span>.querySelector(<span class="string">'.second-hand'</span>)</span><br><span class="line"><span class="keyword">const</span> minPin = <span class="built_in">document</span>.querySelector(<span class="string">'.min-hand'</span>)</span><br><span class="line"><span class="keyword">const</span> hourPin = <span class="built_in">document</span>.querySelector(<span class="string">'.hour-hand'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="keyword">const</span> seconds = now.getSeconds()</span><br><span class="line"><span class="keyword">const</span> mins = now.getMinutes()</span><br><span class="line"><span class="keyword">const</span> hours = now.getHours()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s_deg = (seconds/<span class="number">60</span>)*<span class="number">360</span> + <span class="number">90</span></span><br><span class="line"><span class="keyword">var</span> m_deg = (mins/<span class="number">60</span>)*<span class="number">360</span> + seconds*(<span class="number">6</span>/<span class="number">60</span>) + <span class="number">90</span> </span><br><span class="line"><span class="keyword">var</span> h_deg = (hours/<span class="number">12</span>)*<span class="number">360</span> + mins*(<span class="number">30</span>/<span class="number">60</span>) + <span class="number">90</span> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeSet</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  s_deg += <span class="number">360</span>/<span class="number">60</span></span><br><span class="line">  m_deg += <span class="number">360</span>/(<span class="number">60</span>*<span class="number">60</span>) </span><br><span class="line">  h_deg += <span class="number">360</span>/(<span class="number">60</span>*<span class="number">60</span>*<span class="number">12</span>)</span><br><span class="line">  </span><br><span class="line">  secondPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;s_deg&#125;</span>deg)`</span></span><br><span class="line">  minPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;m_deg&#125;</span>deg)`</span></span><br><span class="line">  hourPin.style.transform = <span class="string">`rotate(<span class="subst">$&#123;h_deg&#125;</span>deg)`</span></span><br><span class="line">&#125;</span><br><span class="line">timeSet()</span><br><span class="line">setInterval(timeSet,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不負責任聲明ಥ◡ಥ：<br>純屬個人筆記，每個範例都有不同的寫法，還有很多細節可以加入，甚至可能有看不到的bug，有任何問題都歡迎提出一起研究哦，我會很感謝您的！<em>沒有好不好，只有適不適合</em> - 2018.08.08 </p>
+<blockquote>
+<p>祝爸爸父親節快樂&lt;3 原本想說要回家替爸爸慶祝一下，但我爸說只要不要讓他操心就是孝順了(因為我剛離職XD)，但這個離職就是為了找到更好的工作不讓他擔心我的未來呀ಥ◡ಥ</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js30/" rel="tag"># js30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/01/" rel="next" title="Day1 JavaScript Drum Kit">
+                <i class="fa fa-chevron-left"></i> Day1 JavaScript Drum Kit
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/js30/03/" rel="prev" title="Day3 CSS Variables and JS">
+                Day3 CSS Variables and JS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments"
+           data-href="http://icguanyu.github.io/js30/02/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#設定CSS"><span class="nav-number">1.</span> <span class="nav-text">設定CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取得時間"><span class="nav-number">2.</span> <span class="nav-text">取得時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算數學"><span class="nav-number">3.</span> <span class="nav-text">算數學</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#細節"><span class="nav-number">4.</span> <span class="nav-text">細節</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讓時鐘動起來"><span class="nav-number">5.</span> <span class="nav-text">讓時鐘動起來</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼"><span class="nav-number">6.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
