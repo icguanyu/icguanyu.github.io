@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="scss," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Sass 線上直播課程(9/29)上半場">
+<meta name="keywords" content="scss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS 筆記(1) - What is SASS ?">
+<meta property="og:url" content="http://icguanyu.github.io/scss/scss_1/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="Sass 線上直播課程(9/29)上半場">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-10-10T06:35:18.621Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SCSS 筆記(1) - What is SASS ?">
+<meta name="twitter:description" content="Sass 線上直播課程(9/29)上半場">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/scss/scss_1/"/>
+
+
+
+
+
+  <title>SCSS 筆記(1) - What is SASS ? | 個人前端筆記</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/scss/scss_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SCSS 筆記(1) - What is SASS ?</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-10-10T14:00:36+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/scss/" itemprop="url" rel="index">
+                    <span itemprop="name">scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/scss/scss_1/" class="leancloud_visitors" data-flag-title="SCSS 筆記(1) - What is SASS ?">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  823
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://sass-lang.com/" target="_blank" rel="noopener">Sass</a> 線上直播課程(9/29)上半場<br><a id="more"></a></p>
+<h3 id="What-is-SASS"><a href="#What-is-SASS" class="headerlink" title="What is SASS ?"></a>What is SASS ?</h3><ul>
+<li><p><strong>Preprocessor</strong> :  Less -&gt; Sass(Scss) -&gt; Stylus</p>
+</li>
+<li><p><strong>Postprocessor</strong> : Postcss reflow AutoPrefixer</p>
+</li>
+</ul>
+<h3 id="Why-SASS"><a href="#Why-SASS" class="headerlink" title="Why SASS ?"></a>Why SASS ?</h3><ul>
+<li>邏輯式的開發</li>
+<li>結構化、模組化</li>
+<li>加快開發速度（提高重用性）</li>
+</ul>
+<h3 id="How-SASS"><a href="#How-SASS" class="headerlink" title="How SASS ?"></a>How SASS ?</h3><ul>
+<li>SASS 開發邏輯<ul>
+<li>Preprocessor -&gt; CSS -&gt; Postprocessor  -&gt;CSS</li>
+</ul>
+</li>
+</ul>
+<h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/#alt-do..." target="_blank" rel="noopener">VSCode</a></h3><ul>
+<li><strong>VSCode 環境安裝與設定</strong><ul>
+<li>User Settings (使用者區，全域設定)</li>
+<li>Work Space Settings (工作區，專案區域設定)</li>
+</ul>
+</li>
+<li><strong>VSCode 推薦外掛</strong><ul>
+<li>Live Server</li>
+<li>Live Sass Compile</li>
+<li>Settings</li>
+</ul>
+</li>
+<li><strong>User Setting Config Example</strong><ul>
+<li>format: expanded,expanded,nested,compact,compressed</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;window.zoomLevel&quot;: 3,                        // 自己使用的話可以調小一點(0 or 1就可)</span><br><span class="line">    &quot;window.titleBarStyle&quot;: &quot;custom&quot;,             // 變更視窗標題列的外觀</span><br><span class="line">    &quot;files.autoSave&quot;: &quot;onFocusChange&quot;,            //切換焦點存檔</span><br><span class="line">    &quot;editor.formatOnSave&quot;: true,                  // 存檔時自動格式調整</span><br><span class="line">    &quot;editor.insertSpaces&quot;: true,                  // 以空白取代tab符號</span><br><span class="line">    &quot;editor.tabSize&quot;: 2,                          // 縮排空白數</span><br><span class="line">    &quot;emmet.triggerExpansionOnTab&quot;: true           //新版VSCode，使用Emmet有時候Tab會失效，要加這個，才會正常觸發emmet</span><br><span class="line">                                                  // ----------- 以上為VScode基本設定 -----------</span><br><span class="line">                                                  // ----------- 以下為Live Sever設定 -----------</span><br><span class="line">    &quot;liveServer.settings.port&quot;: 8080              // Live Sever port，建議使用1024以上的port (設定port為0時，他會隨機抓一個未占用的port)</span><br><span class="line">    //&quot;liveSassCompile.settings.excludeList&quot;: [], // 排除不要watch的目錄, 減少sass compiler去watch不必要的目錄</span><br><span class="line">    &quot;liveSassCompile.settings.formats&quot;:[          // 需了解查看備註區之Live Sass compiler設定</span><br><span class="line">        // This is Default.</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;format&quot;: &quot;expanded&quot;,  </span><br><span class="line">            &quot;extensionName&quot;: &quot;.css&quot;,</span><br><span class="line">            &quot;savePath&quot;: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // You can add more</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;format&quot;: &quot;compressed&quot;,</span><br><span class="line">            &quot;extensionName&quot;: &quot;.min.css&quot;,</span><br><span class="line">            &quot;savePath&quot;: &quot;/dist/css&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        // More Complex</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;format&quot;: &quot;compressed&quot;,</span><br><span class="line">            &quot;extensionName&quot;: &quot;.min.css&quot;,</span><br><span class="line">            &quot;savePath&quot;: &quot;~/../css/&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;liveSassCompile.settings.generateMap&quot;: false,</span><br><span class="line">    &quot;liveSassCompile.settings.autoprefix&quot;: [</span><br><span class="line">        &quot;&gt; 1%&quot;,</span><br><span class="line">        &quot;last 2 versions&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Start-your-project"><a href="#Start-your-project" class="headerlink" title="Start your project"></a><strong>Start your project</strong></h3><ol>
+<li>新增<code>專案資料夾</code></li>
+<li>使用 <code>VScode</code> 開啟該資料夾<ul>
+<li>可使用cmd，在專案資料夾下使用 <code>code .</code>指令</li>
+</ul>
+</li>
+<li>建立基礎架構 (檔案 or 資料夾)<ul>
+<li><code>index.html</code> -&gt; 快速基本HTML5基礎架構 : <code>! + Tab</code></li>
+<li><code>style/</code> -&gt; 發佈區</li>
+<li><code>scss/</code> -&gt; 工作區</li>
+</ul>
+</li>
+<li>開始 <code>index.html</code> 和使用 LIVE SEVER<ul>
+<li>Preview on Web -&gt; live-server</li>
+<li>右鍵 -&gt; Open with Live Server</li>
+</ul>
+</li>
+</ol>
+<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><ul>
+<li><a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">emmet 寫法整理</a></li>
+<li><a href="http://mizage.com/divvy/" target="_blank" rel="noopener">Divvy ~ 實用的螢幕分割軟體</a></li>
+<li><a href="https://github.com/browserslist/browserslist" target="_blank" rel="noopener">Browserslist Github</a></li>
+<li><a href="https://browserl.ist/" target="_blank" rel="noopener">browserl.ist</a></li>
+<li>Sass vs Scss</li>
+<li>Sass/Scss source map</li>
+<li>Live Sass Compiler 設定</li>
+</ul>
+<h3 id="Sass-vs-Scss"><a href="#Sass-vs-Scss" class="headerlink" title="Sass vs Scss"></a><strong>Sass vs Scss</strong></h3><ul>
+<li>Sass : 不能大括號，不能分號，必須冒號後面空白一格</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Scss : 完全相容於以往CSS的習慣</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body</span><br><span class="line">  color: red</span><br><span class="line">  font-size: 12px</span><br></pre></td></tr></table></figure>
+<h3 id="Sass-Scss-source-map"><a href="#Sass-Scss-source-map" class="headerlink" title="Sass/Scss source map"></a><strong>Sass/Scss source map</strong></h3><ul>
+<li>chrome/settings/enable source map</li>
+<li>產生的css要有map檔的關聯</li>
+<li>要有.map檔</li>
+<li>簡單來說就是：右鍵檢查元件會很聰明指向.scss而不是.css</li>
+</ul>
+<h3 id="Live-Sass-Compiler-設定-詳細解說影片空降地點-52-30"><a href="#Live-Sass-Compiler-設定-詳細解說影片空降地點-52-30" class="headerlink" title="Live Sass Compiler 設定 ( 詳細解說影片空降地點 52:30 )"></a><strong>Live Sass Compiler 設定</strong> <em>( 詳細解說影片空降地點 52:30 )</em></h3><ul>
+<li><p><code>liveSassCompile.settings.formats</code> 參數說明 </p>
+<ul>
+<li><code>format</code> - 指定編譯css的樣式類型<ul>
+<li><code>expanded</code> : 開發用, 產出的css看不出是用scss/sass</li>
+<li><code>nested</code></li>
+<li><code>compact</code> : 開發用, 產出的css可以看的出是用scss/sass</li>
+<li><code>compressed</code> : 發行使用，輸出時，幫忙做程式碼壓縮</li>
+</ul>
+</li>
+<li><code>extensionName</code> - 產出的副檔名，.css為一般程式碼，.min.css為壓縮程式</li>
+<li><code>savePath</code> - 指定編譯完後檔案存放路徑<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;liveSassCompile.settings.formats&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;format&quot;: &quot;compact&quot;, </span><br><span class="line">        &quot;extensionName&quot;: &quot;.css&quot;,</span><br><span class="line">        &quot;savePath&quot;: &quot;/style&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>liveSassCompile.settings.generateMap</code></p>
+<ul>
+<li><code>true</code> or <code>false</code>：關閉編譯css後的map檔案。</li>
+</ul>
+</li>
+<li><p><code>liveSassCompile.settings.autoprefix</code></p>
+<ul>
+<li>編譯成 css 時，Vender Prefixes問題，自動加入後處理器</li>
+<li>編譯成 css 時，可幫忙加入瀏覽器前綴</li>
+<li>browserslist<ul>
+<li><a href="https://github.com/browserslist/browserslist" target="_blank" rel="noopener">Github</a></li>
+<li><a href="https://browserl.ist" target="_blank" rel="noopener">Offical</a> -&gt; 線上查詢有哪些瀏覽器跟版本符合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="補充資源"><a href="#補充資源" class="headerlink" title="補充資源"></a>補充資源</h3><ul>
+<li><a href="https://code.tutsplus.com/zh-hant/tutorials/the-30-css-selectors-you-must-memorize--net-16048" target="_blank" rel="noopener">不知道<code>+</code>, <code>&gt;</code>是什麼意思? 30個你必須記住的CSS選擇器</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/scss/" rel="tag"># scss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/other/git常用指令/" rel="next" title="Git 個人常用指令筆記">
+                <i class="fa fa-chevron-left"></i> Git 個人常用指令筆記
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/scss/scss_2/" rel="prev" title="SCSS 筆記(2) - extend、mixin、function">
+                SCSS 筆記(2) - extend、mixin、function <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-SASS"><span class="nav-number">1.</span> <span class="nav-text">What is SASS ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-SASS"><span class="nav-number">2.</span> <span class="nav-text">Why SASS ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-SASS"><span class="nav-number">3.</span> <span class="nav-text">How SASS ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VSCode"><span class="nav-number">4.</span> <span class="nav-text">VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-your-project"><span class="nav-number">5.</span> <span class="nav-text">Start your project</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充"><span class="nav-number"></span> <span class="nav-text">補充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass-vs-Scss"><span class="nav-number">1.</span> <span class="nav-text">Sass vs Scss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass-Scss-source-map"><span class="nav-number">2.</span> <span class="nav-text">Sass/Scss source map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Live-Sass-Compiler-設定-詳細解說影片空降地點-52-30"><span class="nav-number">3.</span> <span class="nav-text">Live Sass Compiler 設定 ( 詳細解說影片空降地點 52:30 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#補充資源"><span class="nav-number">4.</span> <span class="nav-text">補充資源</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="scss," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ALEX線上直播課程(10/6)下半場">
+<meta name="keywords" content="scss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS 筆記(3) - CSS MODULAR">
+<meta property="og:url" content="http://icguanyu.github.io/scss/scss_3/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="ALEX線上直播課程(10/6)下半場">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-10-10T06:34:38.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SCSS 筆記(3) - CSS MODULAR">
+<meta name="twitter:description" content="ALEX線上直播課程(10/6)下半場">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/scss/scss_3/"/>
+
+
+
+
+
+  <title>SCSS 筆記(3) - CSS MODULAR | 個人前端筆記</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/scss/scss_3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SCSS 筆記(3) - CSS MODULAR</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-10-10T14:14:36+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/scss/" itemprop="url" rel="index">
+                    <span itemprop="name">scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/scss/scss_3/" class="leancloud_visitors" data-flag-title="SCSS 筆記(3) - CSS MODULAR">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  822
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ALEX線上直播課程(10/6)下半場<br><a id="more"></a></p>
+<h2 id="如果今天我要做一個網站，第一次完成的第一個頁面要上線前，最少會包含幾支css："><a href="#如果今天我要做一個網站，第一次完成的第一個頁面要上線前，最少會包含幾支css：" class="headerlink" title="如果今天我要做一個網站，第一次完成的第一個頁面要上線前，最少會包含幾支css："></a>如果今天我要做一個網<strong>站</strong>，第一次完成的第一個頁面要上線前，最少會包含幾支css：</h2><p>建議:</p>
+<ul>
+<li>reset<br>因為不是自己的，可以的話建議分開。</li>
+<li>layout<br>header、nav、footer這類的</li>
+<li>content<br>真正在寫的</li>
+</ul>
+<h2 id="如果有30頁，可能有幾支CSS"><a href="#如果有30頁，可能有幾支CSS" class="headerlink" title="如果有30頁，可能有幾支CSS"></a>如果有30頁，可能有幾支CSS</h2><p>32頁</p>
+<ul>
+<li>reset(1)</li>
+<li>layout(1)</li>
+<li>content(30)</li>
+<li>(僅供參考)</li>
+</ul>
+<h2 id="如果是一頁式呢"><a href="#如果是一頁式呢" class="headerlink" title="如果是一頁式呢?"></a>如果是一頁式呢?</h2><ul>
+<li>css*1 (來自scss)</li>
+<li>scss(*n)</li>
+</ul>
+<p>all.scss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;./layout/header&apos;;</span><br><span class="line">@import &apos;./layout/nav&apos;;</span><br><span class="line">@import &apos;./layout/footer&apos;;</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="你的reset哪裡來"><a href="#你的reset哪裡來" class="headerlink" title="你的reset哪裡來"></a>你的reset哪裡來</h2><p>最好一定要有一個常用的公用檔,可以放在自己的電腦裡再import進來。</p>
+<h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><p>all.scss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;./layout/header&apos;;</span><br><span class="line">@import &apos;./layout/nav&apos;;</span><br><span class="line">@import &apos;./layout/footer&apos;;</span><br><span class="line">..</span><br><span class="line">...</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>import的位置取決於你的樣式要在哪個位置，會影響權重。</li>
+<li>也可以巢狀import</li>
+</ul>
+<h2 id="filename"><a href="#filename" class="headerlink" title="_filename"></a>_filename</h2><p>可以將檔案名稱加上底線，變成專門用來import的scss檔，自己本身不會被sass complier產出css檔</p>
+<h2 id="集中管理-範例-請依個人需求規劃"><a href="#集中管理-範例-請依個人需求規劃" class="headerlink" title="集中管理-範例(請依個人需求規劃)"></a>集中管理-範例(請依個人需求規劃)</h2><ol>
+<li>normalize.scss (reset)</li>
+<li>layout.scss</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;./utils/_init&apos;;</span><br><span class="line">..</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>content.scss</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;./utils/_init&apos;;</span><br><span class="line">..</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<hr>
+<p>_init.scss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;./utils/variable&apos;;</span><br><span class="line">@import &apos;./utils/function&apos;;</span><br><span class="line">@import &apos;./utils/extend&apos;;</span><br><span class="line">@import &apos;./utils/extend&apos;;</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>_variable.scss 管理變數</li>
+<li>_function.scss 管理函式</li>
+<li>_extend.scss 管理繼承</li>
+<li>_mixin.scss 管理屬性</li>
+</ul>
+<p>OS：內容不多按照順序寫在一起就好不用分檔案免得自找麻煩。</p>
+<ol>
+<li>變數</li>
+<li>function</li>
+<li>extend</li>
+<li>mixin</li>
+</ol>
+<p><strong>注意：如果你import的scss會變成css，不要import兩次以上</strong></p>
+<h2 id="rgba"><a href="#rgba" class="headerlink" title="rgba"></a>rgba</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$color: #3356db;</span><br><span class="line">div&#123;</span><br><span class="line">    color:($color,0.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://sass-lang.com/documentation/Sass/Script/Functions.html#adjust_color-instance_method" target="_blank" rel="noopener">sass 官方函數</a></p>
+<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$light: white;</span><br><span class="line">$dark: black;</span><br><span class="line"></span><br><span class="line">@for $i from 1 through 8 &#123; </span><br><span class="line">  .gray#&#123;9 - $i&#125;&#123;</span><br><span class="line">    color: adjust-color($dark,$lightness:10% * $i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>輸出8個階段的黑到白<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.gray8</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#1a1a1a</span>;</span><br><span class="line">&#125;</span><br><span class="line">..</span><br><span class="line">...</span><br><span class="line"><span class="selector-class">.gray1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>除了巢狀以外，透過一些規範我們有一些更好的寫法</p>
+<h2 id="CSS-MODULAR（模組化）設計模式"><a href="#CSS-MODULAR（模組化）設計模式" class="headerlink" title="CSS MODULAR（模組化）設計模式"></a>CSS MODULAR（模組化）設計模式</h2><p>閱讀性、重用性、維護姓、擴充性</p>
+<ol>
+<li>OOCSS</li>
+<li>SMACSS</li>
+<li>BEM</li>
+</ol>
+<h3 id="OOCSS-提升CSS複用性"><a href="#OOCSS-提升CSS複用性" class="headerlink" title="OOCSS 提升CSS複用性"></a>OOCSS 提升CSS複用性</h3><p>主要理念：分離結構與主題，分離容器與內容</p>
+<ul>
+<li>適當的使用有助於減少你網頁上重複性的程式碼</li>
+<li>網站規模小時，不建議套用OOCSS設計模式：為了讓一組CSS能夠套用在各個頁面上，勢必需要設定很多獨立功能的CSS，所以光你在設計OOCSS理念的程式碼的時間，你可能就已經寫好了。</li>
+</ul>
+<p>資料來源：<a href="https://ithelp.ithome.com.tw/articles/10160437" target="_blank" rel="noopener">OOCSS - 提升CSS複用性</a></p>
+<h3 id="SMACSS（大型網站推薦）"><a href="#SMACSS（大型網站推薦）" class="headerlink" title="SMACSS（大型網站推薦）"></a>SMACSS（大型網站推薦）</h3><p>Module要設計為獨立的樣式， 不該綁定在父容器、ID選擇器、HTML元素，並同時能靈活套用至各頁面上。</p>
+<p>主要理念：</p>
+<ul>
+<li>結構分類</li>
+<li>命名規則</li>
+<li>HTML/CSS分離</li>
+</ul>
+<p>詳細資料參考：<a href="https://ithelp.ithome.com.tw/articles/10159948" target="_blank" rel="noopener">SMACSS - Module Rules</a></p>
+<h3 id="BEM-設計模式"><a href="#BEM-設計模式" class="headerlink" title="BEM 設計模式"></a>BEM 設計模式</h3><ul>
+<li>BLOCK(區塊)</li>
+<li>ELEMENT(按鈕/標題)</li>
+<li>MODIFIER(狀態)</li>
+</ul>
+<p>BEM的功能主要就是要讓你在瀏覽HTML CODE時，能夠透過觀察class，就能了解你的CSS架構，讓你不用再回去追CSS Code才辨別得出哪些是Layout、Module、OOCSS，就算你專案沒打算使用BEM，那也可以套用其<strong>觀念</strong>，讓團隊都有個一致的命名規則，讓同事都能一目了然地看懂網站上的架構。</p>
+<p>詳細資料參考：<a href="https://ithelp.ithome.com.tw/articles/10160545" target="_blank" rel="noopener">BEM 設計模式</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/scss/" rel="tag"># scss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/scss/scss_4/" rel="next" title="SCSS 筆記(4) - Media Query">
+                <i class="fa fa-chevron-left"></i> SCSS 筆記(4) - Media Query
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/other/facebook/" rel="prev" title="網頁中加入「透過Facebook登入」功能">
+                網頁中加入「透過Facebook登入」功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果今天我要做一個網站，第一次完成的第一個頁面要上線前，最少會包含幾支css："><span class="nav-number">1.</span> <span class="nav-text">如果今天我要做一個網站，第一次完成的第一個頁面要上線前，最少會包含幾支css：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果有30頁，可能有幾支CSS"><span class="nav-number">2.</span> <span class="nav-text">如果有30頁，可能有幾支CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果是一頁式呢"><span class="nav-number">3.</span> <span class="nav-text">如果是一頁式呢?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你的reset哪裡來"><span class="nav-number">4.</span> <span class="nav-text">你的reset哪裡來</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">5.</span> <span class="nav-text">@import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filename"><span class="nav-number">6.</span> <span class="nav-text">_filename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集中管理-範例-請依個人需求規劃"><span class="nav-number">7.</span> <span class="nav-text">集中管理-範例(請依個人需求規劃)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rgba"><span class="nav-number">8.</span> <span class="nav-text">rgba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for"><span class="nav-number">9.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-MODULAR（模組化）設計模式"><span class="nav-number">10.</span> <span class="nav-text">CSS MODULAR（模組化）設計模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OOCSS-提升CSS複用性"><span class="nav-number">10.1.</span> <span class="nav-text">OOCSS 提升CSS複用性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SMACSS（大型網站推薦）"><span class="nav-number">10.2.</span> <span class="nav-text">SMACSS（大型網站推薦）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BEM-設計模式"><span class="nav-number">10.3.</span> <span class="nav-text">BEM 設計模式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

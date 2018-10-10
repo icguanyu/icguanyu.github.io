@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="筆記," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
+<meta name="keywords" content="筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js&#x2F;jQ各種取寬高與位置">
+<meta property="og:url" content="http://icguanyu.github.io/jquery/getsize/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
+<meta property="og:image" content="http://icguanyu.github.io/jquery/getsize/0912.PNG">
+<meta property="og:updated_time" content="2018-10-10T05:57:10.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js&#x2F;jQ各種取寬高與位置">
+<meta name="twitter:description" content="有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等所以整理了各種取寬高位置的方法">
+<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/jquery/getsize/"/>
+
+
+
+
+
+  <title>js/jQ各種取寬高與位置 | 個人前端筆記</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/jquery/getsize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js/jQ各種取寬高與位置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-12T11:41:23+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jq/" itemprop="url" rel="index">
+                    <span itemprop="name">jq</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jq/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/jquery/getsize/" class="leancloud_visitors" data-flag-title="js/jQ各種取寬高與位置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,124
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有鑑於常常迷失於javascript和jQuery中取視窗、元素的寬高、位置等<br>所以整理了各種取寬高位置的方法<br><a id="more"></a></p>
+<h1 id="原生js"><a href="#原生js" class="headerlink" title="原生js"></a>原生js</h1><p>以下是原生js用法</p>
+<h2 id="元素的寬高"><a href="#元素的寬高" class="headerlink" title="元素的寬高"></a>元素的寬高</h2><p><img src="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" alt=""></p>
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><ul>
+<li>clientWidth 取得元素的寬度（含padding 不含 border）較少用</li>
+<li>clientHeight 取得元素的高度（含padding 不含 border）較少用</li>
+<li>offsetWidth 取得元素的寬度（包含 padding 和 border）</li>
+<li>offsetHeight 取得元素的高度（包含 padding 和 border）</li>
+</ul>
+<h3 id="設置（直接透過style設定-不會改變到預設padding-和-border）"><a href="#設置（直接透過style設定-不會改變到預設padding-和-border）" class="headerlink" title="設置（直接透過style設定,不會改變到預設padding 和 border）"></a>設置（直接透過style設定,不會改變到預設padding 和 border）</h3><ul>
+<li>style.width = “120px”;</li>
+<li>style.height = “130px”;</li>
+</ul>
+<h3 id="如果元素被overflow擋住"><a href="#如果元素被overflow擋住" class="headerlink" title="如果元素被overflow擋住"></a>如果元素被overflow擋住</h3><p>Element.scrollHeight 是衡量元素包含因為 overflow 而沒顯示在螢幕上的內容高度的唯讀屬性。</p>
+<ul>
+<li>scrollWidth 取得整個沒被擋住的寬</li>
+<li>scrollHeight 取得整個沒被擋住的高</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Element/scrollHeight" target="_blank" rel="noopener">詳細介紹</a><br>圖解更容易懂<br><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt=""><br>可以用來判斷元素<strong>是否完全被滾過</strong></p>
+<h3 id="取得border的值"><a href="#取得border的值" class="headerlink" title="取得border的值"></a>取得border的值</h3><p>還有較少見的，如果我今天border很大，可以取得border</p>
+<ul>
+<li>clientTop 取得元素的border-top</li>
+<li>clientLeft 取得元素的border-ledt</li>
+</ul>
+<h2 id="元素的位置"><a href="#元素的位置" class="headerlink" title="元素的位置"></a>元素的位置</h2><p><strong>相對於父層</strong>的位置</p>
+<ul>
+<li>offsetTop - 取得相對於上層的Y座標</li>
+<li>offsetLeft - 取得相對於上層的X座標<br>(類似jQ的position)</li>
+</ul>
+<p><strong>絕對位置</strong></p>
+<blockquote>
+<p>原生js中沒有直接的語法像jQuery的offset可以取得絕對位置，但可透過相對位置的方法加上遍歷直到父元素沒有為止，可參考：<a href="https://www.jianshu.com/p/1c2e0bef7907" target="_blank" rel="noopener">原生JS获取页面中DIV绝对位置的方法</a></p>
+</blockquote>
+<h2 id="視窗的寬高"><a href="#視窗的寬高" class="headerlink" title="視窗的寬高"></a>視窗的寬高</h2><p>取得視窗的寬高我們可利用上面提到元素的寬高來取得</p>
+<ul>
+<li>document.body.clientWidth</li>
+<li>document.body.clientHeight</li>
+<li>document.body.offsetWidth(包括邊線和捲軸的寬)</li>
+<li>document.body.offsetHeight</li>
+</ul>
+<h2 id="卷軸位置"><a href="#卷軸位置" class="headerlink" title="卷軸位置"></a>卷軸位置</h2><p>範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.scrollY)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意：window本身沒有scrollTop/Left這個屬性，<br>所以window.scrollTop是undefined的，可以console.log印出來看看：<br><img src="0912.PNG" alt=""></p>
+<p>所以我們取得視窗卷軸可以使用：</p>
+<h3 id="視窗卷軸"><a href="#視窗卷軸" class="headerlink" title="視窗卷軸"></a>視窗卷軸</h3><ul>
+<li>window.scrollX 卷軸現在寬值(X軸)</li>
+<li>window.scrollY 卷軸現在高值(Y軸)</li>
+</ul>
+<p>我們在<a href="https://icguanyu.github.io/js30/13/#more">Day13</a>有練習過一次。</p>
+<h3 id="元素卷軸"><a href="#元素卷軸" class="headerlink" title="元素卷軸"></a>元素卷軸</h3><p>我們要操作指定元素內的捲軸可以使用</p>
+<ul>
+<li>Element.scorllTop</li>
+<li>Element.scrollLeft<br>如果要給值：scorllTop = 500</li>
+</ul>
+<blockquote>
+<p>建議卷軸操作還是交給jQuery比較不會搞混</p>
+</blockquote>
+<h2 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect()"></a>getBoundingClientRect()</h2><p>可以快速取得元素的許多值，高、寬、位置等</p>
+<ul>
+<li>DOMRect.top：元素於目前可視範圍中，距離上方邊界的距離。</li>
+<li>DOMRect.bottom：元素於目前可視範圍中，距離下方邊界的距離。</li>
+<li>DOMRect.left：元素於目前可視範圍中，距離左邊邊界的距離。</li>
+<li>DOMRect.right：元素於目前可視範圍中，距離右邊邊界的距離。</li>
+<li>DOMRect.x：元素於目前可視範圍中，水平方向的座標。</li>
+<li>DOMRect.y：元素於目前可視範圍中，垂直方向的座標。</li>
+<li>DOMRect.width：元素的寬。</li>
+<li>DOMRect.height：元素的高。</li>
+</ul>
+<p>我們在js30<a href="https://icguanyu.github.io/js30/22/">Day22</a>有介紹過</p>
+<hr>
+<h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><p>以下是JQ用法</p>
+<h2 id="元素的寬高-1"><a href="#元素的寬高-1" class="headerlink" title="元素的寬高"></a>元素的寬高</h2><ul>
+<li>width() - <strong>設置</strong>或取得元素的宽度</li>
+<li>height() - <strong>設置</strong>或取得元素的高度<br>括號內放值可自訂寬高</li>
+<li>innerWidth() - 取得元素的寬度（<strong>含 padding</strong>）</li>
+<li>innerHeight() - 取得元素的高度（<strong>含 padding</strong>）<br>注意：元素內,不含border等</li>
+<li>outerWidth() - 取得元素的寬度（包含 padding 和 border）</li>
+<li>outerHeight() - 取得元素的高度（包含 padding 和 border）<br>注意：不含margin，<strong>括號內加入true就包含margin</strong></li>
+</ul>
+<h2 id="元素的位置-1"><a href="#元素的位置-1" class="headerlink" title="元素的位置"></a>元素的位置</h2><h3 id="絕對位置"><a href="#絕對位置" class="headerlink" title="絕對位置"></a>絕對位置</h3><p>相對整個視窗中</p>
+<ul>
+<li>offset() - 取得一個<strong>物件</strong>，包含top和left</li>
+<li>offset().left - 取得X座標</li>
+<li>offset().top - 取得Y座標<br>也可以傳入一個物件設定他的位置(數值為字串)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.block'</span>).offset(&#123;</span><br><span class="line">  top: <span class="string">'50'</span>, <span class="comment">//數值為字串</span></span><br><span class="line">  left: <span class="string">'100'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="相對位置"><a href="#相對位置" class="headerlink" title="相對位置"></a>相對位置</h3><p>相對於父層</p>
+<ul>
+<li>position() - 取得一個<strong>物件</strong>，包含top和left</li>
+<li>position().left - 取得相對於上層的X座標</li>
+<li>position().top - 取得相對於上層的Y座標<br>使用方法和絕對位置一樣，只是相對位置為父層（上一層）</li>
+</ul>
+<h2 id="視窗的寬高-1"><a href="#視窗的寬高-1" class="headerlink" title="視窗的寬高"></a>視窗的寬高</h2><ul>
+<li>取得螢幕寬 $(window).width()</li>
+<li>取得螢幕高 $(window).height()<br>跟取得元素寬高一樣，基本上就不會有inner/outer差別了</li>
+</ul>
+<h2 id="視窗-元素-卷軸位置"><a href="#視窗-元素-卷軸位置" class="headerlink" title="視窗(元素)卷軸位置"></a>視窗(元素)卷軸位置</h2><p>如果元素本身沒有卷軸會取得0，所以大多情況下都是用在window/html/body這些元素</p>
+<ul>
+<li>$(window).scrollTop() 卷軸現在Y值(高度)</li>
+<li>$(window).scrollLeft() 卷軸現在的X值</li>
+</ul>
+<p>常用在捲動時取得高度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="string">'html,body'</span>).scrollTop())</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="keyword">this</span>).scrollTop())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>或返回頂端效果<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.backTop'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">'html,body'</span>).animate(&#123;<span class="attr">scrollTop</span>:<span class="number">0</span>&#125;,<span class="number">400</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/筆記/" rel="tag"># 筆記</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js30/30/" rel="next" title="Day30 Whack A Mole!">
+                <i class="fa fa-chevron-left"></i> Day30 Whack A Mole!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/other/git常用指令/" rel="prev" title="Git 個人常用指令筆記">
+                Git 個人常用指令筆記 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原生js"><span class="nav-number">1.</span> <span class="nav-text">原生js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的寬高"><span class="nav-number">1.1.</span> <span class="nav-text">元素的寬高</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#取值"><span class="nav-number">1.1.1.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設置（直接透過style設定-不會改變到預設padding-和-border）"><span class="nav-number">1.1.2.</span> <span class="nav-text">設置（直接透過style設定,不會改變到預設padding 和 border）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果元素被overflow擋住"><span class="nav-number">1.1.3.</span> <span class="nav-text">如果元素被overflow擋住</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取得border的值"><span class="nav-number">1.1.4.</span> <span class="nav-text">取得border的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的位置"><span class="nav-number">1.2.</span> <span class="nav-text">元素的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗的寬高"><span class="nav-number">1.3.</span> <span class="nav-text">視窗的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷軸位置"><span class="nav-number">1.4.</span> <span class="nav-text">卷軸位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#視窗卷軸"><span class="nav-number">1.4.1.</span> <span class="nav-text">視窗卷軸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素卷軸"><span class="nav-number">1.4.2.</span> <span class="nav-text">元素卷軸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getBoundingClientRect"><span class="nav-number">1.5.</span> <span class="nav-text">getBoundingClientRect()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery"><span class="nav-number">2.</span> <span class="nav-text">JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的寬高-1"><span class="nav-number">2.1.</span> <span class="nav-text">元素的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的位置-1"><span class="nav-number">2.2.</span> <span class="nav-text">元素的位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#絕對位置"><span class="nav-number">2.2.1.</span> <span class="nav-text">絕對位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相對位置"><span class="nav-number">2.2.2.</span> <span class="nav-text">相對位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗的寬高-1"><span class="nav-number">2.3.</span> <span class="nav-text">視窗的寬高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視窗-元素-卷軸位置"><span class="nav-number">2.4.</span> <span class="nav-text">視窗(元素)卷軸位置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

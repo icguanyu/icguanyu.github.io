@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="facebook," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="連結：facebook for developers 初始步驟 直接進到facebook for developers頁面後，右上角「我的應用程式」中選擇「新增應用程式」。 建立新的應用程式。替應用程式取個名稱，例如：「臉書登入測試」。並輸入聯絡子郵件。 新增產品。來到應用程式的管理頁面，選擇「Facebook 登入」右下角的「設定」。 選擇應用程式要使用的平台，在此我們當然選擇「網站」。">
+<meta name="keywords" content="facebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網頁中加入「透過Facebook登入」功能">
+<meta property="og:url" content="http://icguanyu.github.io/other/facebook/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="連結：facebook for developers 初始步驟 直接進到facebook for developers頁面後，右上角「我的應用程式」中選擇「新增應用程式」。 建立新的應用程式。替應用程式取個名稱，例如：「臉書登入測試」。並輸入聯絡子郵件。 新增產品。來到應用程式的管理頁面，選擇「Facebook 登入」右下角的「設定」。 選擇應用程式要使用的平台，在此我們當然選擇「網站」。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-10-10T06:35:44.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="網頁中加入「透過Facebook登入」功能">
+<meta name="twitter:description" content="連結：facebook for developers 初始步驟 直接進到facebook for developers頁面後，右上角「我的應用程式」中選擇「新增應用程式」。 建立新的應用程式。替應用程式取個名稱，例如：「臉書登入測試」。並輸入聯絡子郵件。 新增產品。來到應用程式的管理頁面，選擇「Facebook 登入」右下角的「設定」。 選擇應用程式要使用的平台，在此我們當然選擇「網站」。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/other/facebook/"/>
+
+
+
+
+
+  <title>網頁中加入「透過Facebook登入」功能 | 個人前端筆記</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/other/facebook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">網頁中加入「透過Facebook登入」功能</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-10-10T14:30:36+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">other</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/other/facebook/" class="leancloud_visitors" data-flag-title="網頁中加入「透過Facebook登入」功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,990
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>連結：<strong><a href="https://developers.facebook.com/" target="_blank" rel="noopener">facebook for developers</a></strong></p>
+<h2 id="初始步驟"><a href="#初始步驟" class="headerlink" title="初始步驟"></a>初始步驟</h2><ol>
+<li>直接進到facebook for developers頁面後，右上角「我的應用程式」中選擇「新增應用程式」。</li>
+<li>建立新的應用程式。替應用程式取個名稱，例如：「臉書登入測試」。並輸入聯絡子郵件。</li>
+<li>新增產品。來到應用程式的管理頁面，選擇「Facebook 登入」右下角的「設定」。</li>
+<li>選擇應用程式要使用的平台，在此我們當然選擇「網站」。</li>
+</ol>
+<a id="more"></a>
+<h2 id="快速掛載Facebook-JavaScript-SDK"><a href="#快速掛載Facebook-JavaScript-SDK" class="headerlink" title="快速掛載Facebook JavaScript SDK"></a>快速掛載Facebook JavaScript SDK</h2><p>接下來會自動進入到臉書預設的快速入門帶你設定。</p>
+<h3 id="1-輸入你的網站網址。"><a href="#1-輸入你的網站網址。" class="headerlink" title="1. 輸入你的網站網址。"></a>1. 輸入你的網站網址。</h3><blockquote>
+<p>舉例：頁面在 <a href="https://www.example.com" target="_blank" rel="noopener">https://www.example.com</a> 下的test資料夾的index.html，我們只需要輸入　<a href="https://www.example.com/test" target="_blank" rel="noopener">https://www.example.com/test</a>　即可<br><strong>備註：似乎只能使用在https網域下，不能使用在http網域下。</strong></p>
+</blockquote>
+<h3 id="2-設定-Facebook-JavaScript-SDK"><a href="#2-設定-Facebook-JavaScript-SDK" class="headerlink" title="2. 設定 Facebook JavaScript SDK"></a>2. 設定 Facebook JavaScript SDK</h3><p>我們可以依照開發人員介面的教學內容依序完成即可。<br>將此段內容貼到你 html 頁面上的 <code>&lt;body&gt;</code> 標籤後<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>.fbAsyncInit = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">    FB.init(&#123;</span></span><br><span class="line"><span class="javascript">      appId      : <span class="string">'&#123;your-app-id&#125;'</span>,<span class="comment">//15碼數字字串不含大括號</span></span></span><br><span class="line"><span class="javascript">      cookie     : <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">      xfbml      : <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">      version    : <span class="string">'3.1'</span> <span class="comment">//筆者目前是v3.1</span></span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">      </span></span><br><span class="line"><span class="undefined">    FB.AppEvents.logPageView();   </span></span><br><span class="line"><span class="undefined">      </span></span><br><span class="line"><span class="undefined">  &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  (<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">     <span class="keyword">if</span> (d.getElementById(id)) &#123;<span class="keyword">return</span>;&#125;</span></span><br><span class="line"><span class="undefined">     js = d.createElement(s); js.id = id;</span></span><br><span class="line"><span class="javascript">     js.src = <span class="string">"https://connect.facebook.net/en_US/sdk.js"</span>;</span></span><br><span class="line"><span class="undefined">     fjs.parentNode.insertBefore(js, fjs);</span></span><br><span class="line"><span class="javascript">   &#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>‘{your-app-id}’就是開發人員頁面上方的 <strong>「應用程式編號」</strong></li>
+<li>注意：在官方教學中有提到：SDK 是以非同步方式載入。<br>Facebook JavaScript SDK 沒有任何需要下載或安裝的獨立檔案，您只需要將一小段一般的 JavaScript 置入 HTML 中，就會以非同步的方式將 SDK 載入頁面中。<strong>非同步載入是指不會阻擋頁面中其他元素的載入。</strong><br>所以這說明了什麼呢？後續我們會提到。</li>
+</ul>
+<p>到這邊其實已經完成掛載Facebook JavaScript SDK的工作了。</p>
+<h3 id="3-檢查登入狀態（存取權杖）"><a href="#3-檢查登入狀態（存取權杖）" class="headerlink" title="3. 檢查登入狀態（存取權杖）"></a>3. 檢查登入狀態（存取權杖）</h3><p>載入您的網頁時，第一個步驟是確認用戶<strong>是否已經</strong>使用「Facebook 登入」來登入您的應用程式。<br>所以我們會使用一個方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FB.getLoginStatus(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    statusChangeCallback(response);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>這是回傳的 response 內容（先不用急著貼到您的頁面上）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    status: <span class="string">'connected'</span>,</span><br><span class="line">    authResponse: &#123;</span><br><span class="line">        accessToken: <span class="string">'...'</span>,<span class="comment">//權杖在這</span></span><br><span class="line">        expiresIn:<span class="string">'...'</span>,</span><br><span class="line">        signedRequest:<span class="string">'...'</span>,</span><br><span class="line">        userID:<span class="string">'...'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在官方教學步驟中有詳細介紹每一個值代表的意義。<br>更多詳細介紹可見<a href="https://developers.facebook.com/docs/facebook-login/web/accesstokens" target="_blank" rel="noopener">官方文件說明</a></p>
+<p><strong>接下來就非官方的步驟了，因為照做採了好多雷，也可能是因為經驗不足把它想得太簡單．．．</strong></p>
+<hr>
+<h3 id="4-隱私政策網址-狀態：-調整中"><a href="#4-隱私政策網址-狀態：-調整中" class="headerlink" title="4. 隱私政策網址 ( 狀態： 調整中? )"></a>4. 隱私政策網址 ( 狀態： 調整中? )</h3><p>在進入接下來的步驟之前，我們必須把應用程式設定為<strong>上線</strong>狀態。<br>在開發者頁面上方可以看見目前狀態為：調整中。點選調整中會出現：</p>
+<blockquote>
+<p>你必須提供有效的隱私政策網址，才能夠將應用程式上架。請前往基本設定並確認網址有效。</p>
+</blockquote>
+<p>我們前往設定 –&gt; 基本資料 –&gt; 隱私權政策網址</p>
+<p>我們透過 <a href="https://privacypolicies.com/" target="_blank" rel="noopener">privacypolicies.com</a> 點選 Start creating your  Privacy Policy，基本上裡面就是幫你產生一篇專屬於你的隱私權政策，並連結你的網域，最後會產出</p>
+<ul>
+<li>隱私權政策網址 <strong>&lt;&lt;–這就是我們要的</strong></li>
+<li>和一大篇隱私權政策(html)</li>
+</ul>
+<p><a href="https://blog.ccjeng.com/2016/05/privacy-policy-generator.html" target="_blank" rel="noopener">這裡也有一篇教學網址</a></p>
+<p>把隱私權政策網址輸入後儲存變更就可以將狀態改為<strong>已上線</strong><br>（請確保已上線才能繼續往下）</p>
+<h3 id="5-登入-登出"><a href="#5-登入-登出" class="headerlink" title="5. 登入/登出"></a>5. 登入/登出</h3><p>在此我不使用官方提供的登入按鈕，畢竟大多時候我們可能需要客製化這些按鈕，所以這邊採用我們自己熟悉的方法來製作。</p>
+<p><strong>注意：登出會讓使用者真的登出她自己的Facebook、正常來說我們不會特別製作這個方法在真正的網站上，你也不會想莫名其妙被登出臉書吧。但在此我們還是會示範如何使用。</strong></p>
+<p>所以這邊呼應第三點提到的：我們只會判斷使用者是否已經使用「Facebook 登入」來登入您的應用程式。而非是否登入Facebook，兩者是有差異的。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"login()"</span>&gt;</span>登入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"logout()"</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我們用最簡單的方法直接用<code>&lt;button&gt;</code>來呼叫登入和登出的方法，而呼叫登入和登出的方法為：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.login(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/*console.log(response);*/</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.logout(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/*console.log(response)*/</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不過在這之前我們應該要先判斷使用者是否已經透過「Facebook 登入」來登入</p>
+<h3 id="6-判斷是否已登入"><a href="#6-判斷是否已登入" class="headerlink" title="6. 判斷是否已登入"></a>6. 判斷是否已登入</h3><p>再次強調這邊的已登入並非你的臉書是否已登入，而是「是否曾透過這應用程式」登入。<br>我們使用到第三點的：檢查登入狀態（存取權杖）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkLoginState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.getLoginStatus(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">checkLoginState()</span><br></pre></td></tr></table></figure></p>
+<p>直覺上我們可能會希望網頁一載入就判斷，但此時會出現：<br><code>Uncaught ReferenceError: FB is not defined</code><br>為什麼呢？在此呼應到了第二點所提到的非同步載入的問題。</p>
+<blockquote>
+<p>非同步載入是指不會阻擋頁面中其他元素的載入。</p>
+</blockquote>
+<p>也就是說FB並還沒完成初始化，或在初始化的同時，您就讓程式呼叫了<code>FB.getLoginStatus</code>，在此一瞬間當然會出現FB is not defined。</p>
+<p>所以一般我們會將<strong>判斷</strong>設定在登入的按鈕上，或是一些<strong>需要登入才能互動的元件</strong>上。</p>
+<blockquote>
+<p>如果你硬是想要在頁一載入就判斷是否曾登入可能要使用一些同步的方法來處理非同步的問題，在此先不做討論</p>
+</blockquote>
+<p>所以我們的登入應該是先檢查：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button onclick="checkLoginState()"&gt;登入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>呼叫 <code>checkLoginState</code> 來使用 <code>FB.getLoginStatus</code> 方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkLoginState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.getLoginStatus(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(response.status === <span class="string">'connected'</span>)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'你已經登入囉'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      login()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-繼續未完成的登入"><a href="#7-繼續未完成的登入" class="headerlink" title="7. 繼續未完成的登入"></a>7. 繼續未完成的登入</h3><p>接著 <code>login()</code> 此時使用者的畫面就會跳出臉書登入視窗。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.login(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>透過 <code>FB.login</code> 這個方法會回傳跟 <code>FB.getLoginStatus</code> 一樣的 response 內容。<br>此時的 status 如果是 connected 就是已經登入成功，而且 authResponse 內會有accessToken、userID 等</p>
+<h3 id="8-FB-api-取得使用者資料"><a href="#8-FB-api-取得使用者資料" class="headerlink" title="8. FB.api() 取得使用者資料"></a>8. FB.api() 取得使用者資料</h3><p>目前臉書提供的預設權限只能讓我們獲得</p>
+<ul>
+<li>id</li>
+<li>name</li>
+<li>email</li>
+<li>picture (大頭照)</li>
+<li>目前已知可預設取得的只有這些資料。（或有更多還請不吝分享）</li>
+</ul>
+<p>如果需要更多用戶資訊，需額外向FB說明用途，<strong>申請</strong>等待通過。<br>在開發者頁面左方選單的「應用程式審查」。</p>
+<p>如果已經登入了(<code>response.status === &quot;connected&quot;</code>)，我們就使用　<code>FB.api</code>　這個方法來獲得使用者的資料。</p>
+<blockquote>
+<p><code>FB.api(path, method, params, callback)</code><br>詳細介紹：<a href="https://developers.facebook.com/docs/javascript/reference/FB.api" target="_blank" rel="noopener">Graph API Request</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FB.login(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">    <span class="keyword">if</span> (response.status === <span class="string">"connected"</span>) &#123;</span><br><span class="line">      FB.api(<span class="string">'/me'</span>, &#123;</span><br><span class="line">        <span class="string">'fields'</span>: <span class="string">'id,name,email,picture'</span></span><br><span class="line">      &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(response);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">      scope: <span class="string">'email'</span>,</span><br><span class="line">      auth_type: <span class="string">'rerequest'</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>response 就是取得的 json 格式的資料了！大功告成！</p>
+<h3 id="後面那奇怪的-scope-是"><a href="#後面那奇怪的-scope-是" class="headerlink" title="後面那奇怪的 scope 是?"></a>後面那奇怪的 scope 是?</h3><p>一般來說使用者可以選擇不要讓應用程式取得這些資料，<br>如果你今天非拿到資料不可，這邊有<a href="https://developers.facebook.com/docs/facebook-login/web/permissions" target="_blank" rel="noopener">官方詳細說明</a></p>
+<p>補充：我們也可以直接透過這個api取得我們要的資料(json格式)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//graph.facebook.com/me?fields=d,name,email,picture&amp;access_token="&#123;responseauthResponse.accessToken&#125;"</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="資料來源：Facebook-JavaScript-SDK"><a href="#資料來源：Facebook-JavaScript-SDK" class="headerlink" title="資料來源：Facebook JavaScript SDK"></a>資料來源：Facebook JavaScript SDK</h1><p>一整套豐富的用戶端功能，用來新增社交外掛程式、「Facebook 登入」和 Graph API 呼叫。</p>
+<ul>
+<li><p><a href="https://developers.facebook.com/docs/web" target="_blank" rel="noopener">Facebook JavaScript SDK</a></p>
+</li>
+<li><p><a href="https://developers.facebook.com/docs/graph-api/using-graph-api/" target="_blank" rel="noopener">使用圖形 API</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/facebook/" rel="tag"># facebook</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/scss/scss_3/" rel="next" title="SCSS 筆記(3) - CSS MODULAR">
+                <i class="fa fa-chevron-left"></i> SCSS 筆記(3) - CSS MODULAR
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始步驟"><span class="nav-number">1.</span> <span class="nav-text">初始步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速掛載Facebook-JavaScript-SDK"><span class="nav-number">2.</span> <span class="nav-text">快速掛載Facebook JavaScript SDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-輸入你的網站網址。"><span class="nav-number">2.1.</span> <span class="nav-text">1. 輸入你的網站網址。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-設定-Facebook-JavaScript-SDK"><span class="nav-number">2.2.</span> <span class="nav-text">2. 設定 Facebook JavaScript SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-檢查登入狀態（存取權杖）"><span class="nav-number">2.3.</span> <span class="nav-text">3. 檢查登入狀態（存取權杖）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-隱私政策網址-狀態：-調整中"><span class="nav-number">2.4.</span> <span class="nav-text">4. 隱私政策網址 ( 狀態： 調整中? )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-登入-登出"><span class="nav-number">2.5.</span> <span class="nav-text">5. 登入/登出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-判斷是否已登入"><span class="nav-number">2.6.</span> <span class="nav-text">6. 判斷是否已登入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-繼續未完成的登入"><span class="nav-number">2.7.</span> <span class="nav-text">7. 繼續未完成的登入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-FB-api-取得使用者資料"><span class="nav-number">2.8.</span> <span class="nav-text">8. FB.api() 取得使用者資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#後面那奇怪的-scope-是"><span class="nav-number">2.9.</span> <span class="nav-text">後面那奇怪的 scope 是?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#資料來源：Facebook-JavaScript-SDK"><span class="nav-number"></span> <span class="nav-text">資料來源：Facebook JavaScript SDK</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

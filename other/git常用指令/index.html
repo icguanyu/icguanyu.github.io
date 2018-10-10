@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/earlyaccess/notosanstc.css/css?family=Noto Sans TC:300,300italic,400,400italic,700,700italic|Open Sans:300,300italic,400,400italic,700,700italic|Noto Sans TC:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="開始之前 mkdir demo創建一個叫做demo的資料夾">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 個人常用指令筆記">
+<meta property="og:url" content="http://icguanyu.github.io/other/git常用指令/index.html">
+<meta property="og:site_name" content="個人前端筆記">
+<meta property="og:description" content="開始之前 mkdir demo創建一個叫做demo的資料夾">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/rPQLcPK.png =350x200">
+<meta property="og:image" content="https://nvie.com/img/git-model@2x.png">
+<meta property="og:updated_time" content="2018-10-10T06:10:39.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 個人常用指令筆記">
+<meta name="twitter:description" content="開始之前 mkdir demo創建一個叫做demo的資料夾">
+<meta name="twitter:image" content="https://i.imgur.com/rPQLcPK.png =350x200">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icguanyu.github.io/other/git常用指令/"/>
+
+
+
+
+
+  <title>Git 個人常用指令筆記 | 個人前端筆記</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-118818781-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">個人前端筆記</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不想放棄設計的前端工程師(junior)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icguanyu.github.io/other/git常用指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icguanyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人前端筆記">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git 個人常用指令筆記</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-10-10T13:58:36+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">other</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/other/git常用指令/" class="leancloud_visitors" data-flag-title="Git 個人常用指令筆記">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字數統計">
+                  1,180
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="開始之前"><a href="#開始之前" class="headerlink" title="開始之前"></a>開始之前</h2><ul>
+<li><code>mkdir demo</code><br>創建一個叫做demo的資料夾</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><code>cd</code><br>cd加一個空白鍵後，再<strong>按下tab</strong>鍵會列出當前目錄的清單</li>
+<li><code>cd demo</code><br>前往demo這個資料夾</li>
+<li><code>cd ..</code><br>回資料夾的<strong>上一層</strong></li>
+<li><code>cd ~</code><br>回到電腦<strong>最外層</strong>，像是根目錄Home之類的。</li>
+<li><code>touch index.html</code><br>新增index.html這個檔案</li>
+<li><code>git init</code><br>初始化git，創建git儲存庫。</li>
+</ul>
+<h2 id="基礎操作"><a href="#基礎操作" class="headerlink" title="基礎操作"></a>基礎操作</h2><ul>
+<li><code>git add .</code><br>將所有檔案加入索引，<strong>準備</strong>加入版本控管。</li>
+<li><code>git status</code>或<code>git sta</code><br>查看現在索引的狀態，哪些檔案未被追蹤或已經追蹤。</li>
+<li><code>git commit -m&#39;輸入一些備註&#39;</code><br>將索引內容建立一個<strong>新的</strong>版本控管，未來可能會有很多個。</li>
+<li><code>git add app</code><br>跟<code>git add .</code>差別在於只將app資料夾的檔案加入索引。</li>
+</ul>
+<h3 id="狀況一：終端機畫面好亂想清空"><a href="#狀況一：終端機畫面好亂想清空" class="headerlink" title="狀況一：終端機畫面好亂想清空"></a>狀況一：終端機畫面好亂想清空</h3><ul>
+<li><code>clear</code></li>
+</ul>
+<h3 id="狀況二：想查看過去版本的內容-HEAD"><a href="#狀況二：想查看過去版本的內容-HEAD" class="headerlink" title="狀況二：想查看過去版本的內容(HEAD)"></a>狀況二：想查看過去版本的內容(HEAD)</h3><p>HEAD為目前所在位置的指標。</p>
+<ul>
+<li><code>git checkout [前四碼]</code><br>回到以前得某個指定版本狀態，查看過去的內容。</li>
+<li><code>git checkout master</code><br>還原最新版本。</li>
+</ul>
+<h2 id="復原檔案"><a href="#復原檔案" class="headerlink" title="復原檔案"></a>復原檔案</h2><h3 id="狀況一：某個檔案改壞了，需要復原到上一個-最新-Commit紀錄"><a href="#狀況一：某個檔案改壞了，需要復原到上一個-最新-Commit紀錄" class="headerlink" title="狀況一：某個檔案改壞了，需要復原到上一個(最新)Commit紀錄"></a>狀況一：某個檔案改壞了，需要復原到上一個(最新)Commit紀錄</h3><ul>
+<li><code>git checkout 檔案名稱</code><br>將這個檔案復原回最新一個(上一個)版本。</li>
+</ul>
+<h3 id="狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引"><a href="#狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引" class="headerlink" title="狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引"></a>狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引</h3><ul>
+<li><code>git reset --hard</code><br>將整個目錄復原到最新的Commit狀態，例如：<br>Commit1 –&gt; 編輯 –&gt; Commit2 –&gt; 編輯發現壞了<br>使用<code>git reset --hard</code>回到<br>Commit1 –&gt; 編輯 –&gt; Commit2</li>
+</ul>
+<h2 id="復原索引"><a href="#復原索引" class="headerlink" title="復原索引"></a>復原索引</h2><h3 id="狀況一：git-add-後希望某個檔案不要加入追蹤了"><a href="#狀況一：git-add-後希望某個檔案不要加入追蹤了" class="headerlink" title="狀況一：git add .後希望某個檔案不要加入追蹤了"></a>狀況一：<code>git add .</code>後希望某個檔案不要加入追蹤了</h3><ul>
+<li><code>git reset HEAD 檔案名稱</code><br>將這個檔案從暫存索引中移除，待會就不會被Commit出去了。<h3 id="狀況二：全部都先不要追蹤了"><a href="#狀況二：全部都先不要追蹤了" class="headerlink" title="狀況二：全部都先不要追蹤了"></a>狀況二：全部都先不要追蹤了</h3></li>
+<li><code>git reset HEAD</code><br>將所有檔案從暫存索引中移除，取消追蹤。</li>
+</ul>
+<h2 id="觀念提醒"><a href="#觀念提醒" class="headerlink" title="觀念提醒"></a>觀念提醒</h2><ul>
+<li>要使用 Git 版本控管，你必須先建立「工作目錄」與「版本庫」。(mkdir, git init)</li>
+<li>你要先在「工作目錄」進行開發，你可能會建立目錄、建立檔案、修改檔案、刪除檔案、… 等操作。</li>
+<li>然後當你想提交一個新版本到 Git 的「儲存庫」裡，一定要先更新「索引」狀態。(git add, git mv, …)</li>
+<li>然後 Git 會依據「索引」當下的狀態，決定要把那些檔案提交到 Git 的「儲存庫」裡。(git status)</li>
+<li>最後提交變更時 (git commit)，才會把版本資訊寫入到「物件儲存區」當中 (此時將會寫入 commit 物件)。<br><a href="https://github.com/doggy8088/Learn-Git-in-30-days/blob/master/zh-tw/05.md" target="_blank" rel="noopener">資料來源-保哥</a></li>
+</ul>
+<hr>
+<h2 id="branch-分支"><a href="#branch-分支" class="headerlink" title="branch 分支"></a>branch 分支</h2><ul>
+<li><code>git branch</code><br>查看目前有哪些分支。</li>
+<li><code>git branch 分支名稱</code><br>建立一個新的分支。</li>
+<li><code>git checkout 分支名稱</code><br>前往這個分支。</li>
+<li><code>git merge 分支名稱</code><br>假設我有兩個分支：master和branch，今天我要將branch合併(merge)至master時，請注意必須將目前分支指回<strong>master</strong><blockquote>
+<p>建議搭配GUI(source tree)使用。</p>
+</blockquote>
+<h2 id="push-推送分支到遠端數據庫-reomte"><a href="#push-推送分支到遠端數據庫-reomte" class="headerlink" title="push 推送分支到遠端數據庫(reomte)"></a>push 推送分支到遠端數據庫(reomte)</h2>數據庫可能會有很多個，像是開發用或正式發布用的。</li>
+<li><code>git reomte</code><br>查詢目前有哪些遠端數據庫名稱，以github來說會取得預設的名稱<strong>origin</strong></li>
+<li><code>git push [origin] [branch_name](你要推的分支)</code><br>透過以上方法將分支推到github上</li>
+</ul>
+<p><a href="https://gitbook.tw/chapters/github/push-to-github.html" target="_blank" rel="noopener">為你自己學 Git  - push 詳細介紹</a></p>
+<h2 id="pull分支-遇到衝突時"><a href="#pull分支-遇到衝突時" class="headerlink" title="pull分支(遇到衝突時)"></a>pull分支(遇到衝突時)</h2><p>當有多人協作的專案時，會有不同時間上傳的不同版本問題，因此產生衝突。</p>
+<ul>
+<li><code>git pull</code><br>需先透過<code>git pull</code>將最新版本pull下來，此時會自動進行merge，並跳出一個視窗：<br><img src="https://i.imgur.com/rPQLcPK.png =350x200" alt=""><br>在此輸入<code>:wq!</code>儲存並退出即可，此為Vim是Git預設的編輯器，查看下方Vim介紹。</li>
+</ul>
+<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p>Vim是Git預設的編輯器，這邊是<strong>希望你寫一些備註說明為什麼要合併</strong>，預設說明如上截圖(不含#號部分內容)。主要會用到的指令：</p>
+<h3 id="Normal模式："><a href="#Normal模式：" class="headerlink" title="Normal模式："></a>Normal模式：</h3><ul>
+<li><code>i</code>(insert)或<code>a</code>(append)或<code>o</code>(新增一行)進入Insert模式</li>
+<li><code>:w</code> 存檔</li>
+<li><code>:q</code> 離開</li>
+<li><code>:wq</code> 存檔然後離開</li>
+</ul>
+<h3 id="Insert模式：-在這邊我們用來編輯Commit訊息"><a href="#Insert模式：-在這邊我們用來編輯Commit訊息" class="headerlink" title="Insert模式：(在這邊我們用來編輯Commit訊息)"></a>Insert模式：(在這邊我們用來編輯Commit訊息)</h3><ul>
+<li><code>esc鍵</code> 或 <code>ctrl+[</code> 退回Normal模式</li>
+</ul>
+<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><p>git pull = git fetch + git merge<br>pull就是將遠端的分支和你本地的分支進行合併(merge)的動作，<br>但有時候你不希望<code>pull</code>下來導致自己的數據庫太亂又擔心有衝突時，可以先使用下面這個指令。</p>
+<ul>
+<li><code>git fetch</code></li>
+</ul>
+<p>可以等到你看過沒問題後，再進行合併(merge)的動作。<br>所以如果不滿意呢？不需要撤销， git fetch 對本地分支没有影響。</p>
+<p><a href="https://gitbook.tw/chapters/github/pull-from-github.html" target="_blank" rel="noopener">fetch詳細介紹</a></p>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><p><code>touch .gitignore</code><br>忽略檔案 -<a href="https://github.com/github/gitignore" target="_blank" rel="noopener">常用ignore</a></p>
+</li>
+<li><p>參考架構圖 <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">來源</a><br><img src="https://nvie.com/img/git-model@2x.png" alt=""></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/jquery/getsize/" rel="next" title="js/jQ各種取寬高與位置">
+                <i class="fa fa-chevron-left"></i> js/jQ各種取寬高與位置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/scss/scss_1/" rel="prev" title="SCSS 筆記(1) - What is SASS ?">
+                SCSS 筆記(1) - What is SASS ? <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">icguanyu</p>
+              <p class="site-description motion-element" itemprop="description">腦子裡裝不了那麼多，就先裝在這，再慢慢消化。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/icguanyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:icguanyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/guanyu.wu.9" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/icguanyu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#開始之前"><span class="nav-number">1.</span> <span class="nav-text">開始之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基礎操作"><span class="nav-number">2.</span> <span class="nav-text">基礎操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況一：終端機畫面好亂想清空"><span class="nav-number">2.1.</span> <span class="nav-text">狀況一：終端機畫面好亂想清空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況二：想查看過去版本的內容-HEAD"><span class="nav-number">2.2.</span> <span class="nav-text">狀況二：想查看過去版本的內容(HEAD)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#復原檔案"><span class="nav-number">3.</span> <span class="nav-text">復原檔案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況一：某個檔案改壞了，需要復原到上一個-最新-Commit紀錄"><span class="nav-number">3.1.</span> <span class="nav-text">狀況一：某個檔案改壞了，需要復原到上一個(最新)Commit紀錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引"><span class="nav-number">3.2.</span> <span class="nav-text">狀況二：整個工作目錄都亂了，想要還原整個工作目錄的檔案和索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#復原索引"><span class="nav-number">4.</span> <span class="nav-text">復原索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況一：git-add-後希望某個檔案不要加入追蹤了"><span class="nav-number">4.1.</span> <span class="nav-text">狀況一：git add .後希望某個檔案不要加入追蹤了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狀況二：全部都先不要追蹤了"><span class="nav-number">4.2.</span> <span class="nav-text">狀況二：全部都先不要追蹤了</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#觀念提醒"><span class="nav-number">5.</span> <span class="nav-text">觀念提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#branch-分支"><span class="nav-number">6.</span> <span class="nav-text">branch 分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-推送分支到遠端數據庫-reomte"><span class="nav-number">7.</span> <span class="nav-text">push 推送分支到遠端數據庫(reomte)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull分支-遇到衝突時"><span class="nav-number">8.</span> <span class="nav-text">pull分支(遇到衝突時)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">9.</span> <span class="nav-text">Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal模式："><span class="nav-number">9.1.</span> <span class="nav-text">Normal模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert模式：-在這邊我們用來編輯Commit訊息"><span class="nav-number">9.2.</span> <span class="nav-text">Insert模式：(在這邊我們用來編輯Commit訊息)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">10.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">11.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Made by icguanyu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cYS5OXByLefsf95QeP43zVeH-gzGzoHsz", "Ew0qc2Oqr0GhJ2r5Prcb0JB0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
